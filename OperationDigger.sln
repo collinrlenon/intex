@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.809.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationDigger", "OperationDigger.csproj", "{DD5834A4-305E-471C-A86F-952B980D3B3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationDigger", "OperationDigger.csproj", "{F58AAA43-7384-4363-A7F8-7357FE8895A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DD5834A4-305E-471C-A86F-952B980D3B3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD5834A4-305E-471C-A86F-952B980D3B3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD5834A4-305E-471C-A86F-952B980D3B3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD5834A4-305E-471C-A86F-952B980D3B3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F58AAA43-7384-4363-A7F8-7357FE8895A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F58AAA43-7384-4363-A7F8-7357FE8895A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F58AAA43-7384-4363-A7F8-7357FE8895A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F58AAA43-7384-4363-A7F8-7357FE8895A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {BBEEC0DE-DBA1-473A-8639-5372D07E8692}
+		SolutionGuid = {CB251413-9C8E-421C-967F-2DA91CFEA773}
 	EndGlobalSection
 EndGlobal

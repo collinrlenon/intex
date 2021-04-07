@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/collinrlenon/Desktop/GitHub/intex/OperationDigger.csproj": {}
+    "/Users/collinrlenon/Desktop/OperationDigger/OperationDigger.csproj": {}
   },
   "projects": {
-    "/Users/collinrlenon/Desktop/GitHub/intex/OperationDigger.csproj": {
+    "/Users/collinrlenon/Desktop/OperationDigger/OperationDigger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/collinrlenon/Desktop/GitHub/intex/OperationDigger.csproj",
+        "projectUniqueName": "/Users/collinrlenon/Desktop/OperationDigger/OperationDigger.csproj",
         "projectName": "OperationDigger",
-        "projectPath": "/Users/collinrlenon/Desktop/GitHub/intex/OperationDigger.csproj",
+        "projectPath": "/Users/collinrlenon/Desktop/OperationDigger/OperationDigger.csproj",
         "packagesPath": "/Users/collinrlenon/.nuget/packages/",
-        "outputPath": "/Users/collinrlenon/Desktop/GitHub/intex/obj/",
+        "outputPath": "/Users/collinrlenon/Desktop/OperationDigger/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/collinrlenon/.config/NuGet/NuGet.Config"
@@ -38,37 +38,25 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.5, )"
+              "version": "[3.1.13, )"
             },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.5, )"
+              "version": "[3.1.13, )"
             },
-            "Microsoft.EntityFrameworkCore.Relational": {
+            "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[5.0.5, )"
+              "version": "[3.1.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.13, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.5, )"
-            },
-            "Npgsql": {
-              "target": "Package",
-              "version": "[5.0.4, )"
-            },
-            "Npgsql.EntityFrameworkCore.PostgreSQL": {
-              "target": "Package",
-              "version": "[5.0.2, )"
-            },
-            "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
-              "target": "Package",
-              "version": "[1.1.0, )"
+              "version": "[3.1.13, )"
             }
           },
           "imports": [

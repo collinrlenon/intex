@@ -1,10 +1,9 @@
-﻿<Properties StartupConfiguration="{DD5834A4-305E-471C-A86F-952B980D3B3B}|Default">
-  <MonoDevelop.Ide.ItemProperties.OperationDigger FirstBuild="True" PreferredExecutionTarget="/Applications/Google Chrome.app" />
+﻿<Properties StartupConfiguration="{F58AAA43-7384-4363-A7F8-7357FE8895A7}|Default">
+  <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
     <Files>
-      <File FileName="buildspec.yml" Line="25" Column="9" />
-      <File FileName="appsettings.json" Line="9" Column="22" />
-      <File FileName="Startup.cs" Line="29" Column="66" />
+      <File FileName="appsettings.json" Line="9" Column="32" />
+      <File FileName="Startup.cs" Line="23" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

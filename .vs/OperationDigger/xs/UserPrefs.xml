@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{DD5834A4-305E-471C-A86F-952B980D3B3B}|Default">
+  <MonoDevelop.Ide.ItemProperties.OperationDigger FirstBuild="True" PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="buildspec.yml">
+    <Files>
+      <File FileName="buildspec.yml" Line="25" Column="9" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="OperationDigger" expanded="True">
+            <Node name="OperationDigger" expanded="True">
+              <Node name="buildspec.yml" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/collinrlenon/Desktop/OperationDigger/OperationDigger.csproj": {}
+    "/Users/garrettfarnsworth/Desktop/intex/OperationDigger.csproj": {}
   },
   "projects": {
-    "/Users/collinrlenon/Desktop/OperationDigger/OperationDigger.csproj": {
+    "/Users/garrettfarnsworth/Desktop/intex/OperationDigger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/collinrlenon/Desktop/OperationDigger/OperationDigger.csproj",
+        "projectUniqueName": "/Users/garrettfarnsworth/Desktop/intex/OperationDigger.csproj",
         "projectName": "OperationDigger",
-        "projectPath": "/Users/collinrlenon/Desktop/OperationDigger/OperationDigger.csproj",
-        "packagesPath": "/Users/collinrlenon/.nuget/packages/",
-        "outputPath": "/Users/collinrlenon/Desktop/OperationDigger/obj/",
+        "projectPath": "/Users/garrettfarnsworth/Desktop/intex/OperationDigger.csproj",
+        "packagesPath": "/Users/garrettfarnsworth/.nuget/packages/",
+        "outputPath": "/Users/garrettfarnsworth/Desktop/intex/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/collinrlenon/.config/NuGet/NuGet.Config"
+          "/Users/garrettfarnsworth/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

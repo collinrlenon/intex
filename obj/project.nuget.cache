@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ltgzIHBX1udlxGQooVfx4uNvNazTLnh29DIMNKN0so7ESpfoZc7mEM8jxEnEowO2/E8QwVV9MbAlLH/6y0uMxQ==",
+  "dgSpecHash": "NABFtJjWhzv8u0zHRam9Akehto6J2ptHJnNVXXpbpMSX1tTcCjrhLn3yGdTOA1xhYW5GC/fkrnsFI4Zx/TVydw==",
   "success": true,
-  "projectFilePath": "/Users/collinrlenon/Desktop/OperationDigger/OperationDigger.csproj",
+  "projectFilePath": "/Users/collinrlenon/Desktop/GitHub/intex/OperationDigger.csproj",
   "expectedPackageFiles": [
     "/Users/collinrlenon/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/collinrlenon/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",

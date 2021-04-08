@@ -861,14 +861,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/collinrlenon/Desktop/OperationDigger/OperationDigger.csproj",
+      "projectUniqueName": "/Users/collinrlenon/Desktop/GitHub/intex/OperationDigger.csproj",
       "projectName": "OperationDigger",
-      "projectPath": "/Users/collinrlenon/Desktop/OperationDigger/OperationDigger.csproj",
+      "projectPath": "/Users/collinrlenon/Desktop/GitHub/intex/OperationDigger.csproj",
       "packagesPath": "/Users/collinrlenon/.nuget/packages/",
-      "outputPath": "/Users/collinrlenon/Desktop/OperationDigger/obj/",
+      "outputPath": "/Users/collinrlenon/Desktop/GitHub/intex/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/collinrlenon/.config/NuGet/NuGet.Config"
+        "/Users/collinrlenon/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

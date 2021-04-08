@@ -23,6 +23,56 @@ namespace OperationDigger.Controllers
             return View();
         }
 
+        public IActionResult AddMummy()
+        {
+            return View();
+        }
+
+        public IActionResult AddNotes()
+        {
+            return View();
+        }
+
+        public IActionResult Burial()
+        {
+            return View();
+        }
+
+        public IActionResult BurialList()
+        {
+            return View();
+        }
+
+        public IActionResult BurialRecord()
+        {
+            return View();
+        }
+
+        public IActionResult ManageUsers()
+        {
+            return View();
+        }
+
+        public IActionResult UploadBooks()
+        {
+            return View();
+        }
+
+        public IActionResult UploadNotes()
+        {
+            return View();
+        }
+
+        public IActionResult UploadPhotos()
+        {
+            return View();
+        }
+
+        public IActionResult DeleteRecords()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

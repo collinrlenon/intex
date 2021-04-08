@@ -1,16 +1,33 @@
 ﻿<Properties StartupConfiguration="{F58AAA43-7384-4363-A7F8-7357FE8895A7}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/Burial.cshtml.cs">
     <Files>
-      <File FileName="appsettings.json" Line="9" Column="32" />
-      <File FileName="Startup.cs" Line="23" Column="10" />
+      <File FileName="Views/Home/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Home/ManageUsers.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Home/UploadBooks.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Home/UploadNotes.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Home/UploadPhotos.cshtml" Line="6" Column="1" />
+      <File FileName="Views/Home/AddMummy.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Home/AddNotes.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Home/BurialList.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Home/BurialRecord.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Home/DeleteRecords.cshtml" Line="37" Column="1" />
+      <File FileName="Models/MainModel.cs" Line="11" Column="9" />
+      <File FileName="Models/ViewModels/Mummy.cs" Line="20" Column="1" />
+      <File FileName="Pages/Burial.cshtml.cs" Line="11" Column="1" />
+      <File FileName="Pages/Burial.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Home/Privacy.cshtml" Line="1" Column="1" />
+      <File FileName="Pages/Shared/_PageLayout.cshtml" Line="1" Column="1" />
+      <File FileName="Models/ViewModels/Notes.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="OperationDigger" expanded="True">
             <Node name="OperationDigger" expanded="True">
-              <Node name="Startup.cs" selected="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>

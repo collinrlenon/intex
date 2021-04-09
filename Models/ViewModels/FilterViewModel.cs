@@ -5,12 +5,12 @@ namespace OperationDigger.Models.ViewModels
 {
     public class FilterViewModel
     {
-        public IEnumerable<BioSample> BioSamples { get; set; }
+        public List<BioSample> BioSamples { get; set; }
 
-        public IEnumerable<Burial> Burials { get; set; }
+        public List<Burial> Burials { get; set; }
 
-        public IEnumerable<CarbonDating> CarbonDatings { get; set; }
+        public List<CarbonDating> CarbonDatings { get; set; }
 
-        public IEnumerable<Cranial> Cranials { get; set; }
+        public List<Cranial> Cranials { get; set; }
     }
 }

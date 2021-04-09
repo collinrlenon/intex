@@ -1,6 +1,67 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Burial Page";
 }
 
+@model OperationDigger.Models.ViewModels.IndexViewModel
+    <html>
+        <head>
+            <link rel="stylesheet" href="~/css/burialstyle.css">
+            
+        </head>
+        <body>
+
+            <div class="text-center m-1">
+                <div class="m-4">
+                    @if (Model.BurialId == null)
+                    {
+                        <h2 class="display-4">All Burial Ids</h2>
+                    }
+                    else
+                    {
+                        <h2 class="display-4">@Model.BurialId</h2>
+                    }
+                </div>
+
+                <div>
+                    <vc:filter />
+                </div>
+
+                @foreach (var x in Model.Burials)
+                {
+                    <div class="card text-center m-1">
+                        <div class="card-body">
+                            <h5 class="card-title">@x.LocationId  @x.BurialNs </h5>
+                            <p class="card-text">
+                                @x.BurialEw <br />
+                                @x.HighNs, @x.LowEw  @x.HighEw
+                            </p>
+                            <p>@x.BurialSubplot</p>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div page-info="@Model.PageNumbering"
+                 page-url-burialId="@Model.BurialId"
+                 page-classes-enabled="true"
+                 page-class="btn"
+                 page-class-normal="btn-primary"
+                 page-class-selected="btn-warning"
+                 class="btn-group pull-right m-1">
+
+
+            </div>
+
+
+
+        </body>
+        <script>
+            $(document).ready(function () {
+              $('.dropdown-submenu a.test').on("click", function(e){
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+              });
+            });
+        </script>
+</html>

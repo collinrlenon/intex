@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -7,14 +8,37 @@ namespace OperationDigger.Models
 {
     public partial class Burial
     {
-        public int? BurialId { get; set; }
+        [Key]
+        [Required]
+        public int BurialId { get; set; }
         public string LocationId { get; set; }
+        [MaxLength(1)]
         public string BurialNs { get; set; }
+        [MaxLength(1)]
         public string BurialEw { get; set; }
+        [Range(1, 999)]
         public int? HighNs { get; set; }
-        public int? LowEw { get; set; }
+        [Range(1, 999)]
+        public int? LowNs { get; set; }
+        [Range(1, 999)]
         public int? HighEw { get; set; }
+        [Range(1, 999)]
+        public int? LowEw { get; set; }
+        [Range(1, 999)]
+        public string BurialNum { get; set; }
+        [Range(1, 999)]
+        public string WestToHead { get; set; }
+        [Range(1, 999)]
+        public string WestToFeet { get; set; }
         public string BurialSubplot { get; set; }
+        [Range(1, 999)]
+        public int? EastToHead { get; set; }
+        [Range(1, 999)]
+        public int? EastToFeet { get; set; }
+        public decimal? BurialDepth { get; set; }
+        public string? AritifactFound2 { get; set; }
+        [Range(1, 999)]
+        public int? Length { get; set; }
         public string Gender { get; set; }
         public string HairColor { get; set; }
         public int? YearExc { get; set; }
@@ -47,8 +71,6 @@ namespace OperationDigger.Models
         public string LinearHypoplasiaEnamel { get; set; }
         public int? HillBurialsA { get; set; }
         public int? Tomb { get; set; }
-        public string WestToHead { get; set; }
-        public string WestToFeet { get; set; }
         public string BurialPreservation { get; set; }
         public string BurialWrapping { get; set; }
         public string BurialAc { get; set; }
@@ -63,17 +85,10 @@ namespace OperationDigger.Models
         public string Cluster { get; set; }
         public string FaceBundle { get; set; }
         public string OsteologyNotes { get; set; }
-        public int? LowNs { get; set; }
-        public decimal? BurialDepth { get; set; }
         public int? BurialSH { get; set; }
         public int? BurialSF { get; set; }
-        public int? Length { get; set; }
-        public string BurialNum { get; set; }
         public bool? AritifactFound { get; set; }
         public string AritifactFoundDesc { get; set; }
-        public string AritifactFound2 { get; set; }
-        public int? EastToHead { get; set; }
-        public int? EastToFeet { get; set; }
         public string BurialSituation { get; set; }
         public int? SampleNumber { get; set; }
         public string GenderGe { get; set; }

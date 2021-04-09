@@ -1,11 +1,39 @@
-﻿@model FilterViewModel
+﻿@model IEnumerable<Burial>
 
-@foreach (var x in Model.BioSamples)
-{
-    <a>@x.BurialNum</a>
-    <a>@x.Rack</a>
-}
 
-@foreach (var x in Model.Burials.Distinct())
+@* <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    @foreach (var x in Model)
+    {
+        <button class="dropdown-item" type="button">@x.AgeCode</button>
+    } 
+  </div>
+</div> *@
 
-}
+<ul class="nav nav-pills">
+  <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Burials</a>
+      <ul>
+          <li class="dropdown-submenu">
+              <a class="test" tabindex="-1" href="#">Age Code <span class="caret"></span></a>
+                  @foreach (var x in Model.Select(x => x.AgeCode).Distinct())
+                  {
+                      <button class="dropdown-item" type="button">@x</button>
+                  }
+          </li>
+      </ul>
+  </li>
+  <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cranial</a>
+    <ul>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+    </ul>
+  </li>
+</ul>

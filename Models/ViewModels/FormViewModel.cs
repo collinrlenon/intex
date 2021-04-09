@@ -5,6 +5,8 @@ namespace OperationDigger.Models.ViewModels
 {
     public class FormViewModel
     {
+        public int Id;
+
         public BioSample BioSamples { get; set; }
 
         public Burial Burials { get; set; }

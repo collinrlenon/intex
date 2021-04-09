@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using OperationDigger.Models;
 
@@ -15,7 +16,9 @@ namespace OperationDigger.Components
 
         public IViewComponentResult Invoke()
         {
-            return View(_context);
+            return View(_context.Burials
+                .Distinct()
+                .ToList());
         }
     }
 }

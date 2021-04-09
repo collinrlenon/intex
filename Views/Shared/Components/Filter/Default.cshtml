@@ -1,0 +1,12 @@
+﻿@model FilterViewModel
+
+@foreach (var x in Model.bioSample)
+{
+    <a>@x.BurialNum</a>
+    <a>@x.Rack</a>
+}
+
+@foreach (var x in Model.burial.Distinct())
+{
+
+}

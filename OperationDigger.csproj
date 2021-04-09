@@ -23,5 +23,7 @@
     <Folder Include="Pages\" />
     <Folder Include="Pages\Shared\" />
     <Folder Include="Models\ViewModels\" />
+    <Folder Include="Components\" />
+    <Folder Include="Views\Shared\Components\Filter\" />
   </ItemGroup>
 </Project>

@@ -201,3 +201,5 @@
 /Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/UploadPhotos.cshtml.g.cs
 /Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Components/NavigationMenu/Default.cshtml.g.cs
 /Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_LoginPartial.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Relational.Design.dll
+/Users/collinrlenon/Desktop/GitHub/intex/bin/Debug/netcoreapp3.1/Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll

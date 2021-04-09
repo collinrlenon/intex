@@ -1,37 +1,26 @@
 ﻿<Properties StartupConfiguration="{E8299EB5-634B-43F9-A66D-9E1F751A30C5}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Shared/_Layout.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Burial.cs">
     <Files>
-      <File FileName="Views/Shared/_Layout.cshtml" Line="43" Column="153" />
-      <File FileName="Controllers/HomeController.cs" Line="21" Column="37" />
-      <File FileName="Views/Home/Index.cshtml" Line="250" Column="1" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="49" Column="33" />
+      <File FileName="Controllers/HomeController.cs" />
+      <File FileName="Views/Home/Index.cshtml" />
       <File FileName="Models/OperationDiggerDBContext.cs" Line="6" Column="2" />
-      <File FileName="Views/Home/AddMummy.cshtml" Line="1" Column="1" />
-      <File FileName="../Garretts Stuff/startup-kit-bs5-v1.2/startup-kit-bs5/support.html" Line="1" Column="1" />
-      <File FileName="Views/Home/Burial.cshtml" Line="7" Column="1" />
+      <File FileName="Views/Home/AddMummy.cshtml" />
+      <File FileName="Views/Home/Burial.cshtml" />
+      <File FileName="Models/CarbonDating.cs" Line="14" Column="32" />
+      <File FileName="Models/ebdbContext.cs" Line="171" Column="1" />
+      <File FileName="Models/MainModel.cs" Line="17" Column="45" />
+      <File FileName="Models/Burial.cs" Line="127" Column="42" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="OperationDigger" expanded="True">
             <Node name="OperationDigger" expanded="True">
-              <Node name="Areas" expanded="True">
-                <Node name="Identity" expanded="True">
-                  <Node name="Pages" expanded="True" />
-                </Node>
+              <Node name="Models" expanded="True">
+                <Node name="Burial.cs" selected="True" />
               </Node>
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Pages" expanded="True">
-                <Node name="Shared" expanded="True" />
-              </Node>
-              <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
-                <Node name="Shared" expanded="True">
-                  <Node name="_Layout.cshtml" selected="True" />
-                </Node>
-              </Node>
-              <Node name="wwwroot" expanded="True" />
             </Node>
           </Node>
         </State>

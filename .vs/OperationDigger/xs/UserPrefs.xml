@@ -1,25 +1,35 @@
 ﻿<Properties StartupConfiguration="{E8299EB5-634B-43F9-A66D-9E1F751A30C5}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Burial.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Migrations/OperationDiggerDBContextModelSnapshot.cs">
     <Files>
       <File FileName="Views/Shared/_Layout.cshtml" Line="49" Column="33" />
-      <File FileName="Controllers/HomeController.cs" />
-      <File FileName="Views/Home/Index.cshtml" />
-      <File FileName="Models/OperationDiggerDBContext.cs" Line="6" Column="2" />
+      <File FileName="Controllers/HomeController.cs" Line="26" Column="49" />
+      <File FileName="Views/Home/Index.cshtml" Line="121" Column="18" />
+      <File FileName="Models/OperationDiggerDBContext.cs" Line="13" Column="58" />
       <File FileName="Views/Home/AddMummy.cshtml" />
       <File FileName="Views/Home/Burial.cshtml" />
-      <File FileName="Models/CarbonDating.cs" Line="14" Column="32" />
-      <File FileName="Models/ebdbContext.cs" Line="171" Column="1" />
-      <File FileName="Models/MainModel.cs" Line="17" Column="45" />
+      <File FileName="Models/CarbonDating.cs" Line="12" Column="33" />
+      <File FileName="Models/ebdbContext.cs" Line="22" Column="50" />
+      <File FileName="Models/MainModel.cs" />
       <File FileName="Models/Burial.cs" Line="127" Column="42" />
+      <File FileName="Startup.cs" Line="33" Column="16" />
+      <File FileName="appsettings.json" Line="1" Column="1" />
+      <File FileName="Migrations/20210408141243_Initial.Designer.cs" Line="11" Column="23" />
+      <File FileName="Migrations/OperationDiggerDBContextModelSnapshot.cs" Line="19" Column="45" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="OperationDigger" expanded="True">
             <Node name="OperationDigger" expanded="True">
-              <Node name="Models" expanded="True">
-                <Node name="Burial.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Migrations" expanded="True">
+                <Node name="20210408141243_Initial.cs" expanded="True" />
+                <Node name="OperationDiggerDBContextModelSnapshot.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
               </Node>
             </Node>
           </Node>

@@ -27,7 +27,7 @@ namespace OperationDigger
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<OperationDiggerDBContext>(opts =>
+            services.AddDbContext<ebdbContext>(opts =>
             {
                 opts.UseNpgsql(Configuration.GetConnectionString("OperationDiggerConnection"));
             });

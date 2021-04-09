@@ -1,5 +1,4 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<html lang="en">
 <head>
     <title>@ViewData["Title"] - OperationDigger</title>
     <!-- Meta -->
@@ -12,14 +11,14 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,300italic,400italic,500italic,700,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <!-- FontAwesome JS -->
-    <script defer src="assets/fontawesome/js/all.js"></script>
+    <script defer src="~/assets/fontawesome/js/all.js"></script>
     <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="~/https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="assets/css/theme-6.css">
+    <link id="theme-style" rel="stylesheet" href="~/assets/css/theme-6.css">
 </head>
 
 <body>
@@ -41,6 +40,21 @@
                         <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
 
                         <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="Burial">Burial Summary List & Records</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">More <i class="fas fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="AddNotes"> Add Field Notes</a></li>
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="AddMummy">Add Mummy Information</a></li>
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="DeleteRecord">Delete Records</a></li>
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="ManageUsers">Manage User Accounts</a></li>
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="UploadPhotos">Upload Photos</a></li>
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="UploadNotes">Upload Notes</a></li>
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="UploadBooks">Upload Books</a></li>
+
+                            </ul>
+                        </li><!--//dropdown-->
+
                         <li class="nav-item"><a class="nav-link login-trigger" href="#" data-bs-toggle="modal" data-bs-target="#login-modal">Log in</a></li>
                         <li class="nav-item nav-item-cta last"><a class="btn-signup" href="#" data-bs-toggle="modal" data-bs-target="#signup-modal">Sign Up</a></li>
                     </ul><!--//nav-->

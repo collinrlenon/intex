@@ -22,5 +22,8 @@
   <ItemGroup>
     <Folder Include="Pages\" />
     <Folder Include="Pages\Shared\" />
+    <Folder Include="Models\ViewModels\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="wwwroot\css\" />
   </ItemGroup>
 </Project>

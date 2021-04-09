@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using OperationDigger.Models;
+using OperationDigger.Models.ViewModels;
 
 namespace OperationDigger.Controllers
 {
@@ -36,9 +37,36 @@ namespace OperationDigger.Controllers
             return View();
         }
 
-        public IActionResult Burial()
+        public IActionResult Burial(long? burialId, int pageNum = 2) ///welp???
         {
-            return View();
+
+
+            // Sets the page size to 5
+            int pageSize = 5;
+          
+
+            //Uses the Burial view model 
+            return View(new IndexViewModel
+            {
+                Burials = _context.Burials
+                    .Where(x => x.BurialId == burialId || burialId == null)
+                    .OrderBy(x => x.BurialId)
+                    .Skip((pageNum - 1) * pageSize) //throws an error if I put the page to -1 need to revisit
+                    .Take(pageSize)
+                    .ToList(),
+                PageNumbering = new PageNumbering
+                {
+                    NumItemsPerPage = pageSize,
+                    CurrentPage = pageNum,
+                    TotalItems = burialId == null ? _context.Burials.Count() :
+                        _context.Burials.Where(x => x.BurialId == burialId).Count()
+
+
+                },
+
+                BurialId = (int?)burialId
+            });
+            
         }
 
         public IActionResult BurialList()

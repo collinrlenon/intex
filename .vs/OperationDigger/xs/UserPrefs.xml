@@ -1,27 +1,26 @@
 ﻿<Properties StartupConfiguration="{E8299EB5-634B-43F9-A66D-9E1F751A30C5}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="job-single.html">
     <Files>
       <File FileName="Views/Shared/_Layout.cshtml" Line="49" Column="33" />
-      <File FileName="Controllers/HomeController.cs" Line="26" Column="49" />
-      <File FileName="Views/Home/Index.cshtml" Line="121" Column="18" />
+      <File FileName="Controllers/HomeController.cs" />
+      <File FileName="Views/Home/Index.cshtml" />
       <File FileName="Views/Home/AddMummy.cshtml" />
       <File FileName="Views/Home/Burial.cshtml" />
-      <File FileName="Models/CarbonDating.cs" Line="12" Column="33" />
-      <File FileName="Models/ebdbContext.cs" Line="22" Column="50" />
+      <File FileName="Models/CarbonDating.cs" />
+      <File FileName="Models/ebdbContext.cs" />
       <File FileName="Models/MainModel.cs" />
-      <File FileName="Models/Burial.cs" Line="127" Column="42" />
+      <File FileName="Models/Burial.cs" />
       <File FileName="Startup.cs" Line="40" Column="14" />
-      <File FileName="appsettings.json" Line="1" Column="1" />
+      <File FileName="appsettings.json" />
+      <File FileName="job-single.html" Line="18" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="OperationDigger" expanded="True">
             <Node name="OperationDigger" expanded="True">
-              <Node name="Models" expanded="True" />
-              <Node name="Views" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
+              <Node name="job-single.html" selected="True" />
             </Node>
           </Node>
         </State>

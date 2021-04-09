@@ -1,7 +1,60 @@
 ﻿@{
+    ViewData["Title"] = "Submit Form";
 }
 
 @model FormViewModel
 
-<label>Burial Num:</label>
-<input asp-for="@Model.BioSamples.BurialNum">
+
+<body class="job-single-page">
+    <section class="heading-section section section-on-bg">
+        <div class="hero-wrapper">
+            <div class="hero-holder"></div>
+            <div class="hero-mask-gradient"></div>
+        </div><!--//hero-wrapper-->
+        <div class="container heading-content">
+            <h2 class="headline">@ViewData["Title"]</h2>
+            <div class="meta">Burial, Sample, Cranial, & Carbon Dating Information</div>
+        </div><!--//container-->
+    </section><!--//heading-section-->
+
+    <div class="job-single-block" id="job-single-block">
+        <div class="job-details">
+            <div class="cta-container text-center">
+
+                @*Form that will pass the data to the next view*@
+                <div class="container col-6 shadow-lg p-3 rounded text-dark" style="border: 3px solid black; background-color: lightgray">
+                    <form asp-action="AddQuote" method="post" class="text-center justify-content-center m-3">
+                        <div class="justify-content-center text-center">
+
+                            @*Quote item*@
+                            <div class="form-group row text-center justify-content-center">
+                                <label asp-for="@Model.CarbonDatings.Square" class="col-sm-2 col-form-label text-right">Square</label>
+                                <input class="col-sm-6 form-control" asp-for="@Model.CarbonDatings.Square" type="text" />
+                                <span class="text-danger pl-3" asp-validation-for="@Model.CarbonDatings.Square"></span>
+                            </div>
+
+                            @*Author item*@
+                            <div class="form-group row text-center justify-content-center">
+                                <label asp-for="@Model.CarbonDatings.Area" class="col-sm-2 col-form-label text-right">Area</label>
+                                <input class="col-sm-6 form-control" asp-for="@Model.CarbonDatings.Area" type="text" />
+                                <span class="text-danger pl-3" asp-validation-for="@Model.CarbonDatings.Area"></span>
+                            </div>
+
+                            @*Buttom item*@
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+
+                @*<a class="btn btn-primary">Submit</a>*@ 
+            </div>
+        </div><!--//job-details-->
+    </div><!--//job-single-->
+    <!-- Javascript -->
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/vanilla-back-to-top.min.js"></script>
+    <script src="assets/plugins/smoothscroll.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>

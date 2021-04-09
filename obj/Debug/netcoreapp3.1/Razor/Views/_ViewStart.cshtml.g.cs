@@ -26,8 +26,15 @@ using OperationDigger.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "/Users/collinrlenon/Desktop/GitHub/intex/Views/_ViewImports.cshtml"
+using OperationDigger.Models.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f400a24e4f1c1f8dbc87c0f761266a45e781e06b", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dbb910eb0ad56092f9ba39f6923a1468f7846348", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6cff45eca2ddb3ee2ac7512879ad0aa5df077b10", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

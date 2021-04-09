@@ -203,3 +203,24 @@
 /Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_LoginPartial.cshtml.g.cs
 /Users/collinrlenon/Desktop/GitHub/intex/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Relational.Design.dll
 /Users/collinrlenon/Desktop/GitHub/intex/bin/Debug/netcoreapp3.1/Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/Form.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Components/Filter/Default.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Areas/Identity 2/Pages/_ViewStart.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home 2/AddMummy.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home 2/AddNotes.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home 2/Burial.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home 2/BurialList.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home 2/BurialRecord.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home 2/DeleteRecords.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home 2/Index.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home 2/ManageUsers.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home 2/Privacy.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home 2/UploadBooks.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home 2/UploadNotes.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home 2/UploadPhotos.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Components 2/Filter/Default.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Components 2/NavigationMenu/Default.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error 2.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_ValidationScriptsPartial 2.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/_ViewImports 2.cshtml.g.cs
+/Users/collinrlenon/Desktop/GitHub/intex/obj/Debug/netcoreapp3.1/Razor/Views/_ViewStart 2.cshtml.g.cs

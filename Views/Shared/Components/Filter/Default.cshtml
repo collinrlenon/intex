@@ -1,12 +1,11 @@
 ﻿@model FilterViewModel
 
-@foreach (var x in Model.bioSample)
+@foreach (var x in Model.BioSamples)
 {
     <a>@x.BurialNum</a>
     <a>@x.Rack</a>
 }
 
-@foreach (var x in Model.burial.Distinct())
-{
+@foreach (var x in Model.Burials.Distinct())
 
 }

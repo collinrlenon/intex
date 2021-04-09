@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using OperationDigger.Models;
+using OperationDigger.Models.ViewModels;
 
 namespace OperationDigger.Controllers
 {
@@ -72,6 +73,11 @@ namespace OperationDigger.Controllers
         }
 
         public IActionResult DeleteRecords()
+        {
+            return View();
+        }
+
+        public IActionResult Form()
         {
             return View();
         }

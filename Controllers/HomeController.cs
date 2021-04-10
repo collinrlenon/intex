@@ -128,59 +128,69 @@ namespace OperationDigger.Controllers
 
         public static int statId;
 
-        public IActionResult EditForm()
+        //public IActionResult EditForm()
+        //{
+        //    return View();
+        //}
+
+        //Sends data from list to the edit burials view
+        [HttpPost]
+        public IActionResult EditForm(int id)
         {
-            return View();
+            statId = id;
+            return View("EditForm", new FormViewModel
+            {
+                Burials = _context.Burials.Single(x => x.BurialId == statId),
+                Id = statId
+            });
         }
 
-        // //Sends data from list to the edit burials view
-        // [HttpPost]
-        // public IActionResult EditForm(int id)
-        // {
-        //     statId = id;
-        //     return View("EditForm", new FormViewModel
-        //     {
-        //         Burials = _context.Burials.Single(x => x.BurialId == statId),
-        //         Id = statId
-        //     });
-        // }
+        //Updates the list of burials
+        [HttpPost]
+        public IActionResult UpdateForm(FormViewModel model)
+        {
+            //Validate the model
+            if (ModelState.IsValid)
+            {
+                var burial = _context.Burials.Single(x => x.BurialId == statId);
 
-        // //Updates the list of burials
-        // [HttpPost]
-        // public IActionResult UpdateForm(FormViewModel model)
-        // {
-        //     //Validate the model
-        //     if (ModelState.IsValid)
-        //     {
-        //         var quote = _context.Burials.Single(x => x.BurialId == statId);
+                _context.Entry(burial).Property(x => x.LocationId).CurrentValue = model.Burials.LocationId;
+                _context.Entry(burial).Property(x => x.BurialNs).CurrentValue = model.Burials.BurialNs;
+                _context.Entry(burial).Property(x => x.EastToHead).CurrentValue = model.Burials.EastToHead;
+                _context.Entry(burial).Property(x => x.AritifactFound2).CurrentValue = model.Burials.AritifactFound2;
+                _context.Entry(burial).Property(x => x.LowNs).CurrentValue = model.Burials.LowNs;
+                _context.Entry(burial).Property(x => x.EastToFeet).CurrentValue = model.Burials.EastToFeet;
+                //_context.Entry(burial).Property(x => x.Photo).CurrentValue = model.Burials.Photo;
+                _context.Entry(burial).Property(x => x.HighNs).CurrentValue = model.Burials.HighNs;
+                _context.Entry(burial).Property(x => x.WestToHead).CurrentValue = model.Burials.WestToHead;
+                _context.Entry(burial).Property(x => x.BurialEw).CurrentValue = model.Burials.BurialEw;
+                _context.Entry(burial).Property(x => x.WestToFeet).CurrentValue = model.Burials.WestToFeet;
+                _context.Entry(burial).Property(x => x.LowEw).CurrentValue = model.Burials.LowEw;
+                _context.Entry(burial).Property(x => x.Length).CurrentValue = model.Burials.Length;
+                _context.Entry(burial).Property(x => x.HighEw).CurrentValue = model.Burials.HighEw;
+                _context.Entry(burial).Property(x => x.BurialDepth).CurrentValue = model.Burials.BurialDepth;
+                _context.Entry(burial).Property(x => x.BurialSubplot).CurrentValue = model.Burials.BurialSubplot;
+                _context.Entry(burial).Property(x => x.BurialNum).CurrentValue = model.Burials.BurialNum;
 
-        //         _context.Entry(quote).Property(x => x.BurialNs).CurrentValue = model.Burials.BurialNs;
-        //         _context.Entry(quote).Property(x => x.EastToHead).CurrentValue = model.Burials.EastToHead;
-        //         _context.Entry(quote).Property(x => x.AritifactFound2).CurrentValue = model.Burials.AritifactFound2;
-        //         _context.Entry(quote).Property(x => x.LowNs).CurrentValue = model.Burials.LowNs;
-        //         _context.Entry(quote).Property(x => x.EastToFeet).CurrentValue = model.Burials.EastToFeet;
-        //         //_context.Entry(quote).Property(x => x.Photo).CurrentValue = model.Burials.Photo;
-        //         _context.Entry(quote).Property(x => x.HighNs).CurrentValue = model.Burials.HighNs;
-        //         _context.Entry(quote).Property(x => x.WestToHead).CurrentValue = model.Burials.WestToHead;
-        //         _context.Entry(quote).Property(x => x.BurialEw).CurrentValue = model.Burials.BurialEw;
-        //         _context.Entry(quote).Property(x => x.WestToFeet).CurrentValue = model.Burials.WestToFeet;
-        //         _context.Entry(quote).Property(x => x.LowEw).CurrentValue = model.Burials.LowEw;
-        //         _context.Entry(quote).Property(x => x.Length).CurrentValue = model.Burials.Length;
-        //         _context.Entry(quote).Property(x => x.HighEw).CurrentValue = model.Burials.HighEw;
-        //         _context.Entry(quote).Property(x => x.BurialDepth).CurrentValue = model.Burials.BurialDepth;
-        //         _context.Entry(quote).Property(x => x.BurialSubplot).CurrentValue = model.Burials.BurialSubplot;
-        //         _context.Entry(quote).Property(x => x.BurialNum).CurrentValue = model.Burials.BurialNum;
+                _context.SaveChanges();
 
-        //         _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            //Show validation errors
+            else
+            {
+                return View("EditForm");
+            }
+        }
 
-        //         return RedirectToAction("Index");
-        //     }
-        //     //Show validation errors
-        //     else
-        //     {
-        //         return View("EditForm");
-        //     }
-        // }
+        //Delete a burial action
+        public IActionResult DeleteForm(int id)
+        {
+            _context.Remove(_context.Burials.Single(x => x.BurialId == id));
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

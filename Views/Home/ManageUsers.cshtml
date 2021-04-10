@@ -1,5 +1,57 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+    @model IEnumerable<OperationDigger.Models.MainModel>
 *@
+
 @{
+    ViewData["Title"] = "Manage Users";
 }
+
+
+
+<table class="table" id="myTable">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" class="text-dark">User Id</th>
+            <th scope="col" class="text-dark">Name</th>
+            <th scope="col" class="text-dark">Address</th>
+            <th scope="col" class="text-dark">Email</th>
+            <th scope="col" class="text-dark">Phone</th>
+
+            <th scope="col" class="text-dark"></th>
+            <th scope="col" class="text-dark"></th>
+        </tr>
+    </thead>
+    <tbody>
+</table>
+@*  @foreach (MainModel x in Model)
+                {
+                    <tr>
+                        <td class="text-light">@x.UserId</td>
+                        <td class="text-light">@x.Name</td>
+                        <td class="text-light">@x.Email</td>
+                        <td class="text-light">@x.Address</td>
+
+                        <td>
+                            <form method="post" asp-action="Edit" id="@x.UserId">
+                                <input type="hidden" value="@x.UserId" name="id" />
+                                <button type="submit" class="btn btn-warning">Edit User</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form method="post" asp-action="Delete" asp-route-id="@x.UserId">
+                                <button type="submit" class="btn btn-danger">Delete User</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="m-2">
+            <form method="post" asp-action="AddUser">
+                <button type="submit" class="btn btn-warning">Add New User</button>
+            </form>
+        </div>
+
+    *@
+

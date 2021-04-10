@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="~/favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,300italic,400italic,500italic,700,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -30,7 +30,7 @@
     <header id="header" class="header">
         <div class="container">
             <h1 class="logo">
-                <a asp-controller="Home" asp-action="Index"><img src="~/assets/images/logo.svg" alt=""><span class="text">Fag el-Gamous</span></a>
+                <a asp-controller="Home" asp-action="Index"><img src="~/assets/images/mummy.png" alt="" width="50px"><span class="text">Fag el-Gamous</span></a>
             </h1><!--//logo-->
             <nav class="main-nav navbar navbar-right navbar-expand-md">
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse">
@@ -49,14 +49,13 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" asp-controller="Home" asp-action="AddNotes"> Add Field Notes</a></li>
                                 <li><a class="dropdown-item" asp-controller="Home" asp-action="AddMummy">Add Mummy Information</a></li>
-                                <li><a class="dropdown-item" asp-controller="Home" asp-action="DeleteRecord">Delete Records</a></li>
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="DeleteRecords">Delete Records</a></li>
                                 <li><a class="dropdown-item" asp-controller="Home" asp-action="ManageUsers">Manage User Accounts</a></li>
                                 <li><a class="dropdown-item" asp-controller="Home" asp-action="UploadPhotos">Upload Photos</a></li>
                                 <li><a class="dropdown-item" asp-controller="Home" asp-action="UploadNotes">Upload Notes</a></li>
                                 <li><a class="dropdown-item" asp-controller="Home" asp-action="UploadBooks">Upload Books</a></li>
                             </ul>
                         </li><!--//dropdown-->
-                        <partial name="_LoginPartial" />
                         <li class="nav-item"><a class="nav-link login-trigger" href="#" data-bs-toggle="modal" data-bs-target="#login-modal">Log in</a></li>
                         <li class="nav-item nav-item-cta last"><a class="btn-signup" href="#" data-bs-toggle="modal" data-bs-target="#signup-modal">Sign Up</a></li>
                     </ul><!--//nav-->
@@ -65,7 +64,7 @@
         </div><!--//container-->
     </header><!--//header-->
 
-    <div>
+    <div class="container">
         <main>
             @RenderBody()
         </main>

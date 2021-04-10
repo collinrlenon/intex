@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/collinrlenon/Projects/OperationDigger/OperationDigger.csproj": {}
+    "/Users/collinrlenon/Projects/intex/OperationDigger.csproj": {}
   },
   "projects": {
-    "/Users/collinrlenon/Projects/OperationDigger/OperationDigger.csproj": {
+    "/Users/collinrlenon/Projects/intex/OperationDigger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/collinrlenon/Projects/OperationDigger/OperationDigger.csproj",
+        "projectUniqueName": "/Users/collinrlenon/Projects/intex/OperationDigger.csproj",
         "projectName": "OperationDigger",
-        "projectPath": "/Users/collinrlenon/Projects/OperationDigger/OperationDigger.csproj",
+        "projectPath": "/Users/collinrlenon/Projects/intex/OperationDigger.csproj",
         "packagesPath": "/Users/collinrlenon/.nuget/packages/",
-        "outputPath": "/Users/collinrlenon/Projects/OperationDigger/obj/",
+        "outputPath": "/Users/collinrlenon/Projects/intex/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/collinrlenon/.config/NuGet/NuGet.Config"

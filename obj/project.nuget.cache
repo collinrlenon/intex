@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lSDD1hcbxd67wZYMsUL1dL1IZ0SdC1c0WJ3IrmfdZusQ3Y60y4YLjnVFr/N3L7Mmnp1ytkXqcV7U1LtbUuU/kg==",
+  "dgSpecHash": "q+5nCpopcXkiXgTtLja4xMrEDrUVWNrFnLgTH4tbBgkOCwshZw42pvbVyfJyhxs0M8yt/0Z05cBBV+J9G/x82w==",
   "success": true,
-  "projectFilePath": "/Users/collinrlenon/Projects/OperationDigger/OperationDigger.csproj",
+  "projectFilePath": "/Users/collinrlenon/Projects/intex/OperationDigger.csproj",
   "expectedPackageFiles": [
     "/Users/collinrlenon/.nuget/packages/entityframework/6.4.0/entityframework.6.4.0.nupkg.sha512",
     "/Users/collinrlenon/.nuget/packages/entityframework6.npgsql/6.4.1/entityframework6.npgsql.6.4.1.nupkg.sha512",

@@ -560,8 +560,6 @@
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/BurialList.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/BurialRecord.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/DeleteRecords.cshtml.g.cs
-/Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/EditForm.cshtml.g.cs
-/Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/Form.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/ManageUsers.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/Privacy.cshtml.g.cs
@@ -583,3 +581,5 @@
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/OperationDigger.dll
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/OperationDigger.pdb
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/OperationDigger.genruntimeconfig.cache
+/Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/AddBurial.cshtml.g.cs
+/Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/EditBurial.cshtml.g.cs

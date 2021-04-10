@@ -103,13 +103,13 @@ namespace OperationDigger.Controllers
         }
 
         [HttpGet]
-        public IActionResult Form()
+        public IActionResult AddBurial()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Form(Burial b)
+        public IActionResult AddBurial(Burial b)
         {
             //Validate the model
             if (ModelState.IsValid)
@@ -122,23 +122,18 @@ namespace OperationDigger.Controllers
             //Show validation errors
             else
             {
-                return View("Form");
+                return View("AddBurial");
             }
         }
 
         public static int statId;
 
-        //public IActionResult EditForm()
-        //{
-        //    return View();
-        //}
-
         //Sends data from list to the edit burials view
         [HttpPost]
-        public IActionResult EditForm(int id)
+        public IActionResult EditBurial(int id)
         {
             statId = id;
-            return View("EditForm", new FormViewModel
+            return View("EditBurial", new FormViewModel
             {
                 Burials = _context.Burials.Single(x => x.BurialId == statId),
                 Id = statId
@@ -147,7 +142,7 @@ namespace OperationDigger.Controllers
 
         //Updates the list of burials
         [HttpPost]
-        public IActionResult UpdateForm(FormViewModel model)
+        public IActionResult UpdateBurial(FormViewModel model)
         {
             //Validate the model
             if (ModelState.IsValid)
@@ -184,7 +179,7 @@ namespace OperationDigger.Controllers
         }
 
         //Delete a burial action
-        public IActionResult DeleteForm(int id)
+        public IActionResult DeleteBurial(int id)
         {
             _context.Remove(_context.Burials.Single(x => x.BurialId == id));
             _context.SaveChanges();

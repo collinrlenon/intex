@@ -44,7 +44,7 @@
 
                     <!--Edit Burial-->
                     <td class="justify-content-center text-center">
-                        <form id="@x.BurialId" asp-action="EditForm" method="post">
+                        <form id="@x.BurialId" asp-action="EditBurial" method="post">
                             <input type="hidden" value="@x.BurialId" name="id" />
                             <span class="card-text p-1 text-center">
                                 <button type="submit" class="btn btn-warning fas fa-edit text-center" style="font-size:medium"></button>
@@ -54,7 +54,7 @@
 
                     <!--Delete Burial-->
                     <td class="justify-content-center text-center">
-                        <form id="@x.BurialId" asp-action="DeleteForm" method="post">
+                        <form id="@x.BurialId" asp-action="DeleteBurial" method="post">
                             <input type="hidden" value="@x.BurialId" name="id" />
                             <span class="card-text p-1 text-center">
                                 <button type="submit" class="btn btn-danger fa fa-trash-alt text-center" style="font-size:medium"></button>

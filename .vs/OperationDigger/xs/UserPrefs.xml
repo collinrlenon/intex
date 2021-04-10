@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{E8299EB5-634B-43F9-A66D-9E1F751A30C5}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/Form.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Shared/_Layout.cshtml">
     <Files>
       <File FileName="Components/FilterViewComponent.cs" Line="19" Column="1" />
       <File FileName="Views/Shared/Components/Filter/Default.cshtml" />
@@ -10,30 +10,17 @@
       <File FileName="Models/MainModel.cs" />
       <File FileName="wwwroot/css/burialstyle.css" />
       <File FileName="Views/Home/Burial.cshtml" />
-      <File FileName="Views/Home/Form.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Home/Form.cshtml" Line="35" Column="1" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="30" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="OperationDigger" expanded="True">
             <Node name="OperationDigger" expanded="True">
-              <Node name="Components" expanded="True" />
-              <Node name="Controllers" expanded="True" />
-              <Node name="Infrastructure" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="ViewModels" expanded="True" />
-              </Node>
-              <Node name="Pages" expanded="True">
-                <Node name="Shared" expanded="True" />
-              </Node>
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True">
-                  <Node name="EditForm.cshtml" selected="True" />
-                </Node>
                 <Node name="Shared" expanded="True">
-                  <Node name="Components" expanded="True">
-                    <Node name="Filter" expanded="True" />
-                  </Node>
+                  <Node name="_Layout.cshtml" selected="True" />
                 </Node>
               </Node>
               <Node name="wwwroot" expanded="True">

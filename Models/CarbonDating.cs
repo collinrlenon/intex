@@ -7,7 +7,7 @@ namespace OperationDigger.Models
 {
     public partial class CarbonDating
     {
-        public int? CarbonId { get; set; }
+        public int CarbonId { get; set; }
         public int? Rack { get; set; }
         public string LocationId { get; set; }
         public int? NsLow { get; set; }

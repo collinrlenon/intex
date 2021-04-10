@@ -7,7 +7,7 @@ namespace OperationDigger.Models
 {
     public partial class BioSample
     {
-        public int? BsId { get; set; }
+        public int BsId { get; set; }
         public string Rack { get; set; }
         public string Bag { get; set; }
         public string LocationId { get; set; }
@@ -21,7 +21,7 @@ namespace OperationDigger.Models
         public int? BurialNum { get; set; }
         public int? Cluster { get; set; }
         public string Date { get; set; }
-        public bool? PrevSamp { get; set; }
+        public string PrevSamp { get; set; }
         public string Notes { get; set; }
         public string Initials { get; set; }
     }

@@ -117,7 +117,7 @@ namespace OperationDigger.Controllers
                 _context.Burials.Add(b);
                 _context.SaveChanges();
 
-                return View("Home", _context.Burials);
+                return View("Index", _context.Burials);
             }
             //Show validation errors
             else
@@ -151,10 +151,10 @@ namespace OperationDigger.Controllers
 
                 _context.Entry(burial).Property(x => x.LocationId).CurrentValue = model.Burials.LocationId;
                 _context.Entry(burial).Property(x => x.BurialNs).CurrentValue = model.Burials.BurialNs;
-                _context.Entry(burial).Property(x => x.EastToHead).CurrentValue = model.Burials.EastToHead;
+                _context.Entry(burial).Property(x => x.SouthToHead).CurrentValue = model.Burials.SouthToHead;
                 _context.Entry(burial).Property(x => x.AritifactFound2).CurrentValue = model.Burials.AritifactFound2;
                 _context.Entry(burial).Property(x => x.LowNs).CurrentValue = model.Burials.LowNs;
-                _context.Entry(burial).Property(x => x.EastToFeet).CurrentValue = model.Burials.EastToFeet;
+                _context.Entry(burial).Property(x => x.SouthToFeet).CurrentValue = model.Burials.SouthToFeet;
                 //_context.Entry(burial).Property(x => x.Photo).CurrentValue = model.Burials.Photo;
                 _context.Entry(burial).Property(x => x.HighNs).CurrentValue = model.Burials.HighNs;
                 _context.Entry(burial).Property(x => x.WestToHead).CurrentValue = model.Burials.WestToHead;

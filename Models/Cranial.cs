@@ -7,7 +7,7 @@ namespace OperationDigger.Models
 {
     public partial class Cranial
     {
-        public int? CId { get; set; }
+        public int CId { get; set; }
         public int? SampleNumber { get; set; }
         public decimal? MaximumCranialLength { get; set; }
         public decimal? MaxCranialBreadth { get; set; }
@@ -29,7 +29,7 @@ namespace OperationDigger.Models
         public decimal? BurialDepth { get; set; }
         public string BurialSubplotDirection { get; set; }
         public string BurialArtDescription { get; set; }
-        public bool? BuriedWithArtifacts { get; set; }
+        public string BuriedWithArtifacts { get; set; }
         public int? GilesGender { get; set; }
         public string BodyGender { get; set; }
     }

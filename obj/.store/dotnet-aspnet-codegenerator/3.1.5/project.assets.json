@@ -77,19 +77,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/haydenthomas/Projects/intex/obj/.store/.stage/b4lbgubm.ybx": {}
+    "/Users/collinrlenon/Projects/clean/OperationDigger/obj/.store/.stage/zztl2mxi.vst": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/var/folders/rr/vw9rchzj4ys8br6672x_gtt80000gn/T/dem3g1ic.zia/restore.csproj",
+      "projectUniqueName": "/var/folders/07/5kfvzf1n6b72cjh3qslbzz4c0000gn/T/ltdxdubg.fqr/restore.csproj",
       "projectName": "restore",
-      "projectPath": "/var/folders/rr/vw9rchzj4ys8br6672x_gtt80000gn/T/dem3g1ic.zia/restore.csproj",
-      "packagesPath": "/Users/haydenthomas/Projects/intex/obj/.store/.stage/b4lbgubm.ybx",
-      "outputPath": "/Users/haydenthomas/Projects/intex/obj/.store/.stage/b4lbgubm.ybx/",
+      "projectPath": "/var/folders/07/5kfvzf1n6b72cjh3qslbzz4c0000gn/T/ltdxdubg.fqr/restore.csproj",
+      "packagesPath": "/Users/collinrlenon/Projects/clean/OperationDigger/obj/.store/.stage/zztl2mxi.vst",
+      "outputPath": "/Users/collinrlenon/Projects/clean/OperationDigger/obj/.store/.stage/zztl2mxi.vst/",
       "projectStyle": "DotnetToolReference",
       "configFilePaths": [
-        "/Users/haydenthomas/.nuget/NuGet/NuGet.Config"
+        "/Users/collinrlenon/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

@@ -26,7 +26,7 @@ namespace OperationDigger.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseNpgsql("Host=aa1n46hd33zfihr.cuj8pfytwaes.us-east-1.rds.amazonaws.com;Database=ebdb;Username=postgres;Password=catchmeifyoucan22");
+                optionsBuilder.UseNpgsql("Host=aa1n46hd33zfihr.cuj8pfytwaes.us-east-1.rds.amazonaws.com;Username=postgres;Password=catchmeifyoucan22;Database=ebdb");
             }
         }
 
@@ -36,15 +36,18 @@ namespace OperationDigger.Models
 
             modelBuilder.Entity<BioSample>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.BsId)
+                    .HasName("bio_samples_pkey");
 
                 entity.ToTable("bio_samples");
+
+                entity.Property(e => e.BsId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("bs_id");
 
                 entity.Property(e => e.Area).HasColumnName("area");
 
                 entity.Property(e => e.Bag).HasColumnName("bag");
-
-                entity.Property(e => e.BsId).HasColumnName("bs_id");
 
                 entity.Property(e => e.BurialNum).HasColumnName("burial_num");
 
@@ -77,9 +80,11 @@ namespace OperationDigger.Models
 
             modelBuilder.Entity<Burial>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("burials");
+
+                entity.Property(e => e.BurialId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("burial_id");
 
                 entity.Property(e => e.AgeCode).HasColumnName("age_code");
 
@@ -131,17 +136,11 @@ namespace OperationDigger.Models
 
                 entity.Property(e => e.BurialHc).HasColumnName("burial_hc");
 
-                entity.Property(e => e.BurialId).HasColumnName("burial_id");
-
                 entity.Property(e => e.BurialNs).HasColumnName("burial_ns");
 
                 entity.Property(e => e.BurialNum).HasColumnName("burial_num");
 
                 entity.Property(e => e.BurialPreservation).HasColumnName("burial_preservation");
-
-                entity.Property(e => e.BurialSF).HasColumnName("burial_s_f");
-
-                entity.Property(e => e.BurialSH).HasColumnName("burial_s_h");
 
                 entity.Property(e => e.BurialSituation).HasColumnName("burial_situation");
 
@@ -172,10 +171,6 @@ namespace OperationDigger.Models
                 entity.Property(e => e.DexInitials).HasColumnName("dex_initials");
 
                 entity.Property(e => e.DorsalPitting).HasColumnName("dorsal_pitting");
-
-                entity.Property(e => e.EastToFeet).HasColumnName("east_to_feet");
-
-                entity.Property(e => e.EastToHead).HasColumnName("east_to_head");
 
                 entity.Property(e => e.EpiphysealUnion).HasColumnName("epiphyseal_union");
 
@@ -331,6 +326,14 @@ namespace OperationDigger.Models
 
                 entity.Property(e => e.SoftTissueTaken).HasColumnName("soft_tissue_taken");
 
+                entity.Property(e => e.SouthToFeet)
+                    .HasPrecision(3, 2)
+                    .HasColumnName("south_to_feet");
+
+                entity.Property(e => e.SouthToHead)
+                    .HasPrecision(3, 2)
+                    .HasColumnName("south_to_head");
+
                 entity.Property(e => e.SubpubicAngle).HasColumnName("subpubic_angle");
 
                 entity.Property(e => e.SupraorbitalRidges).HasColumnName("supraorbital_ridges");
@@ -353,9 +356,13 @@ namespace OperationDigger.Models
 
                 entity.Property(e => e.VentralArc).HasColumnName("ventral_arc");
 
-                entity.Property(e => e.WestToFeet).HasColumnName("west_to_feet");
+                entity.Property(e => e.WestToFeet)
+                    .HasPrecision(4, 2)
+                    .HasColumnName("west_to_feet");
 
-                entity.Property(e => e.WestToHead).HasColumnName("west_to_head");
+                entity.Property(e => e.WestToHead)
+                    .HasPrecision(3, 2)
+                    .HasColumnName("west_to_head");
 
                 entity.Property(e => e.YearExc).HasColumnName("year_exc");
 
@@ -366,9 +373,14 @@ namespace OperationDigger.Models
 
             modelBuilder.Entity<CarbonDating>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.CarbonId)
+                    .HasName("carbon_dating_pkey");
 
                 entity.ToTable("carbon_dating");
+
+                entity.Property(e => e.CarbonId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("carbon_id");
 
                 entity.Property(e => e.Area).HasColumnName("area");
 
@@ -383,8 +395,6 @@ namespace OperationDigger.Models
                 entity.Property(e => e.Calibr95CalDateMin).HasColumnName("calibr_95_cal_date_min");
 
                 entity.Property(e => e.Calibr95CalDateSpan).HasColumnName("calibr_95_cal_date_span");
-
-                entity.Property(e => e.CarbonId).HasColumnName("carbon_id");
 
                 entity.Property(e => e.Category).HasColumnName("category");
 
@@ -425,9 +435,14 @@ namespace OperationDigger.Models
 
             modelBuilder.Entity<Cranial>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.CId)
+                    .HasName("cranial_pkey");
 
                 entity.ToTable("cranial");
+
+                entity.Property(e => e.CId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("c_id");
 
                 entity.Property(e => e.BasionBregmaHeight)
                     .HasPrecision(5, 2)
@@ -467,8 +482,6 @@ namespace OperationDigger.Models
 
                 entity.Property(e => e.BuriedWithArtifacts).HasColumnName("buried_with_artifacts");
 
-                entity.Property(e => e.CId).HasColumnName("c_id");
-
                 entity.Property(e => e.Ew).HasColumnName("ew");
 
                 entity.Property(e => e.GilesGender).HasColumnName("giles_gender");
@@ -489,7 +502,7 @@ namespace OperationDigger.Models
 
                 entity.Property(e => e.MaximumCranialLength)
                     .HasPrecision(5, 2)
-                    .HasColumnName("maximum_cranial_length");
+                    .HasColumnName("Maximum_Cranial_Length");
 
                 entity.Property(e => e.NasionProsthion)
                     .HasPrecision(5, 2)

@@ -12,32 +12,20 @@ namespace OperationDigger.Models
         [Required]
         public int BurialId { get; set; }
         public string LocationId { get; set; }
-        [MaxLength(1)]
         public string BurialNs { get; set; }
-        [MaxLength(1)]
         public string BurialEw { get; set; }
-        [Range(1, 999)]
         public int? HighNs { get; set; }
-        [Range(1, 999)]
         public int? LowNs { get; set; }
-        [Range(1, 999)]
         public int? HighEw { get; set; }
-        [Range(1, 999)]
         public int? LowEw { get; set; }
-        [Range(1, 999)]
         public string BurialNum { get; set; }
-        [Range(1, 999)]
         public string WestToHead { get; set; }
-        [Range(1, 999)]
         public string WestToFeet { get; set; }
         public string BurialSubplot { get; set; }
-        [Range(1, 999)]
         public int? EastToHead { get; set; }
-        [Range(1, 999)]
         public int? EastToFeet { get; set; }
         public decimal? BurialDepth { get; set; }
         public string? AritifactFound2 { get; set; }
-        [Range(1, 999)]
         public int? Length { get; set; }
         public string Gender { get; set; }
         public string HairColor { get; set; }

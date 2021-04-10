@@ -30,17 +30,17 @@
                                 <div class="form-group row pt-3" style="margin-bottom: 10px!important;justify-content:center!important">
                                     <!--Burials Heading item-->
                                     <div class="col-sm-3">
-                                        <h3 class="col-sm-6" style="width: 100%!important; font-weight:bold">Burials</h3>
+                                        <h1 class="col-sm-6" style="width: 100%!important; font-weight:bold">Burials</h1>
                                     </div>
 
                                     <!--Metrics Heading item-->
                                     <div class="col-sm-3">
-                                        <h3 class="col-sm-6" style="width: 100%!important; font-weight:bold">Metrics</h3>
+                                        <h1 class="col-sm-6" style="width: 100%!important; font-weight:bold">Metrics</h1>
                                     </div>
 
                                     <!--Observations Heading item-->
                                     <div class="col-sm-3">
-                                        <h3 class="col-sm-6" style="width: 100%!important; font-weight:bold">Observations</h3>
+                                        <h1 class="col-sm-6" style="width: 100%!important; font-weight:bold">Observations</h1>
                                     </div>
                                 </div>
 
@@ -48,7 +48,7 @@
                                 <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
                                     <!--Burial N/S item-->
                                     <div class="col-sm-3">
-                                        <label asp-for="@Model.Burials.BurialNs" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important">Burial N/S</label>
+                                        <label asp-for="@Model.Burials.BurialNs" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial N/S</label>
                                         <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="@Model.Burials.BurialNs" type="text">
                                             <option value="">--</option>
                                             <option value="N">N (North)</option>
@@ -59,14 +59,14 @@
 
                                     <!--SouthToHead item-->
                                     <div class="col-sm-3">
-                                        <label asp-for="@Model.Burials.EastToHead" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important">South To Head (m)</label>
+                                        <label asp-for="@Model.Burials.EastToHead" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">South To Head (m)</label>
                                         <input class="form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="@Model.Burials.EastToHead" type="number" />
                                         <span class="text-danger pl-3" asp-validation-for="@Model.Burials.EastToHead"></span>
                                     </div>
 
                                     <!--AritifactFound2 item-->
                                     <div class="col-sm-3">
-                                        <label asp-for="@Model.Burials.AritifactFound2" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important">Burial Goods</label>
+                                        <label asp-for="@Model.Burials.AritifactFound2" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial Goods</label>
                                         <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="@Model.Burials.AritifactFound2" type="text">
                                             <option value="">--</option>
                                             <option value="Y">Y (Yes)</option>
@@ -81,14 +81,14 @@
                                 <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
                                     <!--Low N/S item-->
                                     <div class="col-sm-3">
-                                        <label asp-for="@Model.Burials.LowNs" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important">Low N/S</label>
+                                        <label asp-for="@Model.Burials.LowNs" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Low N/S</label>
                                         <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="@Model.Burials.LowNs" type="number" />
                                         <span class="text-danger pl-3" asp-validation-for="@Model.Burials.LowNs"></span>
                                     </div>
 
                                     <!--SouthToFeet item-->
                                     <div class="col-sm-3">
-                                        <label asp-for="@Model.Burials.EastToFeet" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important">South To Feet (m)</label>
+                                        <label asp-for="@Model.Burials.EastToFeet" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">South To Feet (m)</label>
                                         <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="@Model.Burials.EastToFeet" type="number" />
                                         <span class="text-danger pl-3" asp-validation-for="@Model.Burials.EastToFeet"></span>
                                     </div>
@@ -98,7 +98,7 @@
 
                                     <!--Photo item-->
                                     <!--<div class="col-sm-3">
-                                        <label asp-for="Model.Burials.Photo" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important">Photo</label>
+                                        <label asp-for="Model.Burials.Photo" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Photo</label>
                                         <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Model.Burials.Photo" type="text" />
                                         <span class="text-danger pl-3" asp-validation-for="Model.Burials.Photo"></span>
                                     </div>-->
@@ -108,14 +108,14 @@
                                 <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
                                     <!--High N/S item-->
                                     <div class="col-sm-3">
-                                        <label asp-for="@Model.Burials.HighNs" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important">High N/S</label>
+                                        <label asp-for="@Model.Burials.HighNs" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">High N/S</label>
                                         <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="@Model.Burials.HighNs" type="number" />
                                         <span class="text-danger pl-3" asp-validation-for="@Model.Burials.HighNs"></span>
                                     </div>
 
                                     <!--WestToHead item-->
                                     <div class="col-sm-3">
-                                        <label asp-for="@Model.Burials.WestToHead" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important">West To Head (m)</label>
+                                        <label asp-for="@Model.Burials.WestToHead" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">West To Head (m)</label>
                                         <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="@Model.Burials.WestToHead" type="number" />
                                         <span class="text-danger pl-3" asp-validation-for="@Model.Burials.WestToHead"></span>
                                     </div>
@@ -128,7 +128,7 @@
                                 <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
                                     <!--Burial E/W item-->
                                     <div class="col-sm-3">
-                                        <label asp-for="@Model.Burials.BurialEw" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important">Burial E/W</label>
+                                        <label asp-for="@Model.Burials.BurialEw" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial E/W</label>
                                         <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="@Model.Burials.BurialEw" type="text">
                                             <option value="">--</option>
                                             <option value="E">E (East)</option>
@@ -139,7 +139,7 @@
 
                                     <!--WestToFeet item-->
                                     <div class="col-sm-3">
-                                        <label asp-for="@Model.Burials.WestToFeet" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important">West To Feet (m)</label>
+                                        <label asp-for="@Model.Burials.WestToFeet" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">West To Feet (m)</label>
                                         <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="@Model.Burials.WestToFeet" type="number" />
                                         <span class="text-danger pl-3" asp-validation-for="@Model.Burials.WestToFeet"></span>
                                     </div>
@@ -152,14 +152,14 @@
                                 <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
                                     <!--Low E/W item-->
                                     <div class="col-sm-3">
-                                        <label asp-for="@Model.Burials.LowEw" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important">Low E/W</label>
+                                        <label asp-for="@Model.Burials.LowEw" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Low E/W</label>
                                         <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="@Model.Burials.LowEw" type="number" />
                                         <span class="text-danger pl-3" asp-validation-for="@Model.Burials.LowEw"></span>
                                     </div>
 
                                     <!--Length item-->
                                     <div class="col-sm-3">
-                                        <label asp-for="@Model.Burials.Length" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important">Length (m)</label>
+                                        <label asp-for="@Model.Burials.Length" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Length (m)</label>
                                         <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="@Model.Burials.Length" type="number" />
                                         <span class="text-danger pl-3" asp-validation-for="@Model.Burials.Length"></span>
                                     </div>
@@ -172,14 +172,14 @@
                                 <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
                                     <!--High E/W item-->
                                     <div class="col-sm-3">
-                                        <label asp-for="@Model.Burials.HighEw" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important">High E/W</label>
+                                        <label asp-for="@Model.Burials.HighEw" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">High E/W</label>
                                         <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="@Model.Burials.HighEw" type="number" />
                                         <span class="text-danger pl-3" asp-validation-for="@Model.Burials.HighEw"></span>
                                     </div>
 
                                     <!--BurialDepth item-->
                                     <div class="col-sm-3">
-                                        <label asp-for="@Model.Burials.BurialDepth" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important">Burial Depth (m)</label>
+                                        <label asp-for="@Model.Burials.BurialDepth" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial Depth (m)</label>
                                         <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="@Model.Burials.BurialDepth" type="number" step=".01" />
                                         <span class="text-danger pl-3" asp-validation-for="@Model.Burials.BurialDepth"></span>
                                     </div>
@@ -192,7 +192,7 @@
                                 <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
                                     <!--BurialSubplot item-->
                                     <div class="col-sm-3">
-                                        <label asp-for="@Model.Burials.BurialSubplot" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important">Area</label>
+                                        <label asp-for="@Model.Burials.BurialSubplot" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Area</label>
                                         <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="@Model.Burials.BurialSubplot" type="text">
                                             <option value="">--</option>
                                             <option value="NE">NE (North East)</option>
@@ -214,7 +214,7 @@
                                 <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
                                     <!--BurialNum item-->
                                     <div class="col-sm-3">
-                                        <label asp-for="@Model.Burials.BurialNum" class="col-sm-6 col-form-label text-left" style="text-align: left !important;width: 100%!important">Burial Number</label>
+                                        <label asp-for="@Model.Burials.BurialNum" class="col-sm-6 col-form-label text-left" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial Number</label>
                                         <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="@Model.Burials.BurialNum" type="number" />
                                         <span class="text-danger pl-3" asp-validation-for="@Model.Burials.BurialNum"></span>
                                     </div>
@@ -226,7 +226,7 @@
                                     <div class="col-sm-3" style="visibility:hidden"></div>
                                 </div>
 
-                                <button class="btn btn-primary px-4  pt-2 float-right">Submit</button>
+                                <button class="button btn btn-lg btn-light px-4 pt-2 float-right" style="font-size:medium!important;margin:10px!important">Submit</button>
                             </form>
                         </div>
                     </div>

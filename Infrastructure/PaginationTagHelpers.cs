@@ -55,7 +55,7 @@ namespace OperationDigger.Infrastructure
                 TagBuilder individualTag = new TagBuilder("a");
 
                 KeyValuePairs["pageNum"] = i;
-                individualTag.Attributes["href"] = urlHelp.Action("Burial", KeyValuePairs);
+                individualTag.Attributes["href"] = urlHelp.Action("BurialList", KeyValuePairs);
 
                 //This is used to allow for CSS to be used
                 if (PageClassesEnabled)

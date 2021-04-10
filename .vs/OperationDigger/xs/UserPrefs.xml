@@ -1,15 +1,12 @@
 ﻿<Properties StartupConfiguration="{B54F1795-8E42-41EA-BABF-866D99F63EE8}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/CRUDController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/CreateBurial.cshtml">
     <Files>
-      <File FileName="appsettings.json" Line="11" Column="26" />
-      <File FileName="Startup.cs" />
-      <File FileName="Controllers/HomeController.cs" />
-      <File FileName="Views/Home/Burial.cshtml" Line="27" Column="29" />
-      <File FileName="Models/ebdbContext.cs" />
-      <File FileName="Views/Home/AddBurial.cshtml" />
-      <File FileName="Models/Burial.cs" Line="69" Column="25" />
-      <File FileName="Controllers/CRUDController.cs" Line="90" Column="31" />
+      <File FileName="Views/Home/BurialDetails.cshtml" Line="63" Column="34" />
+      <File FileName="Views/Home/DeleteBurial.cshtml" Line="73" Column="1" />
+      <File FileName="Views/Home/Burial.cshtml" Line="56" Column="59" />
+      <File FileName="Views/Home/CreateBurial.cshtml" Line="18" Column="39" />
+      <File FileName="Views/Home/BurialList.cshtml" Line="22" Column="54" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,8 +14,12 @@
           <Node name="OperationDigger" expanded="True">
             <Node name="OperationDigger" expanded="True">
               <Node name="Dependencies" expanded="True" />
-              <Node name="Controllers" expanded="True" />
-              <Node name="Views" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True">
+                  <Node name="CreateBurial.cshtml" selected="True" />
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>

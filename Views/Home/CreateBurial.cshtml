@@ -1,5 +1,5 @@
-@{
-    ViewData["Title"] = "Edit Burial";
+﻿@{
+    ViewData["Title"] = "Create Burial";
 }
 
 @model Burial
@@ -13,7 +13,7 @@
         </div><!--//hero-wrapper-->
         <div class="container heading-content">
             <h2 class="headline">@ViewData["Title"]</h2>
-            <div class="meta">You can now edit this burial Information</div>
+            <div class="meta">Please fill out the requested Information</div>
         </div><!--//container-->
     </section><!--//heading-section-->
 
@@ -24,9 +24,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-10 mx-auto shadow-lg m-5 rounded" style="border: 3px solid black; background-color: #E4D4C8;max-width: 80%;">
-                            <form asp-action="EditBurial" class="p-3 pb-7 pt-3">
+                            <form asp-action="CreateBurial" class="p-3 pb-7 pt-3">
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
                                 <!--Row 0-->
                                 <div class="form-group row pt-3" style="margin-bottom: 10px!important;justify-content:center!important">
                                     <!--Burials Heading item-->

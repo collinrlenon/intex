@@ -1,0 +1,328 @@
+@model Burial
+
+@{ ViewData["Title"] = "Burial Details"; }
+
+@*<div>
+        <h4>Burial</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.BurialId)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.BurialId)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.LocationId)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.LocationId)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.BurialNs)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.BurialNs)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="EditBurial" asp-route-id="@Model.BurialId">Edit</a> |
+        <a asp-action="BurialList">Back to List</a>
+    </div>*@
+
+
+    @*if (@Model. = "") 
+    {
+        <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>LocationId:</b> N/A</p></div>
+    }
+    else 
+    {
+        <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>LocationId:</b> @Model.LocationId</p></div>
+    }*@
+
+
+
+
+
+<body class="job-single-page">
+    <section class="heading-section section section-on-bg">
+        <div class="hero-wrapper">
+            <div class="hero-holder"></div>
+            <div class="hero-mask-gradient"></div>
+        </div><!--//hero-wrapper-->
+        <div class="container heading-content">
+            <h2 class="headline">@ViewData["Title"]</h2>
+            <div class="meta">See details below</div>
+        </div><!--//container-->
+    </section><!--//heading-section-->
+
+    <div id="job-single-block">
+        <div class="job-details">
+            <div class="cta-container text-center">
+                <!--Form that will pass the data to the next view-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 mx-auto shadow-lg m-5 rounded" style="border: 3px solid black; background-color: #E4D4C8;max-width: 80%;">
+                            <div class="text-left">
+
+                                <!--Row 1-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>LocationId:</b> @Model.LocationId</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BurialNs:</b> @Model.BurialNs</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>LowNs:</b> @Model.LowNs</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>HighNs:</b> @Model.HighNs</p></div>
+                                </div>
+
+                                <!--Row 2-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BurialEw:</b> @Model.BurialEw</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>LowEw:</b> @Model.LowEw</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>HighEw:</b> @Model.HighEw</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BurialSubplot:</b> @Model.BurialSubplot</p></div>
+                                </div>
+                                <!--Row 3-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BurialNum:</b> @Model.BurialNum</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Gender:</b> @Model.Gender</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>HairColor:</b> @Model.HairColor</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>YearExc:</b> @Model.YearExc</p></div>
+                                </div>
+
+                                <!--Row 4-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>MonthExc:</b> @Model.MonthExc</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>DayExc:</b> @Model.DayExc</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>HeadDirection:</b> @Model.HeadDirection</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>PostcraniaTrauma:</b> @Model.PostcraniaTrauma</p></div>
+                                </div>
+
+                                <!--Row 5-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>YrSkull:</b> @Model.YrSkull</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>MtSkull:</b> @Model.MtSkull</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>DSkull:</b> @Model.DSkull</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>FieldBook:</b> @Model.FieldBook</p></div>
+                                </div>
+
+                                <!--Row 6-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>FieldBookPgnum:</b> @Model.FieldBookPgnum</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>DexInitials:</b> @Model.DexInitials</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>DecInitials:</b> @Model.DecInitials</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>ByuSample:</b> @Model.ByuSample</p></div>
+                                </div>
+
+                                <!--Row 7-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BodyAnalysis:</b> @Model.BodyAnalysis</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>SkullMag:</b> @Model.SkullMag</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>PostcraniaMag:</b> @Model.PostcraniaMag</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>SexSkull:</b> @Model.SexSkull</p></div>
+                                </div>
+
+                                <!--Row 8-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>AgeSkull:</b> @Model.AgeSkull</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>RackShelf:</b> @Model.RackShelf</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>SkullTrauma:</b> @Model.SkullTrauma</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>CribraOrbitala:</b> @Model.CribraOrbitala</p></div>
+                                </div>
+
+                                <!--Row 9-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>PoroticHyperostosis:</b> @Model.PoroticHyperostosis</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>PoroticHyperostosisLoc:</b> @Model.PoroticHyperostosisLoc</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>MetopicSuture:</b> @Model.MetopicSuture</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>ButtonOsteoma:</b> @Model.ButtonOsteoma</p></div>
+                                </div>
+
+                                <!--Row 10-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>OsteologyUnknownComment:</b> @Model.OsteologyUnknownComment</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>TemporalMandibularJointOsteoarthritis:</b> @Model.TemporalMandibularJointOsteoarthritis</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>LinearHypoplasiaEnamel:</b> @Model.LinearHypoplasiaEnamel</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>HillBurialsA:</b> @Model.HillBurialsA</p></div>
+                                </div>
+
+                                <!--Row 11-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Tomb:</b> @Model.Tomb</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>WestToHead:</b> @Model.WestToHead</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>WestToFeet:</b> @Model.WestToFeet</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BurialPreservation:</b> @Model.BurialPreservation</p></div>
+                                </div>
+
+                                <!--Row 12-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BurialWrapping:</b> @Model.BurialWrapping</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BurialAc:</b> @Model.BurialAc</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BurialGendMeth:</b> @Model.BurialGendMeth</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>AgeCode:</b> @Model.AgeCode</p></div>
+                                </div>
+
+                                <!--Row 13-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BurialAgeDeath:</b> @Model.BurialAgeDeath</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BurialAgeMeth:</b> @Model.BurialAgeMeth</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BurialHc:</b> @Model.BurialHc</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BurialSt:</b> @Model.BurialSt</p></div>
+                                </div>
+
+                                <!--Row 14-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>LenM:</b> @Model.LenM</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>LenCm:</b> @Model.LenCm</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Cluster:</b> @Model.Cluster</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>FaceBundle:</b> @Model.FaceBundle</p></div>
+                                </div>
+
+                                <!--Row 15-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>OsteologyNotes:</b> @Model.OsteologyNotes</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BurialDepth:</b> @Model.BurialDepth</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>SouthToHead:</b> @Model.SouthToHead</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>SouthToFeet:</b> @Model.SouthToFeet</p></div>
+                                </div>
+
+                                <!--Row 16-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Length:</b> @Model.Length</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>AritifactFound:</b> @Model.AritifactFound</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>AritifactFoundDesc:</b> @Model.AritifactFoundDesc</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>AritifactFound2:</b> @Model.AritifactFound2</p></div>
+                                </div>
+
+                                <!--Row 17-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BurialSituation:</b> @Model.BurialSituation</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>SampleNumber:</b> @Model.SampleNumber</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>GenderGe:</b> @Model.GenderGe</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>GeFunction:</b> @Model.GeFunction</p></div>
+                                </div>
+
+                                <!--Row 18-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BasliarSuture:</b> @Model.BasliarSuture</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>VentralArc:</b> @Model.VentralArc</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>SubpubicAngle:</b> @Model.SubpubicAngle</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>SciaticNotch:</b> @Model.SciaticNotch</p></div>
+                                </div>
+
+                                <!--Row 19-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>PubicBone:</b> @Model.PubicBone</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>PreaurSulcus:</b> @Model.PreaurSulcus</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>MedialIpRamus:</b> @Model.MedialIpRamus</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>DorsalPitting:</b> @Model.DorsalPitting</p></div>
+                                </div>
+
+                                <!--Row 20-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>ForemanMagnum:</b> @Model.ForemanMagnum</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>FemurHead:</b> @Model.FemurHead</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>HumerusHead:</b> @Model.HumerusHead</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Osteophytosis:</b> @Model.Osteophytosis</p></div>
+                                </div>
+
+                                <!--Row 21-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>PubicSymphysis:</b> @Model.PubicSymphysis</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BoneLength:</b> @Model.BoneLength</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>MedialClavicle:</b> @Model.MedialClavicle</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>IliacCrest:</b> @Model.IliacCrest</p></div>
+                                </div>
+
+                                <!--Row 22-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>FemurDiameter:</b> @Model.FemurDiameter</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Humerus:</b> @Model.Humerus</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>FemurLength:</b> @Model.FemurLength</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>HumerusLength:</b> @Model.HumerusLength</p></div>
+                                </div>
+
+                                <!--Row 23-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>TibiaLength:</b> @Model.TibiaLength</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Robust:</b> @Model.Robust</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>SupraorbitalRidges:</b> @Model.SupraorbitalRidges</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>OrbitEdge:</b> @Model.OrbitEdge</p></div>
+                                </div>
+
+                                <!--Row 24-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>ParietalBossing:</b> @Model.ParietalBossing</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Gonian:</b> @Model.Gonian</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>NuchalCrest:</b> @Model.NuchalCrest</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>ZygomaticCrest:</b> @Model.ZygomaticCrest</p></div>
+                                </div>
+
+                                <!--Row 25-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>CranialSuture:</b> @Model.CranialSuture</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>MaximumCranialLength:</b> @Model.MaximumCranialLength</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>MaximumCranialBreadth:</b> @Model.MaximumCranialBreadth</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BasionBregmaHeight:</b> @Model.BasionBregmaHeight</p></div>
+                                </div>
+
+                                <!--Row 26-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BasionNasion:</b> @Model.BasionNasion</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BasionProsthionLength:</b> @Model.BasionProsthionLength</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BizygomaticDiameter:</b> @Model.BizygomaticDiameter</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>NasionProsthion:</b> @Model.NasionProsthion</p></div>
+                                </div>
+
+                                <!--Row 27-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>MaximumNasalBreadth:</b> @Model.MaximumNasalBreadth</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>InterorbitalBreadth:</b> @Model.InterorbitalBreadth</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>PreservationIndex:</b> @Model.PreservationIndex</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>DescriptionOfTaken:</b> @Model.DescriptionOfTaken</p></div>
+                                </div>
+
+                                <!--Row 28-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>EstimateAge:</b> @Model.EstimateAge</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>EstimateLivingStature:</b> @Model.EstimateLivingStature</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>ToothAttrition:</b> @Model.ToothAttrition</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>ToothEruption:</b> @Model.ToothEruption</p></div>
+                                </div>
+
+                                <!--Row 29-->
+                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>PathologyAnomalies:</b> @Model.PathologyAnomalies</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>EpiphysealUnion:</b> @Model.EpiphysealUnion</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>HairTaken:</b> @Model.HairTaken</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>SoftTissueTaken:</b> @Model.SoftTissueTaken</p></div>
+                                </div>
+
+                                <!--Row 30-->
+                                <div class="form-group row mt-5" style="margin-bottom:15px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BoneTaken:</b> @Model.BoneTaken</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>ToothTaken:</b> @Model.ToothTaken</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>TextileTaken:</b> @Model.TextileTaken</p></div>
+                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Notes:</b> @Model.Notes</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--//job-details-->
+        </div><!--//job-single-->
+    </div>
+
+    <!-- Javascript -->
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/vanilla-back-to-top.min.js"></script>
+    <script src="assets/plugins/smoothscroll.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <div>
+        <a asp-action="BurialList">Back to List</a>
+    </div>
+
+</body>

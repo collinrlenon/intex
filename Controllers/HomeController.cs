@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using OperationDigger.Models;
+using Microsoft.Extensions.Logging;
 using OperationDigger.Models.ViewModels;
 
 namespace OperationDigger.Controllers
@@ -24,55 +28,10 @@ namespace OperationDigger.Controllers
 
         public IActionResult Index()
         {
-            return View(_context.CarbonDatings);
-        }
-
-        public IActionResult AddMummy()
-        {
             return View();
         }
 
         public IActionResult AddNotes()
-        {
-            return View();
-        }
-
-        public IActionResult Burial(long? burialId, int pageNum = 1) ///welp???
-        {
-
-
-            // Sets the page size to 5
-            int pageSize = 20;
-
-
-            //Uses the Burial view model 
-            return View(new IndexViewModel
-            {
-                Burials = _context.Burials
-                    .Where(x => x.BurialId == burialId || burialId == null)
-                    .OrderBy(x => x.BurialId)
-                    .Skip((pageNum - 1) * pageSize) //throws an error if I put the page to -1 need to revisit
-                    .Take(pageSize)
-                    .ToList(),
-                PageNumbering = new PageNumbering
-                {
-                    NumItemsPerPage = pageSize,
-                    CurrentPage = pageNum,
-                    TotalItems = burialId == null ? _context.Burials.Count() :
-                        _context.Burials.Where(x => x.BurialId == burialId).Count()
-
-
-                },
-                BurialId = (int?)burialId
-            });
-        }
-
-        public IActionResult BurialList()
-        {
-            return View();
-        }
-
-        public IActionResult BurialRecord()
         {
             return View();
         }
@@ -97,95 +56,159 @@ namespace OperationDigger.Controllers
             return View();
         }
 
-        public IActionResult DeleteRecords()
+        // GET: CRUD
+        public IActionResult BurialList(long? burialId, int pageNum = 1)
         {
-            return View();
-        }
+            // Sets the page size to 50
+            int pageSize = 50;
 
-        [HttpGet]
-        public IActionResult AddBurial()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult AddBurial(Burial b)
-        {
-            //Validate the model
-            if (ModelState.IsValid)
+            return View(new BurialListViewModel
             {
-                _context.Burials.Add(b);
-                _context.SaveChanges();
-
-                return View("Index", _context.Burials);
-            }
-            //Show validation errors
-            else
-            {
-                return View("AddBurial");
-            }
-        }
-
-        public static int statId;
-
-        //Sends data from list to the edit burials view
-        [HttpPost]
-        public IActionResult EditBurial(int id)
-        {
-            statId = id;
-            return View("EditBurial", new FormViewModel
-            {
-                Burials = _context.Burials.Single(x => x.BurialId == statId),
-                Id = statId
+                Burials = _context.Burials
+                    .Where(x => x.BurialId == burialId || burialId == null)
+                    .OrderBy(x => x.BurialId)
+                    .Skip((pageNum - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToList(),
+                PageNumbering = new PageNumbering
+                {
+                    NumItemsPerPage = pageSize,
+                    CurrentPage = pageNum,
+                    TotalItems = burialId == null ? _context.Burials.Count() :
+                        _context.Burials.Where(x => x.BurialId == burialId).Count()
+                },
+                BurialId = (int?)burialId
             });
         }
 
-        //Updates the list of burials
-        [HttpPost]
-        public IActionResult UpdateBurial(FormViewModel model)
+        // GET: CRUD/BurialBurialDetails/5
+        public async Task<IActionResult> BurialDetails(int? id)
         {
-            //Validate the model
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var burial = await _context.Burials.FindAsync(id);
+            //.FirstOrDefaultAsync(m => m.BurialId == id);
+            if (burial == null)
+            {
+                return NotFound();
+            }
+
+            return View(burial);
+        }
+
+        // GET: CRUD/CreateBurial
+        public IActionResult CreateBurial()
+        {
+            return View();
+        }
+
+        // POST: CRUD/CreateBurial
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateBurial([Bind("BurialId,LocationId,BurialNs,LowNs,HighNs,BurialEw,LowEw,HighEw,BurialSubplot,BurialNum,Gender,HairColor,YearExc,MonthExc,DayExc,HeadDirection,PostcraniaTrauma,YrSkull,MtSkull,DSkull,FieldBook,FieldBookPgnum,DexInitials,DecInitials,ByuSample,BodyAnalysis,SkullMag,PostcraniaMag,SexSkull,AgeSkull,RackShelf,SkullTrauma,CribraOrbitala,PoroticHyperostosis,PoroticHyperostosisLoc,MetopicSuture,ButtonOsteoma,OsteologyUnknownComment,TemporalMandibularJointOsteoarthritis,LinearHypoplasiaEnamel,HillBurialsA,Tomb,WestToHead,WestToFeet,BurialPreservation,BurialWrapping,BurialAc,BurialGendMeth,AgeCode,BurialAgeDeath,BurialAgeMeth,BurialHc,BurialSt,LenM,LenCm,Cluster,FaceBundle,OsteologyNotes,BurialDepth,SouthToHead,SouthToFeet,Length,AritifactFound,AritifactFoundDesc,AritifactFound2,BurialSituation,SampleNumber,GenderGe,GeFunction,BasliarSuture,VentralArc,SubpubicAngle,SciaticNotch,PubicBone,PreaurSulcus,MedialIpRamus,DorsalPitting,ForemanMagnum,FemurHead,HumerusHead,Osteophytosis,PubicSymphysis,BoneLength,MedialClavicle,IliacCrest,FemurDiameter,Humerus,FemurLength,HumerusLength,TibiaLength,Robust,SupraorbitalRidges,OrbitEdge,ParietalBossing,Gonian,NuchalCrest,ZygomaticCrest,CranialSuture,MaximumCranialLength,MaximumCranialBreadth,BasionBregmaHeight,BasionNasion,BasionProsthionLength,BizygomaticDiameter,NasionProsthion,MaximumNasalBreadth,InterorbitalBreadth,PreservationBurialList,DescriptionOfTaken,EstimateAge,EstimateLivingStature,ToothAttrition,ToothEruption,PathologyAnomalies,EpiphysealUnion,HairTaken,SoftTissueTaken,BoneTaken,ToothTaken,TextileTaken,Notes")] Burial burial)
+        {
             if (ModelState.IsValid)
             {
-                var burial = _context.Burials.Single(x => x.BurialId == statId);
-
-                _context.Entry(burial).Property(x => x.LocationId).CurrentValue = model.Burials.LocationId;
-                _context.Entry(burial).Property(x => x.BurialNs).CurrentValue = model.Burials.BurialNs;
-                _context.Entry(burial).Property(x => x.SouthToHead).CurrentValue = model.Burials.SouthToHead;
-                _context.Entry(burial).Property(x => x.AritifactFound2).CurrentValue = model.Burials.AritifactFound2;
-                _context.Entry(burial).Property(x => x.LowNs).CurrentValue = model.Burials.LowNs;
-                _context.Entry(burial).Property(x => x.SouthToFeet).CurrentValue = model.Burials.SouthToFeet;
-                //_context.Entry(burial).Property(x => x.Photo).CurrentValue = model.Burials.Photo;
-                _context.Entry(burial).Property(x => x.HighNs).CurrentValue = model.Burials.HighNs;
-                _context.Entry(burial).Property(x => x.WestToHead).CurrentValue = model.Burials.WestToHead;
-                _context.Entry(burial).Property(x => x.BurialEw).CurrentValue = model.Burials.BurialEw;
-                _context.Entry(burial).Property(x => x.WestToFeet).CurrentValue = model.Burials.WestToFeet;
-                _context.Entry(burial).Property(x => x.LowEw).CurrentValue = model.Burials.LowEw;
-                _context.Entry(burial).Property(x => x.Length).CurrentValue = model.Burials.Length;
-                _context.Entry(burial).Property(x => x.HighEw).CurrentValue = model.Burials.HighEw;
-                _context.Entry(burial).Property(x => x.BurialDepth).CurrentValue = model.Burials.BurialDepth;
-                _context.Entry(burial).Property(x => x.BurialSubplot).CurrentValue = model.Burials.BurialSubplot;
-                _context.Entry(burial).Property(x => x.BurialNum).CurrentValue = model.Burials.BurialNum;
-
-                _context.SaveChanges();
-
-                return RedirectToAction("Index");
+                _context.Add(burial);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(BurialList));
             }
-            //Show validation errors
-            else
-            {
-                return View("EditForm");
-            }
+            return View(burial);
         }
 
-        //Delete a burial action
-        public IActionResult DeleteBurial(int id)
+        // GET: CRUD/EditBurial/5
+        public async Task<IActionResult> EditBurial(int? id)
         {
-            _context.Remove(_context.Burials.Single(x => x.BurialId == id));
-            _context.SaveChanges();
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-            return RedirectToAction("Index");
+            var burial = await _context.Burials.FindAsync(id);
+            if (burial == null)
+            {
+                return NotFound();
+            }
+            return View(burial);
         }
+
+        // POST: CRUD/EditBurial/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditBurial(int id, [Bind("BurialId,LocationId,BurialNs,LowNs,HighNs,BurialEw,LowEw,HighEw,BurialSubplot,BurialNum,Gender,HairColor,YearExc,MonthExc,DayExc,HeadDirection,PostcraniaTrauma,YrSkull,MtSkull,DSkull,FieldBook,FieldBookPgnum,DexInitials,DecInitials,ByuSample,BodyAnalysis,SkullMag,PostcraniaMag,SexSkull,AgeSkull,RackShelf,SkullTrauma,CribraOrbitala,PoroticHyperostosis,PoroticHyperostosisLoc,MetopicSuture,ButtonOsteoma,OsteologyUnknownComment,TemporalMandibularJointOsteoarthritis,LinearHypoplasiaEnamel,HillBurialsA,Tomb,WestToHead,WestToFeet,BurialPreservation,BurialWrapping,BurialAc,BurialGendMeth,AgeCode,BurialAgeDeath,BurialAgeMeth,BurialHc,BurialSt,LenM,LenCm,Cluster,FaceBundle,OsteologyNotes,BurialDepth,SouthToHead,SouthToFeet,Length,AritifactFound,AritifactFoundDesc,AritifactFound2,BurialSituation,SampleNumber,GenderGe,GeFunction,BasliarSuture,VentralArc,SubpubicAngle,SciaticNotch,PubicBone,PreaurSulcus,MedialIpRamus,DorsalPitting,ForemanMagnum,FemurHead,HumerusHead,Osteophytosis,PubicSymphysis,BoneLength,MedialClavicle,IliacCrest,FemurDiameter,Humerus,FemurLength,HumerusLength,TibiaLength,Robust,SupraorbitalRidges,OrbitEdge,ParietalBossing,Gonian,NuchalCrest,ZygomaticCrest,CranialSuture,MaximumCranialLength,MaximumCranialBreadth,BasionBregmaHeight,BasionNasion,BasionProsthionLength,BizygomaticDiameter,NasionProsthion,MaximumNasalBreadth,InterorbitalBreadth,PreservationBurialList,DescriptionOfTaken,EstimateAge,EstimateLivingStature,ToothAttrition,ToothEruption,PathologyAnomalies,EpiphysealUnion,HairTaken,SoftTissueTaken,BoneTaken,ToothTaken,TextileTaken,Notes")] Burial burial)
+        {
+            if (id != burial.BurialId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(burial);
+                    await _context.SaveChangesAsync();
+                }
+                catch (System.Data.Entity.Infrastructure.DbUpdateConcurrencyException)
+                {
+                    if (!BurialExists(burial.BurialId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(BurialList));
+            }
+            return View(burial);
+        }
+
+        // GET: CRUD/DeleteBurial/5
+        public async Task<IActionResult> DeleteBurial(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var burial = await _context.Burials.FindAsync(id);
+                //.FirstOrDefaultAsync(m => m.BurialId == id);
+            if (burial == null)
+            {
+                return NotFound();
+            }
+
+            return View(burial);
+        }
+
+        // POST: CRUD/DeleteBurial/5
+        [HttpPost, ActionName("DeleteBurial")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteBurialConfirmed(int id)
+        {
+            var burial = await _context.Burials.FindAsync(id);
+            _context.Burials.Remove(burial);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(BurialList));
+        }
+
+        private bool BurialExists(int id)
+        {
+            return _context.Burials.Any(e => e.BurialId == id);
+        }
+
+
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

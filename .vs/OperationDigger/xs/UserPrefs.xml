@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{E8299EB5-634B-43F9-A66D-9E1F751A30C5}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="wwwroot/assets/css/theme-6.css">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/Burial.cshtml">
     <Files>
-      <File FileName="Views/Home/Form.cshtml" Line="220" Column="43" />
-      <File FileName="Views/Home/EditForm.cshtml" Line="227" Column="39" />
-      <File FileName="wwwroot/assets/css/theme-6.css" Line="2802" Column="10" />
+      <File FileName="Views/Home/Form.cshtml" Line="193" Column="52" />
+      <File FileName="Views/Home/EditForm.cshtml" />
+      <File FileName="Views/Home/Burial.cshtml" Line="18" Column="35" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,13 +13,8 @@
             <Node name="OperationDigger" expanded="True">
               <Node name="Migrations" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
-              </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="assets" expanded="True">
-                  <Node name="css" expanded="True">
-                    <Node name="theme-6.css" selected="True" />
-                  </Node>
+                <Node name="Home" expanded="True">
+                  <Node name="Burial.cshtml" selected="True" />
                 </Node>
               </Node>
             </Node>

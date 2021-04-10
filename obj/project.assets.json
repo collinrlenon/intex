@@ -6979,11 +6979,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/collinrlenon/Desktop/GitHub/intex/OperationDigger.csproj",
+      "projectUniqueName": "/Users/collinrlenon/Projects/intex/OperationDigger.csproj",
       "projectName": "OperationDigger",
-      "projectPath": "/Users/collinrlenon/Desktop/GitHub/intex/OperationDigger.csproj",
+      "projectPath": "/Users/collinrlenon/Projects/intex/OperationDigger.csproj",
       "packagesPath": "/Users/collinrlenon/.nuget/packages/",
-      "outputPath": "/Users/collinrlenon/Desktop/GitHub/intex/obj/",
+      "outputPath": "/Users/collinrlenon/Projects/intex/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/collinrlenon/.config/NuGet/NuGet.Config"

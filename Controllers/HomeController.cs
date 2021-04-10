@@ -102,7 +102,7 @@ namespace OperationDigger.Controllers
             return View();
         }
 
-[HttpGet]
+        [HttpGet]
         public IActionResult Form()
         {
             return View();
@@ -127,6 +127,11 @@ namespace OperationDigger.Controllers
         }
 
         public static int statId;
+
+        public IActionResult EditForm()
+        {
+            return View();
+        }
 
         // //Sends data from list to the edit burials view
         // [HttpPost]

@@ -1,15 +1,16 @@
 ﻿<Properties StartupConfiguration="{E8299EB5-634B-43F9-A66D-9E1F751A30C5}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Shared/Components/Filter/Default.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/Form.cshtml">
     <Files>
       <File FileName="Components/FilterViewComponent.cs" Line="19" Column="1" />
-      <File FileName="Views/Shared/Components/Filter/Default.cshtml" Line="39" Column="6" />
-      <File FileName="Controllers/HomeController.cs" Line="49" Column="1" />
+      <File FileName="Views/Shared/Components/Filter/Default.cshtml" />
+      <File FileName="Controllers/HomeController.cs" />
       <File FileName="Models/Burial.cs" />
       <File FileName="Models/ebdbContext.cs" />
-      <File FileName="Models/MainModel.cs" Line="1" Column="1" />
-      <File FileName="wwwroot/css/burialstyle.css" Line="28" Column="2" />
-      <File FileName="Views/Home/Burial.cshtml" Line="59" Column="13" />
+      <File FileName="Models/MainModel.cs" />
+      <File FileName="wwwroot/css/burialstyle.css" />
+      <File FileName="Views/Home/Burial.cshtml" />
+      <File FileName="Views/Home/Form.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,12 +27,12 @@
                 <Node name="Shared" expanded="True" />
               </Node>
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
+                <Node name="Home" expanded="True">
+                  <Node name="EditForm.cshtml" selected="True" />
+                </Node>
                 <Node name="Shared" expanded="True">
                   <Node name="Components" expanded="True">
-                    <Node name="Filter" expanded="True">
-                      <Node name="Default.cshtml" selected="True" />
-                    </Node>
+                    <Node name="Filter" expanded="True" />
                   </Node>
                 </Node>
               </Node>

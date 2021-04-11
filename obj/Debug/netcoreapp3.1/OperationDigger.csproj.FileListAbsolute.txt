@@ -584,3 +584,4 @@
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/OperationDigger.dll
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/OperationDigger.pdb
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/OperationDigger.genruntimeconfig.cache
+/Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/BurialList2.cshtml.g.cs

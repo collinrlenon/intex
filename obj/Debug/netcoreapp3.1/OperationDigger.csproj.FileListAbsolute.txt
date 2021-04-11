@@ -120,7 +120,6 @@
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/Burial.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/BurialDetails.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/BurialList.cshtml.g.cs
-/Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/BurialList2.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/CreateBurial.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/DeleteBurial.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/EditBurial.cshtml.g.cs

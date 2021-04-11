@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -7,6 +8,7 @@ namespace OperationDigger.Models
 {
     public partial class Burial
     {
+        [Key]
         public int BurialId { get; set; }
         public string LocationId { get; set; }
         public string BurialNs { get; set; }

@@ -4,67 +4,91 @@
     ViewData["Title"] = "Burial List";
 }
 
-<div class="mt-20">
-    <h1>@ViewData["Title"]</h1>
 
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col" class="text-dark">Burial ID</th>
-                <th scope="col" class="text-dark">Location ID</th>
-                <th scope="col" class="text-dark">South To Head</th>
-                <th scope="col" class="text-dark">South To Feet</th>
-                <th scope="col" class="text-dark">West to Head</th>
-                <th scope="col" class="text-dark">West To Feet</th>
-                <th scope="col" class="text-dark">Length</th>
-                <th scope="col" class="text-dark">Burial Depth</th>
-                <th scope="col" class="text-dark">Burial Goods</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var b in Model.Burials)
-            {
-                <tr>
-                    <td class="text-dark">@b.BurialId</td>
-                    <td class="text-dark">@b.LocationId</td>
-                    <td class="text-dark">@b.SouthToHead</td>
-                    <td class="text-dark">@b.SouthToFeet</td>
-                    <td class="text-dark">@b.WestToHead</td>
-                    <td class="text-dark">@b.WestToFeet</td>
-                    <td class="text-dark">@b.Length</td>
-                    <td class="text-dark">@b.BurialDepth</td>
-                    <td class="text-dark">@b.AritifactFound2</td>
-                    <td>
-                        <a asp-action="EditBurial" asp-route-id="@b.BurialId">Edit</a> |
-                        <a asp-action="BurialDetails" asp-route-id="@b.BurialId">Details</a> |
-                        <a asp-action="DeleteBurial" asp-route-id="@b.BurialId">Delete</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
 
-    <div page-info="@Model.PageNumbering"
-         page-url-burialId="@Model.BurialId"
-         page-classes-enabled="true"
-         page-class="btn"
-         page-class-normal="btn-primary"
-         page-class-selected="btn-warning"
-         class="btn-group pull-right m-1">
+<body class="job-single-page">
+    <section class="heading-section section section-on-bg">
+        <div class="hero-wrapper">
+            <div class="hero-holder"></div>
+            <div class="hero-mask-gradient"></div>
+        </div><!--//hero-wrapper-->
+        <div class="container heading-content">
+            <h2 class="headline">@ViewData["Title"]</h2>
+            <div class="meta">See details below</div>
+        </div><!--//container-->
+    </section><!--//heading-section-->
+
+    <div id="job-single-block">
+        <div class="job-details">
+            <div class="cta-container text-center">
+                <!--Form that will pass the data to the next view-->
+                <div class="container-xxl">
+                    <div class="row" style="margin-top: 30px!important;">
+                        @*<div class="col-sm-12 mx-auto shadow-lg m-5 rounded" style="border: 3px solid black; background-color: #E4D4C8;max-width: 80%;">*@
+                            <div>
+                                <table class="table text-left">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-dark">Burial ID</th>
+                                            <th scope="col" class="text-dark">Location ID</th>
+                                            <th scope="col" class="text-dark">South To Head</th>
+                                            <th scope="col" class="text-dark">South To Feet</th>
+                                            <th scope="col" class="text-dark">West to Head</th>
+                                            <th scope="col" class="text-dark">West To Feet</th>
+                                            <th scope="col" class="text-dark">Length</th>
+                                            <th scope="col" class="text-dark">Burial Depth</th>
+                                            <th scope="col" class="text-dark">Burial Goods</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var b in Model.Burials)
+                                        {
+                                            <tr>
+                                                <td class="text-dark">@b.BurialId</td>
+                                                <td class="text-dark">@b.LocationId</td>
+                                                <td class="text-dark">@b.SouthToHead</td>
+                                                <td class="text-dark">@b.SouthToFeet</td>
+                                                <td class="text-dark">@b.WestToHead</td>
+                                                <td class="text-dark">@b.WestToFeet</td>
+                                                <td class="text-dark">@b.Length</td>
+                                                <td class="text-dark">@b.BurialDepth</td>
+                                                <td class="text-dark">@b.AritifactFound2</td>
+                                                <td>
+                                                    <a asp-action="EditBurial" asp-route-id="@b.BurialId">Edit</a> |
+                                                    <a asp-action="BurialDetails" asp-route-id="@b.BurialId">Details</a> |
+                                                    <a asp-action="DeleteBurial" asp-route-id="@b.BurialId">Delete</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+
+                                <div page-info="@Model.PageNumbering"
+                                     page-url-burialId="@Model.BurialId"
+                                     page-classes-enabled="true"
+                                     page-class="btn"
+                                     page-class-normal="btn-primary"
+                                     page-class-selected="btn-warning"
+                                     class="btn-group pull-right m-1">
+                                </div>
+
+                            </div>
+                        @*</div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</body>
 
-</div>
+
 
 <script>
     $(document).ready(function () {
         $('.dropdown-submenu a.test').on("click", function (e) {
-            $(this).next('ul').toggle();
-            e.stopPropagation();
-            e.preventDefault();
-        });
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
     });
-</script>
+});</script>

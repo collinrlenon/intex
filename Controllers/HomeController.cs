@@ -59,7 +59,7 @@ namespace OperationDigger.Controllers
             {
                 Burials = _context.Burials
                     .Where(x => x.BurialId == burialId || burialId == null)
-                    .OrderBy(x => x.BurialId)
+                    .OrderByDescending(x => x.BurialId)
                     .Skip((pageNum - 1) * pageSize)
                     .Take(pageSize)
                     .ToList(),
@@ -83,7 +83,6 @@ namespace OperationDigger.Controllers
             }
 
             var burial = _context.Burials.Find(id);
-            //.FirstOrDefaultAsync(m => m.BurialId == id);
             if (burial == null)
             {
                 return NotFound();
@@ -106,15 +105,9 @@ namespace OperationDigger.Controllers
         {
             if (ModelState.IsValid)
             {
-                //var last = _context.Burials
-                //    .OrderByDescending(x => x.BurialId)
-                //    .LastOrDefault(x => x.BurialId)
-                //    .Take(1)
-                //    .Select(x => x.BurialId);
 
                 int currentID = burial.BurialId;
 
-                //_context.Burials.Add(burial);
                 _context.Add(burial);
                 _context.SaveChanges();
                 return RedirectToAction("BurialList");

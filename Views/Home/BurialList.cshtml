@@ -24,12 +24,11 @@
                 <!--Form that will pass the data to the next view-->
                 <div class="container-xxl">
                     <div class="row" style="margin-top: 30px!important;">
-                        @*<div class="col-sm-12 mx-auto shadow-lg m-5 rounded" style="border: 3px solid black; background-color: #E4D4C8;max-width: 80%;">*@
                             <div>
-                                <table class="table text-left">
+                                <table class="table text-center">
                                     <thead>
                                         <tr>
-                                            <th scope="col" class="text-dark">Burial ID</th>
+                                            @*<th scope="col" class="text-dark">Burial ID</th>*@
                                             <th scope="col" class="text-dark">Location ID</th>
                                             <th scope="col" class="text-dark">South To Head</th>
                                             <th scope="col" class="text-dark">South To Feet</th>
@@ -45,7 +44,7 @@
                                         @foreach (var b in Model.Burials)
                                         {
                                             <tr>
-                                                <td class="text-dark">@b.BurialId</td>
+                                                @*<td class="text-dark">@b.BurialId</td>*@
                                                 <td class="text-dark">@b.LocationId</td>
                                                 <td class="text-dark">@b.SouthToHead</td>
                                                 <td class="text-dark">@b.SouthToFeet</td>
@@ -72,9 +71,7 @@
                                      page-class-selected="btn-warning"
                                      class="btn-group pull-right m-1">
                                 </div>
-
                             </div>
-                        @*</div>*@
                     </div>
                 </div>
             </div>

@@ -46,23 +46,6 @@
                                 </div>
                                 <hr />
 
-                                <!--Row 1.2-->
-                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
-                                    <!--Burial N/S item-->
-                                    <div class="col-sm-3">
-                                        <label asp-for="BurialId" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial ID</label>
-                                        <input class="form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialId" type="number" />
-                                        <span class="text-danger pl-3" asp-validation-for="BurialId"></span>
-                                    </div>
-
-                                    <!--Hidden item-->
-                                    <div class="col-sm-3" style="visibility:hidden"></div>
-
-                                    <!--Hidden item-->
-                                    <div class="col-sm-3" style="visibility:hidden"></div>
-
-                                </div>
-
                                 <!--Row 1-->
                                 <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
                                     <!--Burial N/S item-->
@@ -117,10 +100,10 @@
 
                                     <!--Photo item-->
                                     <!--<div class="col-sm-3">
-            <label asp-for="Model.Burials.Photo" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Photo</label>
-            <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Model.Burials.Photo" type="text" />
-            <span class="text-danger pl-3" asp-validation-for="Model.Burials.Photo"></span>
-        </div>-->
+                                        <label asp-for="Model.Burials.Photo" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Photo</label>
+                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Model.Burials.Photo" type="text" />
+                                        <span class="text-danger pl-3" asp-validation-for="Model.Burials.Photo"></span>
+                                    </div>-->
                                 </div>
 
                                 <!--Row 3-->
@@ -245,6 +228,13 @@
                                     <div class="col-sm-3" style="visibility:hidden"></div>
                                 </div>
 
+                                <!--Invisible item for passing value-->
+                                <div class="col-sm-3" style="display: none">
+                                    <label asp-for="BurialId" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial ID</label>
+                                    <input class="form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialId" type="number" />
+                                    <span class="text-danger pl-3" asp-validation-for="BurialId"></span>
+                                </div>
+
                                 <button class="button btn btn-lg btn-light px-4 pt-2 float-right" style="font-size:medium!important;margin:10px!important">Submit</button>
                             </form>
                         </div>
@@ -260,8 +250,8 @@
     <script src="assets/plugins/smoothscroll.min.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <div>
-        <a asp-action="BurialList">Back to List</a>
+    <div class="m-3">
+        <a asp-action="BurialList">Back to Burial List</a>
     </div>
 
     @section Scripts {

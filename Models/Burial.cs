@@ -25,7 +25,7 @@ namespace OperationDigger.Models
         public string MonthExc { get; set; }
         public int? DayExc { get; set; }
         public string HeadDirection { get; set; }
-        public string PostcraniaTrauma { get; set; }
+        public bool? PostcraniaTrauma { get; set; }
         public string YrSkull { get; set; }
         public string MtSkull { get; set; }
         public int? DSkull { get; set; }
@@ -36,22 +36,24 @@ namespace OperationDigger.Models
         public string ByuSample { get; set; }
         public int? BodyAnalysis { get; set; }
         public string SkullMag { get; set; }
-        public string PostcraniaMag { get; set; }
+        public bool? PostcraniaMag { get; set; }
         public string SexSkull { get; set; }
         public string AgeSkull { get; set; }
         public string RackShelf { get; set; }
-        public string SkullTrauma { get; set; }
-        public string CribraOrbitala { get; set; }
+        public bool? SkullTrauma { get; set; }
+        public bool? CribraOrbitala { get; set; }
         public string PoroticHyperostosis { get; set; }
         public string PoroticHyperostosisLoc { get; set; }
         public string MetopicSuture { get; set; }
-        public string ButtonOsteoma { get; set; }
+        public bool? ButtonOsteoma { get; set; }
         public string OsteologyUnknownComment { get; set; }
-        public string TemporalMandibularJointOsteoarthritis { get; set; }
+        public bool? TemporalMandibularJointOsteoarthritis { get; set; }
         public string LinearHypoplasiaEnamel { get; set; }
         public int? HillBurialsA { get; set; }
         public int? Tomb { get; set; }
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
         public decimal? WestToHead { get; set; }
+        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
         public decimal? WestToFeet { get; set; }
         public string BurialPreservation { get; set; }
         public string BurialWrapping { get; set; }
@@ -71,7 +73,7 @@ namespace OperationDigger.Models
         public decimal? SouthToHead { get; set; }
         public decimal? SouthToFeet { get; set; }
         public int? Length { get; set; }
-        public string AritifactFound { get; set; }
+        public bool? AritifactFound { get; set; }
         public string AritifactFoundDesc { get; set; }
         public string AritifactFound2 { get; set; }
         public string BurialSituation { get; set; }
@@ -124,11 +126,11 @@ namespace OperationDigger.Models
         public string ToothEruption { get; set; }
         public string PathologyAnomalies { get; set; }
         public string EpiphysealUnion { get; set; }
-        public string HairTaken { get; set; }
-        public string SoftTissueTaken { get; set; }
-        public string BoneTaken { get; set; }
-        public string ToothTaken { get; set; }
-        public string TextileTaken { get; set; }
+        public bool? HairTaken { get; set; }
+        public bool? SoftTissueTaken { get; set; }
+        public bool? BoneTaken { get; set; }
+        public bool? ToothTaken { get; set; }
+        public bool? TextileTaken { get; set; }
         public string Notes { get; set; }
     }
 }

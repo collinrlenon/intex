@@ -82,14 +82,14 @@ namespace OperationDigger.Controllers
         }
 
         // GET method for Burial Detail view
-        public async Task<IActionResult> BurialDetails(int? id)
+        public IActionResult BurialDetails(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var burial = await _context.Burials.FindAsync(id);
+            var burial = _context.Burials.Find(id);
             //.FirstOrDefaultAsync(m => m.BurialId == id);
             if (burial == null)
             {
@@ -113,6 +113,14 @@ namespace OperationDigger.Controllers
         {
             if (ModelState.IsValid)
             {
+                //var last = _context.Burials
+                //    .OrderByDescending(x => x.BurialId)
+                //    .LastOrDefault(x => x.BurialId)
+                //    .Take(1)
+                //    .Select(x => x.BurialId);
+
+                int currentID = burial.BurialId;
+
                 //_context.Burials.Add(burial);
                 _context.Add(burial);
                 _context.SaveChanges();
@@ -191,10 +199,6 @@ namespace OperationDigger.Controllers
         {
             return _context.Burials.Any(e => e.BurialId == id);
         }
-
-
-
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

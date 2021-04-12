@@ -19,6 +19,7 @@ namespace OperationDigger.Models
         public string BurialNum { get; set; }
         public string Gender { get; set; }
         public string HairColor { get; set; }
+        public DateTime? DateExc { get; set; }
         public int? YearExc { get; set; }
         public string MonthExc { get; set; }
         public int? DayExc { get; set; }
@@ -43,7 +44,7 @@ namespace OperationDigger.Models
         public string PoroticHyperostosis { get; set; }
         public string PoroticHyperostosisLoc { get; set; }
         public string MetopicSuture { get; set; }
-        public bool? ButtonOsteoma { get; set; }
+        public string ButtonOsteoma { get; set; }
         public string OsteologyUnknownComment { get; set; }
         public bool? TemporalMandibularJointOsteoarthritis { get; set; }
         public string LinearHypoplasiaEnamel { get; set; }
@@ -130,8 +131,8 @@ namespace OperationDigger.Models
         public string Notes { get; set; }
         [Key]
         public int BurialId { get; set; }
-        public DateTime CreatedAtDate { get; set; }
-        public TimeSpan CreatedAtTime { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public DateTime DateCreatedAt { get; set; }
+        public TimeSpan TimeCreatedAt { get; set; }
+        public TimeSpan UpdatedAt { get; set; }
     }
 }

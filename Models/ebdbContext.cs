@@ -122,7 +122,7 @@ namespace OperationDigger.Models
                     .HasColumnName("basion_nasion");
 
                 entity.Property(e => e.BasionProsthionLength)
-                    .HasPrecision(4, 2)
+                    .HasPrecision(5, 2)
                     .HasColumnName("basion_prosthion_length");
 
                 entity.Property(e => e.BasliarSuture).HasColumnName("basliar_suture");
@@ -175,19 +175,16 @@ namespace OperationDigger.Models
 
                 entity.Property(e => e.CranialSuture).HasColumnName("cranial_suture");
 
-                entity.Property(e => e.CreatedAtDate)
-                    .HasColumnType("date")
-                    .HasColumnName("created_at_date")
-                    .HasDefaultValueSql("now()");
-
-                entity.Property(e => e.CreatedAtTime)
-                    .HasColumnType("time without time zone")
-                    .HasColumnName("created_at_time")
-                    .HasDefaultValueSql("now()");
-
                 entity.Property(e => e.CribraOrbitala).HasColumnName("cribra_orbitala");
 
                 entity.Property(e => e.DSkull).HasColumnName("d_skull");
+
+                entity.Property(e => e.DateCreatedAt)
+                    .HasColumnType("date")
+                    .HasColumnName("date_created_at")
+                    .HasDefaultValueSql("now()");
+
+                entity.Property(e => e.DateExc).HasColumnName("date_exc");
 
                 entity.Property(e => e.DayExc).HasColumnName("day_exc");
 
@@ -202,7 +199,7 @@ namespace OperationDigger.Models
                 entity.Property(e => e.EpiphysealUnion).HasColumnName("epiphyseal_union");
 
                 entity.Property(e => e.EstimateAge)
-                    .HasPrecision(3, 1)
+                    .HasPrecision(5, 2)
                     .HasColumnName("estimate_age");
 
                 entity.Property(e => e.EstimateLivingStature)
@@ -218,7 +215,7 @@ namespace OperationDigger.Models
                     .HasColumnName("femur_head");
 
                 entity.Property(e => e.FemurLength)
-                    .HasPrecision(3, 1)
+                    .HasPrecision(5, 2)
                     .HasColumnName("femur_length");
 
                 entity.Property(e => e.FieldBook).HasColumnName("field_book");
@@ -256,13 +253,13 @@ namespace OperationDigger.Models
                     .HasColumnName("humerus_head");
 
                 entity.Property(e => e.HumerusLength)
-                    .HasPrecision(3, 1)
+                    .HasPrecision(5, 2)
                     .HasColumnName("humerus_length");
 
                 entity.Property(e => e.IliacCrest).HasColumnName("iliac_crest");
 
                 entity.Property(e => e.InterorbitalBreadth)
-                    .HasPrecision(4, 2)
+                    .HasPrecision(5, 2)
                     .HasColumnName("interorbital_breadth");
 
                 entity.Property(e => e.LenCm).HasColumnName("len_cm");
@@ -288,7 +285,7 @@ namespace OperationDigger.Models
                     .HasColumnName("maximum_cranial_length");
 
                 entity.Property(e => e.MaximumNasalBreadth)
-                    .HasPrecision(4, 2)
+                    .HasPrecision(5, 2)
                     .HasColumnName("maximum_nasal_breadth");
 
                 entity.Property(e => e.MedialClavicle).HasColumnName("medial_clavicle");
@@ -302,7 +299,7 @@ namespace OperationDigger.Models
                 entity.Property(e => e.MtSkull).HasColumnName("mt_skull");
 
                 entity.Property(e => e.NasionProsthion)
-                    .HasPrecision(4, 2)
+                    .HasPrecision(5, 2)
                     .HasColumnName("nasion_prosthion");
 
                 entity.Property(e => e.Notes).HasColumnName("notes");
@@ -370,8 +367,13 @@ namespace OperationDigger.Models
                 entity.Property(e => e.TextileTaken).HasColumnName("textile_taken");
 
                 entity.Property(e => e.TibiaLength)
-                    .HasPrecision(3, 1)
+                    .HasPrecision(5, 2)
                     .HasColumnName("tibia_length");
+
+                entity.Property(e => e.TimeCreatedAt)
+                    .HasColumnType("time without time zone")
+                    .HasColumnName("time_created_at")
+                    .HasDefaultValueSql("now()");
 
                 entity.Property(e => e.Tomb).HasColumnName("tomb");
 
@@ -382,7 +384,7 @@ namespace OperationDigger.Models
                 entity.Property(e => e.ToothTaken).HasColumnName("tooth_taken");
 
                 entity.Property(e => e.UpdatedAt)
-                    .HasColumnType("timestamp with time zone")
+                    .HasColumnType("time without time zone")
                     .HasColumnName("updated_at")
                     .HasDefaultValueSql("now()");
 

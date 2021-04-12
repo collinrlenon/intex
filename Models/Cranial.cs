@@ -32,7 +32,7 @@ namespace OperationDigger.Models
         public string BuriedWithArtifacts { get; set; }
         public int? GilesGender { get; set; }
         public string BodyGender { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public TimeSpan CreatedAtTime { get; set; }
+        public DateTime CreatedAtDate { get; set; }
     }
 }

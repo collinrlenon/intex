@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -128,9 +127,8 @@ namespace OperationDigger.Models
         public bool? ToothTaken { get; set; }
         public bool? TextileTaken { get; set; }
         public string Notes { get; set; }
-        [Key]
         public int BurialId { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public DateTime CreatedAtDate { get; set; }
+        public TimeSpan CreatedAtTime { get; set; }
     }
 }

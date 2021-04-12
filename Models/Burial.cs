@@ -8,8 +8,6 @@ namespace OperationDigger.Models
 {
     public partial class Burial
     {
-        [Key]
-        public int BurialId { get; set; }
         public string LocationId { get; set; }
         public string BurialNs { get; set; }
         public int? LowNs { get; set; }
@@ -51,9 +49,7 @@ namespace OperationDigger.Models
         public string LinearHypoplasiaEnamel { get; set; }
         public int? HillBurialsA { get; set; }
         public int? Tomb { get; set; }
-        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
         public decimal? WestToHead { get; set; }
-        [DisplayFormat(DataFormatString = "{0:n2}", ApplyFormatInEditMode = true)]
         public decimal? WestToFeet { get; set; }
         public string BurialPreservation { get; set; }
         public string BurialWrapping { get; set; }
@@ -132,5 +128,9 @@ namespace OperationDigger.Models
         public bool? ToothTaken { get; set; }
         public bool? TextileTaken { get; set; }
         public string Notes { get; set; }
+        [Key]
+        public int BurialId { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
     }
 }

@@ -35,5 +35,6 @@ namespace OperationDigger.Models
         public string Notes { get; set; }
         public DateTime CreatedAtDate { get; set; }
         public TimeSpan CreatedAtTime { get; set; }
+        public DateTime UpdatedAt { get; set; }
     }
 }

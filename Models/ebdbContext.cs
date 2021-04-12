@@ -88,6 +88,11 @@ namespace OperationDigger.Models
                 entity.Property(e => e.PrevSamp).HasColumnName("prev_samp");
 
                 entity.Property(e => e.Rack).HasColumnName("rack");
+
+                entity.Property(e => e.UpdatedAt)
+                    .HasColumnType("timestamp with time zone")
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("now()");
             });
 
             modelBuilder.Entity<Burial>(entity =>
@@ -376,6 +381,11 @@ namespace OperationDigger.Models
 
                 entity.Property(e => e.ToothTaken).HasColumnName("tooth_taken");
 
+                entity.Property(e => e.UpdatedAt)
+                    .HasColumnType("timestamp with time zone")
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("now()");
+
                 entity.Property(e => e.VentralArc).HasColumnName("ventral_arc");
 
                 entity.Property(e => e.WestToFeet)
@@ -461,6 +471,11 @@ namespace OperationDigger.Models
                 entity.Property(e => e.Square).HasColumnName("square");
 
                 entity.Property(e => e.TubeNum).HasColumnName("tube_num");
+
+                entity.Property(e => e.UpdatedAt)
+                    .HasColumnType("timestamp with time zone")
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("now()");
 
                 entity.Property(e => e._14cCalenderDate).HasColumnName("14c_calender_date");
             });
@@ -553,6 +568,11 @@ namespace OperationDigger.Models
                 entity.Property(e => e.Ns).HasColumnName("ns");
 
                 entity.Property(e => e.SampleNumber).HasColumnName("sample_number");
+
+                entity.Property(e => e.UpdatedAt)
+                    .HasColumnType("timestamp with time zone")
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("now()");
             });
 
             modelBuilder.Entity<ProjectRole>(entity =>

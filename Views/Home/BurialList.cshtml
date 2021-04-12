@@ -37,6 +37,7 @@
                                             <th scope="col" class="text-dark">Length</th>
                                             <th scope="col" class="text-dark">Burial Depth</th>
                                             <th scope="col" class="text-dark">Burial Goods</th>
+                                            @*<th scope="col" class="text-dark">Record Created</th>*@
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -53,6 +54,7 @@
                                                 <td class="text-dark">@b.Length</td>
                                                 <td class="text-dark">@b.BurialDepth</td>
                                                 <td class="text-dark">@b.AritifactFound2</td>
+                                                @*<td class="text-dark">@b.CreatedAt</td>*@
                                                 <td>
                                                     <a asp-action="EditBurial" asp-route-id="@b.BurialId">Edit</a> |
                                                     <a asp-action="BurialDetails" asp-route-id="@b.BurialId">Details</a> |

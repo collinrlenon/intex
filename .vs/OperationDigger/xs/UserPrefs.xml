@@ -1,15 +1,21 @@
 ﻿<Properties StartupConfiguration="{93CC3AA0-8FAC-4082-8681-D1C43A9680CF}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/ebdbContext.cs">
     <Files>
       <File FileName="Controllers/HomeController.cs" Line="180" Column="1" />
-      <File FileName="Views/Home/BurialList.cshtml" />
+      <File FileName="Views/Home/BurialList.cshtml" Line="19" Column="32" />
       <File FileName="Views/Home/DeleteBurial.cshtml" />
       <File FileName="Views/Home/CreateBurial.cshtml" />
       <File FileName="Views/Home/EditBurial.cshtml" />
       <File FileName="Views/Home/BurialDetails.cshtml" />
-      <File FileName="Views/Shared/_Layout.cshtml" />
-      <File FileName="Views/Home/Index.cshtml" Line="44" Column="41" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="53" Column="88" />
+      <File FileName="Views/Home/Index.cshtml" Line="33" Column="22" />
+      <File FileName="Models/Burial.cs" Line="4" Column="1" />
+      <File FileName="Models/ErrorViewModel.cs" Line="1" Column="1" />
+      <File FileName="Models/ebdbContext.cs" Line="196" Column="43" />
+      <File FileName="Models/BioSample.cs" Line="15" Column="24" />
+      <File FileName="Models/CarbonDating.cs" Line="1" Column="1" />
+      <File FileName="Models/Cranial.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,10 +23,11 @@
           <Node name="OperationDigger" expanded="True">
             <Node name="OperationDigger" expanded="True">
               <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="ebdbContext.cs" selected="True" />
+              </Node>
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
+                <Node name="Home" expanded="True" />
                 <Node name="Shared" expanded="True" />
               </Node>
               <Node name="wwwroot" expanded="True">

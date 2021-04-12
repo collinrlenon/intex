@@ -24,5 +24,7 @@ namespace OperationDigger.Models
         public string PrevSamp { get; set; }
         public string Notes { get; set; }
         public string Initials { get; set; }
+        public DateTime UpdatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

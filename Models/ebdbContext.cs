@@ -34,7 +34,6 @@ namespace OperationDigger.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseNpgsql("Host=aa1n46hd33zfihr.cuj8pfytwaes.us-east-1.rds.amazonaws.com;Username=postgres;Password=catchmeifyoucan22;Database=ebdb");
             }
         }
@@ -157,6 +156,11 @@ namespace OperationDigger.Models
 
                 entity.Property(e => e.Cluster).HasColumnName("cluster");
 
+                entity.Property(e => e.CreatedAt)
+                    .HasColumnType("timestamp with time zone")
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("now()");
+
                 entity.Property(e => e.Date).HasColumnName("date");
 
                 entity.Property(e => e.Ew).HasColumnName("ew");
@@ -180,6 +184,11 @@ namespace OperationDigger.Models
                 entity.Property(e => e.PrevSamp).HasColumnName("prev_samp");
 
                 entity.Property(e => e.Rack).HasColumnName("rack");
+
+                entity.Property(e => e.UpdatedAt)
+                    .HasColumnType("timestamp with time zone")
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("now()");
             });
 
             modelBuilder.Entity<Burial>(entity =>
@@ -231,7 +240,7 @@ namespace OperationDigger.Models
                 entity.Property(e => e.BurialAgeMeth).HasColumnName("burial_age_meth");
 
                 entity.Property(e => e.BurialDepth)
-                    .HasPrecision(18, 15)
+                    .HasPrecision(5, 2)
                     .HasColumnName("burial_depth");
 
                 entity.Property(e => e.BurialEw).HasColumnName("burial_ew");
@@ -262,6 +271,11 @@ namespace OperationDigger.Models
 
                 entity.Property(e => e.CranialSuture).HasColumnName("cranial_suture");
 
+                entity.Property(e => e.CreatedAt)
+                    .HasColumnType("timestamp with time zone")
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("now()");
+
                 entity.Property(e => e.CribraOrbitala).HasColumnName("cribra_orbitala");
 
                 entity.Property(e => e.DSkull).HasColumnName("d_skull");
@@ -283,7 +297,7 @@ namespace OperationDigger.Models
                     .HasColumnName("estimate_age");
 
                 entity.Property(e => e.EstimateLivingStature)
-                    .HasPrecision(6, 3)
+                    .HasPrecision(5, 2)
                     .HasColumnName("estimate_living_stature");
 
                 entity.Property(e => e.FaceBundle).HasColumnName("face_bundle");
@@ -291,7 +305,7 @@ namespace OperationDigger.Models
                 entity.Property(e => e.FemurDiameter).HasColumnName("femur_diameter");
 
                 entity.Property(e => e.FemurHead)
-                    .HasPrecision(4, 2)
+                    .HasPrecision(5, 2)
                     .HasColumnName("femur_head");
 
                 entity.Property(e => e.FemurLength)
@@ -305,7 +319,7 @@ namespace OperationDigger.Models
                 entity.Property(e => e.ForemanMagnum).HasColumnName("foreman_magnum");
 
                 entity.Property(e => e.GeFunction)
-                    .HasPrecision(7, 4)
+                    .HasPrecision(5, 2)
                     .HasColumnName("ge_function");
 
                 entity.Property(e => e.Gender).HasColumnName("gender");
@@ -329,7 +343,7 @@ namespace OperationDigger.Models
                 entity.Property(e => e.Humerus).HasColumnName("humerus");
 
                 entity.Property(e => e.HumerusHead)
-                    .HasPrecision(4, 2)
+                    .HasPrecision(5, 2)
                     .HasColumnName("humerus_head");
 
                 entity.Property(e => e.HumerusLength)
@@ -431,11 +445,11 @@ namespace OperationDigger.Models
                 entity.Property(e => e.SoftTissueTaken).HasColumnName("soft_tissue_taken");
 
                 entity.Property(e => e.SouthToFeet)
-                    .HasPrecision(3, 2)
+                    .HasPrecision(5, 2)
                     .HasColumnName("south_to_feet");
 
                 entity.Property(e => e.SouthToHead)
-                    .HasPrecision(3, 2)
+                    .HasPrecision(5, 2)
                     .HasColumnName("south_to_head");
 
                 entity.Property(e => e.SubpubicAngle).HasColumnName("subpubic_angle");
@@ -458,14 +472,19 @@ namespace OperationDigger.Models
 
                 entity.Property(e => e.ToothTaken).HasColumnName("tooth_taken");
 
+                entity.Property(e => e.UpdatedAt)
+                    .HasColumnType("timestamp with time zone")
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("now()");
+
                 entity.Property(e => e.VentralArc).HasColumnName("ventral_arc");
 
                 entity.Property(e => e.WestToFeet)
-                    .HasPrecision(18, 16)
+                    .HasPrecision(5, 2)
                     .HasColumnName("west_to_feet");
 
                 entity.Property(e => e.WestToHead)
-                    .HasPrecision(17, 16)
+                    .HasPrecision(5, 2)
                     .HasColumnName("west_to_head");
 
                 entity.Property(e => e.YearExc).HasColumnName("year_exc");
@@ -504,6 +523,11 @@ namespace OperationDigger.Models
 
                 entity.Property(e => e.Conventional14cAgeBp).HasColumnName("conventional_14c_age_bp");
 
+                entity.Property(e => e.CreatedAt)
+                    .HasColumnType("timestamp with time zone")
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("now()");
+
                 entity.Property(e => e.Description).HasColumnName("description");
 
                 entity.Property(e => e.Ew).HasColumnName("ew");
@@ -533,6 +557,11 @@ namespace OperationDigger.Models
                 entity.Property(e => e.Square).HasColumnName("square");
 
                 entity.Property(e => e.TubeNum).HasColumnName("tube_num");
+
+                entity.Property(e => e.UpdatedAt)
+                    .HasColumnType("timestamp with time zone")
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("now()");
 
                 entity.Property(e => e._14cCalenderDate).HasColumnName("14c_calender_date");
             });
@@ -586,6 +615,11 @@ namespace OperationDigger.Models
 
                 entity.Property(e => e.BuriedWithArtifacts).HasColumnName("buried_with_artifacts");
 
+                entity.Property(e => e.CreatedAt)
+                    .HasColumnType("timestamp with time zone")
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("now()");
+
                 entity.Property(e => e.Ew).HasColumnName("ew");
 
                 entity.Property(e => e.GilesGender).HasColumnName("giles_gender");
@@ -615,6 +649,11 @@ namespace OperationDigger.Models
                 entity.Property(e => e.Ns).HasColumnName("ns");
 
                 entity.Property(e => e.SampleNumber).HasColumnName("sample_number");
+
+                entity.Property(e => e.UpdatedAt)
+                    .HasColumnType("timestamp with time zone")
+                    .HasColumnName("updated_at")
+                    .HasDefaultValueSql("now()");
             });
 
             modelBuilder.Entity<ProjectRole>(entity =>

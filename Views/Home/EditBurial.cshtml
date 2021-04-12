@@ -228,6 +228,16 @@
                                     <div class="col-sm-3" style="visibility:hidden"></div>
                                 </div>
 
+                                <!--Row 9-->
+                                <div class="form-group row" style="margin-bottom: 10px!important;margin-left:122px!important">
+                                    <!--Notes item-->
+                                    <div class="col-sm-12">
+                                        <label asp-for="Notes" class="col-sm-6 col-form-label text-left" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Field Notes</label>
+                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Notes" type="text" />
+                                        <span class="text-danger pl-3" asp-validation-for="Notes"></span>
+                                    </div>
+                                </div>
+
                                 <!--Invisible item for passing value-->
                                 <div class="col-sm-3" style="display: none">
                                     <label asp-for="BurialId" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial ID</label>

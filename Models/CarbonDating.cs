@@ -33,7 +33,7 @@ namespace OperationDigger.Models
         public string Calibr95CalDateAvg { get; set; }
         public string Category { get; set; }
         public string Notes { get; set; }
-        public DateTime UpdatedAt { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAtDate { get; set; }
+        public TimeSpan CreatedAtTime { get; set; }
     }
 }

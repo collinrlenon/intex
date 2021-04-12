@@ -37,30 +37,32 @@
                                             <th scope="col" class="text-dark">Length</th>
                                             <th scope="col" class="text-dark">Burial Depth</th>
                                             <th scope="col" class="text-dark">Burial Goods</th>
-                                            @*<th scope="col" class="text-dark">Record Created</th>*@
+                                            @*<th scope="col" class="text-dark">Date</th>
+                                            <th scope="col" class="text-dark">Time</th>*@
                                             <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach (var b in Model.Burials)
                                         {
-                                            <tr>
-                                                @*<td class="text-dark">@b.BurialId</td>*@
-                                                <td class="text-dark">@b.LocationId</td>
-                                                <td class="text-dark">@b.SouthToHead</td>
-                                                <td class="text-dark">@b.SouthToFeet</td>
-                                                <td class="text-dark">@b.WestToHead</td>
-                                                <td class="text-dark">@b.WestToFeet</td>
-                                                <td class="text-dark">@b.Length</td>
-                                                <td class="text-dark">@b.BurialDepth</td>
-                                                <td class="text-dark">@b.AritifactFound2</td>
-                                                @*<td class="text-dark">@b.CreatedAt</td>*@
-                                                <td>
-                                                    <a asp-action="EditBurial" asp-route-id="@b.BurialId">Edit</a> |
-                                                    <a asp-action="BurialDetails" asp-route-id="@b.BurialId">Details</a> |
-                                                    <a asp-action="DeleteBurial" asp-route-id="@b.BurialId">Delete</a>
-                                                </td>
-                                            </tr>
+                                        <tr>
+                                            @*<td class="text-dark">@b.BurialId</td>*@
+                                            <td class="text-dark">@b.LocationId</td>
+                                            <td class="text-dark">@b.SouthToHead</td>
+                                            <td class="text-dark">@b.SouthToFeet</td>
+                                            <td class="text-dark">@b.WestToHead</td>
+                                            <td class="text-dark">@b.WestToFeet</td>
+                                            <td class="text-dark">@b.Length</td>
+                                            <td class="text-dark">@b.BurialDepth</td>
+                                            <td class="text-dark">@b.AritifactFound2</td>
+                                            @*<td class="text-dark">@b.CreatedAtDate</td>
+                                            <td class="text-dark">@b.CreatedAtTime</td>*@
+                                            <td>
+                                                <a asp-action="EditBurial" asp-route-id="@b.BurialId">Edit</a> |
+                                                <a asp-action="BurialDetails" asp-route-id="@b.BurialId">Details</a> |
+                                                <a asp-action="DeleteBurial" asp-route-id="@b.BurialId">Delete</a>
+                                            </td>
+                                        </tr>
                                         }
                                     </tbody>
                                 </table>

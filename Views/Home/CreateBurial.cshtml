@@ -94,15 +94,12 @@
                                         <span class="text-danger pl-3" asp-validation-for="SouthToFeet"></span>
                                     </div>
 
-                                    <!--Hidden item-->
-                                    <div class="col-sm-3" style="visibility:hidden"></div>
-
                                     <!--Photo item-->
-                                    <!--<div class="col-sm-3">
-            <label asp-for="Model.Burials.Photo" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Photo</label>
-            <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Model.Burials.Photo" type="text" />
-            <span class="text-danger pl-3" asp-validation-for="Model.Burials.Photo"></span>
-        </div>-->
+                                    <div class="col-sm-3">
+                                        <label class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Photo:</label>
+                                        <input type="file" name="img" accept="image/*">
+                                        <span class="text-danger pl-3"></span>
+                                    </div>
                                 </div>
 
                                 <!--Row 3-->
@@ -121,8 +118,12 @@
                                         <span class="text-danger pl-3" asp-validation-for="WestToHead"></span>
                                     </div>
 
-                                    <!--Hidden item-->
-                                    <div class="col-sm-3" style="visibility:hidden"></div>
+                                    <!--Field Notes item-->
+                                    <div class="col-sm-3">
+                                        <label class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Field Notes:</label>
+                                        <input type="file" name="img" accept="image/*">
+                                        <span class="text-danger pl-3"></span>
+                                    </div>
                                 </div>
 
                                 <!--Row 4-->
@@ -145,8 +146,12 @@
                                         <span class="text-danger pl-3" asp-validation-for="WestToFeet"></span>
                                     </div>
 
-                                    <!--Hidden item-->
-                                    <div class="col-sm-3" style="visibility:hidden"></div>
+                                    <!--Bone Books item-->
+                                    <div class="col-sm-3">
+                                        <label class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Bone Books:</label>
+                                        <input type="file" name="img" accept="image/*">
+                                        <span class="text-danger pl-3"></span>
+                                    </div>
                                 </div>
 
                                 <!--Row 5-->

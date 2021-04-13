@@ -50,28 +50,110 @@ namespace OperationDigger.Controllers
         }
 
         // GET method for Burial List view
-        public IActionResult BurialList(long? burialId, int pageNum = 1)
+        public IActionResult BurialList(long? burialId, string gender, string hairColor, int? yearExc, string monthExc, string headDir, string fieldBook, string byuSamp, string skullMag, string sexSkull, string ageSkull, decimal? wtHead, decimal? wtFeet, string burialPres, string burialWrap, string gendMeth, string ageCode, string faceBundle, decimal? burDepth, decimal? stHead, decimal? stFeet, int? Length, string genGe, string searchBox, int pageNum = 1)
         {
             // Sets the page size to 50
             int pageSize = 50;
 
-            return View(new BurialListViewModel
+            var BurialListView = new BurialListViewModel
             {
                 Burials = _context.Burials
                     .Where(x => x.BurialId == burialId || burialId == null)
+                    .Where(x => x.Gender == gender || gender == null)
+                    .Where(x => x.HairColor == hairColor || hairColor == null)
+                    .Where(x => x.YearExc == yearExc || yearExc == null)
+                    .Where(x => x.MonthExc == monthExc || monthExc == null)
+                    .Where(x => x.HeadDirection == headDir || headDir == null)
+                    .Where(x => x.FieldBook == fieldBook || fieldBook == null)
+                    .Where(x => x.ByuSample == byuSamp || byuSamp == null)
+                    .Where(x => x.SkullMag == skullMag || skullMag == null)
+                    .Where(x => x.SexSkull == sexSkull || sexSkull == null)
+                    .Where(x => x.AgeSkull == ageSkull || ageSkull == null)
+                    .Where(x => x.WestToHead == wtHead || wtHead == null)
+                    .Where(x => x.WestToFeet == wtFeet || wtFeet == null)
+                    .Where(x => x.BurialPreservation == burialPres || burialPres == null)
+                    .Where(x => x.BurialWrapping == burialWrap || burialWrap == null)
+                    .Where(x => x.BurialGendMeth == gendMeth || gendMeth == null)
+                    .Where(x => x.AgeCode == ageCode || ageCode == null)
+                    .Where(x => x.FaceBundle == faceBundle || faceBundle == null)
+                    .Where(x => x.BurialDepth == burDepth || burDepth == null)
+                    .Where(x => x.SouthToHead == stHead || stHead == null)
+                    .Where(x => x.SouthToFeet == stFeet || stFeet == null)
+                    .Where(x => x.Length == Length || Length == null)
+                    .Where(x => x.GenderGe == genGe || genGe == null)
+                    .Where(x => x.Notes.Contains(searchBox) || x.OsteologyNotes.Contains(searchBox) || x.BurialSituation.Contains(searchBox) || searchBox == null)
                     .OrderByDescending(x => x.BurialId)
                     .Skip((pageNum - 1) * pageSize)
                     .Take(pageSize)
                     .ToList(),
+                BioSamples = _context.BioSamples
+                    .Where(x => x.LocationId == _context.Burials.Select(x => x.LocationId).ToString())
+                    .Where(x => x.Notes.Contains(searchBox) || searchBox == null),
+                Cranials = _context.Cranials
+                    .Where(x => x.LocationId == _context.Burials.Select(x => x.LocationId).ToString())
+                    .Where(x => x.BurialArtDescription.Contains(searchBox) || searchBox == null),
+                CarbonDatings = _context.CarbonDatings
+                    .Where(x => x.LocationId == _context.Burials.Select(x => x.LocationId).ToString())
+                    .Where(x => x.Notes.Contains(searchBox) || searchBox == null),
                 PageNumbering = new PageNumbering
                 {
                     NumItemsPerPage = pageSize,
                     CurrentPage = pageNum,
-                    TotalItems = burialId == null ? _context.Burials.Count() :
-                        _context.Burials.Where(x => x.BurialId == burialId).Count()
+                    TotalItems = _context.Burials
+                    .Where(x => x.BurialId == burialId || burialId == null)
+                    .Where(x => x.Gender == gender || gender == null)
+                    .Where(x => x.HairColor == hairColor || hairColor == null)
+                    .Where(x => x.YearExc == yearExc || yearExc == null)
+                    .Where(x => x.MonthExc == monthExc || monthExc == null)
+                    .Where(x => x.HeadDirection == headDir || headDir == null)
+                    .Where(x => x.FieldBook == fieldBook || fieldBook == null)
+                    .Where(x => x.ByuSample == byuSamp || byuSamp == null)
+                    .Where(x => x.SkullMag == skullMag || skullMag == null)
+                    .Where(x => x.SexSkull == sexSkull || sexSkull == null)
+                    .Where(x => x.AgeSkull == ageSkull || ageSkull == null)
+                    .Where(x => x.WestToHead == wtHead || wtHead == null)
+                    .Where(x => x.WestToFeet == wtFeet || wtFeet == null)
+                    .Where(x => x.BurialPreservation == burialPres || burialPres == null)
+                    .Where(x => x.BurialWrapping == burialWrap || burialWrap == null)
+                    .Where(x => x.BurialGendMeth == gendMeth || gendMeth == null)
+                    .Where(x => x.AgeCode == ageCode || ageCode == null)
+                    .Where(x => x.FaceBundle == faceBundle || faceBundle == null)
+                    .Where(x => x.BurialDepth == burDepth || burDepth == null)
+                    .Where(x => x.SouthToHead == stHead || stHead == null)
+                    .Where(x => x.SouthToFeet == stFeet || stFeet == null)
+                    .Where(x => x.Length == Length || Length == null)
+                    .Where(x => x.GenderGe == genGe || genGe == null)
+                    .Where(x => x.Notes.Contains(searchBox) || x.OsteologyNotes.Contains(searchBox) || x.BurialSituation.Contains(searchBox) || searchBox == null).Count()
+                },
+                Filters = new FilterViewModel
+                {
+                    gender = gender,
+                    hairColor = hairColor,
+                    yearExc = yearExc,
+                    monthExc = monthExc,
+                    headDir = headDir,
+                    fieldBook = fieldBook,
+                    byuSamp = byuSamp,
+                    skullMag = skullMag,
+                    sexSkull = sexSkull,
+                    ageSkull = ageSkull,
+                    wtHead = wtHead,
+                    wtFeet = wtFeet,
+                    burialPres = burialPres,
+                    burialWrap = burialWrap,
+                    gendMeth = gendMeth,
+                    ageCode = ageCode,
+                    faceBundle = faceBundle,
+                    burDepth = burDepth,
+                    stHead = stHead,
+                    stFeet = stFeet,
+                    Length = Length,
+                    genGe = genGe
                 },
                 BurialId = (int?)burialId
-            });
+            };
+
+            return View(BurialListView);
         }
 
         // GET method for Burial Detail view

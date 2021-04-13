@@ -18,33 +18,37 @@
         </div><!--//container-->
     </section><!--//heading-section-->
 
+    <div>
+        <vc:filter />
+    </div>
+
     <div id="job-single-block">
         <div class="job-details">
             <div class="cta-container text-center">
                 <!--Form that will pass the data to the next view-->
                 <div class="container-xxl">
                     <div class="row" style="margin-top: 30px!important;">
-                            <div>
-                                <table class="table text-center">
-                                    <thead>
-                                        <tr>
-                                            @*<th scope="col" class="text-dark">Burial ID</th>*@
-                                            <th scope="col" class="text-dark">Location ID</th>
-                                            <th scope="col" class="text-dark">South To Head</th>
-                                            <th scope="col" class="text-dark">South To Feet</th>
-                                            <th scope="col" class="text-dark">West to Head</th>
-                                            <th scope="col" class="text-dark">West To Feet</th>
-                                            <th scope="col" class="text-dark">Length</th>
-                                            <th scope="col" class="text-dark">Burial Depth</th>
-                                            <th scope="col" class="text-dark">Burial Goods</th>
-                                            @*<th scope="col" class="text-dark">Date</th>
-                                              <th scope="col" class="text-dark">Time</th>*@
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach (var b in Model.Burials)
-                                        {
+                        <div>
+                            <table class="table text-center">
+                                <thead>
+                                    <tr>
+                                        @*<th scope="col" class="text-dark">Burial ID</th>*@
+                                        <th scope="col" class="text-dark">Location ID</th>
+                                        <th scope="col" class="text-dark">South To Head</th>
+                                        <th scope="col" class="text-dark">South To Feet</th>
+                                        <th scope="col" class="text-dark">West to Head</th>
+                                        <th scope="col" class="text-dark">West To Feet</th>
+                                        <th scope="col" class="text-dark">Length</th>
+                                        <th scope="col" class="text-dark">Burial Depth</th>
+                                        <th scope="col" class="text-dark">Burial Goods</th>
+                                        @*<th scope="col" class="text-dark">Date</th>
+                                            <th scope="col" class="text-dark">Time</th>*@
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var b in Model.Burials)
+                                    {
                                         <tr>
                                             @*<td class="text-dark">@b.BurialId</td>*@
                                             <td class="text-dark">@b.LocationId</td>
@@ -56,26 +60,27 @@
                                             <td class="text-dark">@b.BurialDepth</td>
                                             <td class="text-dark">@b.AritifactFound2</td>
                                             @*<td class="text-dark">@b.CreatedAtDate</td>
-                                              <td class="text-dark">@b.CreatedAtTime</td>*@
+                                                <td class="text-dark">@b.CreatedAtTime</td>*@
                                             <td>
                                                 <a asp-action="EditBurial" asp-route-id="@b.BurialId">Edit</a> |
                                                 <a asp-action="BurialDetails" asp-route-id="@b.BurialId">Details</a> |
                                                 <a asp-action="DeleteBurial" asp-route-id="@b.BurialId">Delete</a>
                                             </td>
                                         </tr>
-                                        }
-                                    </tbody>
-                                </table>
+                                    }
+                                </tbody>
+                            </table>
 
-                                <div page-info="@Model.PageNumbering"
-                                     page-url-burialId="@Model.BurialId"
-                                     page-classes-enabled="true"
-                                     page-class="btn"
-                                     page-class-normal="btn-primary"
-                                     page-class-selected="btn-warning"
-                                     class="btn-group pull-right m-1">
-                                </div>
+                            <div page-info="@Model.PageNumbering"
+                                 filters="@Model.Filters"
+                                 page-url-burialId="@Model.BurialId"
+                                 page-classes-enabled="true"
+                                 page-class="btn"
+                                 page-class-normal="btn-primary"
+                                 page-class-selected="btn-warning"
+                                 class="btn-group pull-right m-1">
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>

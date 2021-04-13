@@ -1,39 +1,84 @@
 ﻿@model IEnumerable<Burial>
 
+<br />
+<div id="accordion">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link btn-lg" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Filter
+                </button>
+            </h5>
+        </div>
 
-@* <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    @foreach (var x in Model)
-    {
-        <button class="dropdown-item" type="button">@x.AgeCode</button>
-    } 
-  </div>
-</div> *@
-
-<ul class="nav nav-pills">
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Burials</a>
-    <li class="dropdown-submenu">
-        <a class="test" tabindex="-1" href="#">Age Code <span class="caret"></span></a>
-        <ul>
-                @foreach (var x in Model.Select(x => x.AgeCode).Distinct())
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                @using (Html.BeginForm("BurialList", "Home", FormMethod.Get))
                 {
-                    <button class="dropdown-item" type="button">@x</button>
+                    <div class="row">
+                        <div class="col-2">
+                            <text>Gender</text>@Html.DropDownList("gender", new SelectList(ViewBag.Gender), "", new { @class = "form-control" })
+                            <text>Hair Color:</text>@Html.DropDownList("hairColor", new SelectList(ViewBag.HairColor), "", new { @class = "form-control" })
+                            <text>Year Excavated:</text>@Html.DropDownList("yearExc", new SelectList(ViewBag.YearExc), "", new { @class = "form-control" })
+                            <text>Month Excavated:</text>@Html.DropDownList("monthExc", new SelectList(ViewBag.MonthExc), "", new { @class = "form-control" })
+                        </div>
+                        <div class="col-2">
+                            <text>Head Direction:</text>@Html.DropDownList("headDir", new SelectList(ViewBag.HeadDir), "", new { @class = "form-control" })
+                            <text>Field Book:</text>@Html.DropDownList("fieldBook", new SelectList(ViewBag.FieldBook), "", new { @class = "form-control" })
+                            <text>BYU Sample:</text>@Html.DropDownList("byuSamp", new SelectList(ViewBag.ByuSample), "", new { @class = "form-control" })
+                            <text>Skull Magazine:</text>@Html.DropDownList("skullMag", new SelectList(ViewBag.SkullMag), "", new { @class = "form-control" })
+                        </div>
+                        <div class="col-2">
+                            <text>Sex Determined by Skull:</text>@Html.DropDownList("sexSkull", new SelectList(ViewBag.SexSkull), "", new { @class = "form-control" })
+                            <text>Age Determined by Skull:</text>@Html.DropDownList("ageSkull", new SelectList(ViewBag.AgeSkull), "", new { @class = "form-control" })
+                            <text>West to Head:</text>@Html.DropDownList("wtHead", new SelectList(ViewBag.WtHead), "", new { @class = "form-control" })
+                            <text>West to Feet:</text>@Html.DropDownList("wtFeet", new SelectList(ViewBag.WtFeet), "", new { @class = "form-control" })
+                        </div>
+                        <div class="col-2">
+                            <text>Burial Preservation:</text>@Html.DropDownList("burialPres", new SelectList(ViewBag.BurialPres), "", new { @class = "form-control" })
+                            <text>Burial Wrapping:</text>@Html.DropDownList("burialWrap", new SelectList(ViewBag.BurialWrap), "", new { @class = "form-control" })
+                            <text>Face Bundle:</text>@Html.DropDownList("faceBundle", new SelectList(ViewBag.FaceBundle), "", new { @class = "form-control" })
+                            <text>Age Code:</text>@Html.DropDownList("ageCode", new SelectList(ViewBag.AgeCode), "", new { @class = "form-control" })
+                        </div>
+                        <div class="col-2">
+                            <text>Burial Depth:</text>@Html.DropDownList("burDepth", new SelectList(ViewBag.BurDepth), "", new { @class = "form-control" })
+                            <text>Length:</text>@Html.DropDownList("Length", new SelectList(ViewBag.Length), "", new { @class = "form-control" })
+                            <text>Gender Determination Method:</text>@Html.DropDownList("gendMeth", new SelectList(ViewBag.GendMeth), "", new { @class = "form-control" })
+                        </div>
+                        <div class="col-2">
+                            <text>South to Head:</text>@Html.DropDownList("stHead", new SelectList(ViewBag.StHead), "", new { @class = "form-control" })
+                            <text>South to Feet:</text>@Html.DropDownList("stFeet", new SelectList(ViewBag.StFeet), "", new { @class = "form-control" })
+                            <text>Gender Giles/Elliott Function:</text>@Html.DropDownList("genGe", new SelectList(ViewBag.GenGe), "", new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <br />
+                    <input type="submit" value="Filter" class="btn btn-primary" />
+                    <a asp-action="BurialList" asp-route-id="" class="btn btn-primary">Clear</a>
                 }
-            
-        </ul>
-    </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cranial</a>
-        <ul>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
             </div>
-        </ul>
-    </li>
-</ul>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link btn-lg collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Search
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                @using (Html.BeginForm("BurialList", "Home", new { pageNum = 1 }, FormMethod.Get))
+                {
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.TextBox("searchBox", "", new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <button class="btn btn-fill btn-md btn-success" type="submit">Search</button>
+                    <a asp-action="BurialList" asp-route-id="" class="btn btn-primary">Clear</a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

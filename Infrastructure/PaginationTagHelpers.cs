@@ -12,7 +12,7 @@ namespace OperationDigger.Infrastructure
 {
     //This whole class is developed to create a div and a tag to
     //put in the view to allow users to view different page items
-    [HtmlTargetElement("div", Attributes = "page-info")]
+    [HtmlTargetElement("div", Attributes = "page-info, filters")]
     public class PaginationTagHelper : TagHelper
     {
         private IUrlHelperFactory _urlHelper;
@@ -25,6 +25,8 @@ namespace OperationDigger.Infrastructure
         public int i = 0;
 
         public PageNumbering PageInfo { get; set; }
+
+        public FilterViewModel Filters { get; set; }
 
         //Creates a dictionary to store url information about the
         //burial id and page number
@@ -55,6 +57,28 @@ namespace OperationDigger.Infrastructure
                 TagBuilder individualTag = new TagBuilder("a");
 
                 KeyValuePairs["pageNum"] = i;
+                KeyValuePairs["gender"] = Filters.gender;
+                KeyValuePairs["hairColor"] = Filters.hairColor;
+                KeyValuePairs["yearExc"] = Filters.yearExc;
+                KeyValuePairs["monthExc"] = Filters.monthExc;
+                KeyValuePairs["headDir"] = Filters.headDir;
+                KeyValuePairs["fieldBook"] = Filters.fieldBook;
+                KeyValuePairs["byuSamp"] = Filters.byuSamp;
+                KeyValuePairs["skullMag"] = Filters.skullMag;
+                KeyValuePairs["sexSkull"] = Filters.sexSkull;
+                KeyValuePairs["ageSkull"] = Filters.ageSkull;
+                KeyValuePairs["wtHead"] = Filters.wtHead;
+                KeyValuePairs["wtFeet"] = Filters.wtFeet;
+                KeyValuePairs["burialPres"] = Filters.burialPres;
+                KeyValuePairs["burialWrap"] = Filters.burialWrap;
+                KeyValuePairs["gendMeth"] = Filters.gendMeth;
+                KeyValuePairs["ageCode"] = Filters.ageCode;
+                KeyValuePairs["faceBundle"] = Filters.faceBundle;
+                KeyValuePairs["burDepth"] = Filters.burDepth;
+                KeyValuePairs["stHead"] = Filters.stHead;
+                KeyValuePairs["stFeet"] = Filters.stFeet;
+                KeyValuePairs["Length"] = Filters.Length;
+                KeyValuePairs["genGe"] = Filters.genGe;
                 individualTag.Attributes["href"] = urlHelp.Action("BurialList", KeyValuePairs);
 
                 //This is used to allow for CSS to be used

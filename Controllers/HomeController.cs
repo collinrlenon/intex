@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using OperationDigger.Models;
 using Microsoft.Extensions.Logging;
 using OperationDigger.Models.ViewModels;
+using OperationDigger.Data;
 
 namespace OperationDigger.Controllers
 {
@@ -13,10 +14,12 @@ namespace OperationDigger.Controllers
 
         private readonly ebdbContext _context;
 
-        public HomeController(ILogger<HomeController> logger, ebdbContext context)
+        private readonly OperationDiggerContext _ctx;
+        public HomeController(ILogger<HomeController> logger, ebdbContext context, OperationDiggerContext ctx)
         {
             _logger = logger;
             _context = context;
+            _ctx = ctx;
         }
 
         public IActionResult Index()

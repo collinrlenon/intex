@@ -1,14 +1,20 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Npgsql;
+using OperationDigger.Data;
 using OperationDigger.Models;
 
 namespace OperationDigger
@@ -31,6 +37,18 @@ namespace OperationDigger
             {
                 opts.UseNpgsql(Configuration.GetConnectionString("OperationDiggerConnection"));
             });
+
+            services.AddDbContext<OperationDiggerContext>(opts =>
+            {
+                opts.UseNpgsql(Configuration.GetConnectionString("OperationDiggerConnection"));
+            });
+
+            //var connectionString = Configuration.GetConnectionString("OperationDiggerConnection");
+            ////MigrationManager.ThrowIfNotApplied(connectionString);
+            //services.AddSingleton<DbConnection, NpgsqlConnection>(provider => new NpgsqlConnection(connectionString));
+
+            //services.AddTransient<IUserStore<IdentityUser<long>>, UserStore>();
+            //services.AddTransient<IRoleStore<IdentityRole<long>>, RoleStore>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +69,7 @@ namespace OperationDigger
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

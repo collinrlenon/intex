@@ -10,35 +10,26 @@
       <File FileName="Views/Home/PhotoGallery.cshtml" />
       <File FileName="buildspec.yml" />
       <File FileName="OperationDigger.csproj" />
-      <File FileName="Startup.cs" Line="85" Column="43" />
-      <File FileName="Views/Shared/_Layout.cshtml" Line="62" Column="57" />
+      <File FileName="Startup.cs" />
+      <File FileName="Views/Shared/_Layout.cshtml" />
       <File FileName="Views/Shared/_LoginPartial.cshtml" Line="25" Column="2" />
-      <File FileName="Areas/Identity/IdentityHostingStartup.cs" Line="22" Column="66" />
-      <File FileName="Views/_ViewImports.cshtml" Line="5" Column="43" />
-      <File FileName="Areas/Identity/Pages/Account/Login.cshtml" Line="1" Column="1" />
-      <File FileName="Areas/Identity/Pages/_ViewImports.cshtml" Line="1" Column="1" />
-      <File FileName="Areas/Identity/Pages/_ViewStart.cshtml" Line="1" Column="1" />
-      <File FileName="Areas/Identity/Pages/_ValidationScriptsPartial.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Shared/Error.cshtml" Line="1" Column="1" />
-      <File FileName="Views/Shared/_ValidationScriptsPartial.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/Identity/IdentityHostingStartup.cs" />
+      <File FileName="Views/_ViewImports.cshtml" />
+      <File FileName="Areas/Identity/Pages/Account/Login.cshtml" />
+      <File FileName="Areas/Identity/Pages/_ViewImports.cshtml" />
+      <File FileName="Areas/Identity/Pages/_ViewStart.cshtml" />
+      <File FileName="Areas/Identity/Pages/_ValidationScriptsPartial.cshtml" />
+      <File FileName="Views/Shared/Error.cshtml" />
+      <File FileName="Views/Shared/_ValidationScriptsPartial.cshtml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="OperationDigger" expanded="True">
             <Node name="OperationDigger" expanded="True">
-              <Node name="Areas" expanded="True">
-                <Node name="Identity" expanded="True">
-                  <Node name="Pages" expanded="True">
-                    <Node name="Account" expanded="True" />
-                  </Node>
-                </Node>
-              </Node>
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
-                <Node name="Shared" expanded="True">
-                  <Node name="_LoginPartial.cshtml" selected="True" />
-                </Node>
+                <Node name="Shared" expanded="True" />
               </Node>
             </Node>
           </Node>

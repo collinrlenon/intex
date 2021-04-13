@@ -429,10 +429,6 @@ C:/Users/hayde/Source/Repos/collinrlenon/intex/bin/Debug/net5.0/Microsoft.AspNet
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/ref/OperationDigger.dll
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/OperationDigger.pdb
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/OperationDigger.genruntimeconfig.cache
-/Users/collinrlenon/Projects/intex/bin/Debug/net5.0/EntityFramework.SqlServer.dll
-/Users/collinrlenon/Projects/intex/bin/Debug/net5.0/EntityFramework.dll
-/Users/collinrlenon/Projects/intex/bin/Debug/net5.0/Microsoft.AspNet.Identity.Core.dll
-/Users/collinrlenon/Projects/intex/bin/Debug/net5.0/Microsoft.AspNet.Identity.EntityFramework.dll
 /Users/haydenthomas/Projects/intex/obj/Debug/net5.0/OperationDigger.dll
 /Users/haydenthomas/Projects/intex/obj/Debug/net5.0/ref/OperationDigger.dll
 /Users/haydenthomas/Projects/intex/obj/Debug/net5.0/OperationDigger.pdb

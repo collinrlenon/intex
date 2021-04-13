@@ -15,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Npgsql;
+using OperationDigger.Areas.Identity.Data;
 using OperationDigger.Data;
 using OperationDigger.Models;
 
@@ -43,6 +44,9 @@ namespace OperationDigger
             {
                 opts.UseNpgsql(Configuration.GetConnectionString("OperationDiggerConnection"));
             });
+
+            services.AddDefaultIdentity<OperationDiggerUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<OperationDiggerContext>();
 
             //var connectionString = Configuration.GetConnectionString("OperationDiggerConnection");
             ////MigrationManager.ThrowIfNotApplied(connectionString);
@@ -78,6 +82,7 @@ namespace OperationDigger
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }

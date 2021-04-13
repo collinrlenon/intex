@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/collinrlenon/Projects/intex/OperationDigger.csproj": {}
+    "/Users/haydenthomas/Projects/intex/OperationDigger.csproj": {}
   },
   "projects": {
-    "/Users/collinrlenon/Projects/intex/OperationDigger.csproj": {
+    "/Users/haydenthomas/Projects/intex/OperationDigger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/collinrlenon/Projects/intex/OperationDigger.csproj",
+        "projectUniqueName": "/Users/haydenthomas/Projects/intex/OperationDigger.csproj",
         "projectName": "OperationDigger",
-        "projectPath": "/Users/collinrlenon/Projects/intex/OperationDigger.csproj",
-        "packagesPath": "/Users/collinrlenon/.nuget/packages/",
-        "outputPath": "/Users/collinrlenon/Projects/intex/obj/",
+        "projectPath": "/Users/haydenthomas/Projects/intex/OperationDigger.csproj",
+        "packagesPath": "/Users/haydenthomas/.nuget/packages/",
+        "outputPath": "/Users/haydenthomas/Projects/intex/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/collinrlenon/.config/NuGet/NuGet.Config"
+          "/Users/haydenthomas/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -38,17 +38,13 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Microsoft.AspNet.Identity.EntityFramework": {
-              "target": "Package",
-              "version": "[2.2.3, )"
-            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[5.0.5, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[5.0.5, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -66,13 +62,13 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[5.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[5.0.5, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -109,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -19,8 +19,8 @@ namespace OperationDigger.Areas.Identity
                 //services.AddDbContext<OperationDiggerContext>(options =>
                 //    options.UseNpgsql(Configuration.GetConnectionString("OperationDiggerConnection"));
 
-                services.AddDefaultIdentity<OperationDiggerUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                    .AddEntityFrameworkStores<OperationDiggerContext>();
+                //services.AddDefaultIdentity<OperationDiggerUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                //    .AddEntityFrameworkStores<OperationDiggerContext>();
             });
         }
     }

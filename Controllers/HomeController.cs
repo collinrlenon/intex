@@ -49,11 +49,16 @@ namespace OperationDigger.Controllers
             return View();
         }
 
+        public IActionResult PhotoCollection()
+        {
+            return View();
+        }
+
         // GET method for Burial List view
         public IActionResult BurialList(long? burialId, string gender, string hairColor, int? yearExc, string monthExc, string headDir, string fieldBook, string byuSamp, string skullMag, string sexSkull, string ageSkull, decimal? wtHead, decimal? wtFeet, string burialPres, string burialWrap, string gendMeth, string ageCode, string faceBundle, decimal? burDepth, decimal? stHead, decimal? stFeet, int? Length, string genGe, string searchBox, int pageNum = 1)
         {
-            // Sets the page size to 50
-            int pageSize = 50;
+            // Sets the page size to 30
+            int pageSize = 30;
 
             var BurialListView = new BurialListViewModel
             {

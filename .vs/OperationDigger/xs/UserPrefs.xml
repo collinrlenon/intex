@@ -1,46 +1,30 @@
 ﻿<Properties StartupConfiguration="{93CC3AA0-8FAC-4082-8681-D1C43A9680CF}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/PhotoCollection.cshtml">
     <Files>
-      <File FileName="Views/Home/BurialDetails.cshtml" Line="244" Column="98" />
-      <File FileName="Views/Home/BurialList.cshtml" />
-      <File FileName="Controllers/HomeController.cs" Line="157" Column="10" />
-      <File FileName="Views/Home/CreateBurial.cshtml" />
-      <File FileName="Views/Home/EditBurial.cshtml" />
-      <File FileName="Views/Home/Index.cshtml" />
-      <File FileName="Views/Shared/_Layout.cshtml" />
-      <File FileName="Models/Burial.cs" />
-      <File FileName="Models/ebdbContext.cs" />
-      <File FileName="Components/FilterViewComponent.cs" />
-      <File FileName="Infrastructure/PaginationTagHelpers.cs" />
-      <File FileName="Models/ViewModels/BurialListViewModel.cs" />
-      <File FileName="Models/ViewModels/FilterViewModel.cs" />
-      <File FileName="Views/Shared/Components/Filter/Default.cshtml" />
-      <File FileName="Models/ViewModels/PageNumbering.cs" />
+      <File FileName="Views/Home/BurialDetails.cshtml" Line="34" Column="39" />
+      <File FileName="Views/Home/PhotoCollection.cshtml" Line="43" Column="77" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="14" Column="59" />
+      <File FileName="wwwroot/css/normalize.css" Line="86" Column="1" />
+      <File FileName="wwwroot/css/bootstrap.min.css" Line="5" Column="102197" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="OperationDigger" expanded="True">
             <Node name="OperationDigger" expanded="True">
-              <Node name="Components" expanded="True" />
-              <Node name="Controllers" expanded="True">
-                <Node name="HomeController.cs" selected="True" />
-              </Node>
-              <Node name="Infrastructure" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="ViewModels" expanded="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
-                <Node name="Shared" expanded="True">
-                  <Node name="Components" expanded="True">
-                    <Node name="Filter" expanded="True" />
-                  </Node>
+                <Node name="Home" expanded="True">
+                  <Node name="PhotoCollection.cshtml" selected="True" />
                 </Node>
+                <Node name="Shared" expanded="True" />
               </Node>
               <Node name="wwwroot" expanded="True">
-                <Node name="img" expanded="True" />
+                <Node name="css" expanded="True" />
+                <Node name="scss" expanded="True">
+                  <Node name="gallery" expanded="True" />
+                </Node>
               </Node>
             </Node>
           </Node>

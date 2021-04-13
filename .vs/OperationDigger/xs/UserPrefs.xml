@@ -1,27 +1,26 @@
 ﻿<Properties StartupConfiguration="{93CC3AA0-8FAC-4082-8681-D1C43A9680CF}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/CreateBurial.cshtml">
     <Files>
-      <File FileName="wwwroot/scss/theme/_job-single.scss" Line="13" Column="44" />
-      <File FileName="Views/Home/BurialList.cshtml" />
-      <File FileName="Views/Home/CreateBurial.cshtml" />
+      <File FileName="wwwroot/scss/theme/_job-single.scss" Line="44" Column="1" />
+      <File FileName="Views/Home/BurialList.cshtml" Line="13" Column="29" />
+      <File FileName="Views/Home/CreateBurial.cshtml" Line="14" Column="48" />
       <File FileName="Views/Home/DeleteBurial.cshtml" />
       <File FileName="Views/Home/EditBurial.cshtml" />
       <File FileName="Views/Home/PhotoGallery.cshtml" />
-      <File FileName="buildspec.yml" Line="22" Column="24" />
       <File FileName="OperationDigger.csproj" Line="9" Column="68" />
-      <File FileName="Startup.cs" Line="6" Column="52" />
+      <File FileName="Startup.cs" Line="13" Column="37" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="OperationDigger" expanded="True">
             <Node name="OperationDigger" expanded="True">
-              <Node name="Views" expanded="True" />
-              <Node name="wwwroot" expanded="True">
-                <Node name="assets" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True">
+                  <Node name="CreateBurial.cshtml" selected="True" />
+                </Node>
               </Node>
-              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>

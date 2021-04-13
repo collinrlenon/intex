@@ -1,26 +1,21 @@
 ﻿<Properties StartupConfiguration="{93CC3AA0-8FAC-4082-8681-D1C43A9680CF}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Shared/_Layout.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="buildspec.yml">
     <Files>
       <File FileName="Views/Home/BurialDetails.cshtml" Line="34" Column="39" />
-      <File FileName="Views/Shared/_Layout.cshtml" Line="48" Column="67" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="61" Column="23" />
       <File FileName="wwwroot/css/normalize.css" />
       <File FileName="wwwroot/css/bootstrap.min.css" />
       <File FileName="Controllers/HomeController.cs" />
       <File FileName="wwwroot/css/templatemo-style.css" />
+      <File FileName="buildspec.yml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="OperationDigger" expanded="True">
             <Node name="OperationDigger" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Shared" expanded="True">
-                  <Node name="_Layout.cshtml" selected="True" />
-                </Node>
-              </Node>
-              <Node name="wwwroot" expanded="True" />
+              <Node name="buildspec.yml" selected="True" />
             </Node>
           </Node>
         </State>

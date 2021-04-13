@@ -215,4 +215,4 @@
 /Users/haydenthomas/Projects/intex/obj/Debug/netcoreapp3.1/OperationDigger.dll
 /Users/haydenthomas/Projects/intex/obj/Debug/netcoreapp3.1/OperationDigger.pdb
 /Users/haydenthomas/Projects/intex/obj/Debug/netcoreapp3.1/OperationDigger.genruntimeconfig.cache
-/Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/PhotoCollection.cshtml.g.cs
+/Users/collinrlenon/Projects/intex/obj/Debug/netcoreapp3.1/Razor/Views/Home/PhotoGallery.cshtml.g.cs

@@ -1,12 +1,14 @@
 ﻿<Properties StartupConfiguration="{93CC3AA0-8FAC-4082-8681-D1C43A9680CF}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/PhotoCollection.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="wwwroot/css/templatemo-style.css">
     <Files>
       <File FileName="Views/Home/BurialDetails.cshtml" Line="34" Column="39" />
-      <File FileName="Views/Home/PhotoCollection.cshtml" Line="43" Column="77" />
-      <File FileName="Views/Shared/_Layout.cshtml" Line="14" Column="59" />
-      <File FileName="wwwroot/css/normalize.css" Line="86" Column="1" />
-      <File FileName="wwwroot/css/bootstrap.min.css" Line="5" Column="102197" />
+      <File FileName="Views/Home/PhotoCollection.cshtml" Line="549" Column="8" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="48" Column="67" />
+      <File FileName="wwwroot/css/normalize.css" />
+      <File FileName="wwwroot/css/bootstrap.min.css" />
+      <File FileName="Controllers/HomeController.cs" Line="55" Column="10" />
+      <File FileName="wwwroot/css/templatemo-style.css" Line="498" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,13 +17,13 @@
             <Node name="OperationDigger" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True">
-                  <Node name="PhotoCollection.cshtml" selected="True" />
-                </Node>
+                <Node name="Home" expanded="True" />
                 <Node name="Shared" expanded="True" />
               </Node>
               <Node name="wwwroot" expanded="True">
-                <Node name="css" expanded="True" />
+                <Node name="css" expanded="True">
+                  <Node name="templatemo-style.css" selected="True" />
+                </Node>
                 <Node name="scss" expanded="True">
                   <Node name="gallery" expanded="True" />
                 </Node>

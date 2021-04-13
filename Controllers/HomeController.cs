@@ -49,7 +49,7 @@ namespace OperationDigger.Controllers
             return View();
         }
 
-        public IActionResult PhotoCollection()
+        public IActionResult PhotoGallery()
         {
             return View();
         }

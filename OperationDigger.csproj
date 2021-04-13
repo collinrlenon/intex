@@ -25,5 +25,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\img\" />
+    <Folder Include=".github\" />
+    <Folder Include=".github\workflows\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".github\workflows\buildspec.yml" />
   </ItemGroup>
 </Project>

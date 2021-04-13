@@ -9175,7 +9175,7 @@
       "outputPath": "/Users/collinrlenon/Projects/intex/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/collinrlenon/.nuget/NuGet/NuGet.Config"
+        "/Users/collinrlenon/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

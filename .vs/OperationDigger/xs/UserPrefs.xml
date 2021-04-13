@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{93CC3AA0-8FAC-4082-8681-D1C43A9680CF}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Shared/_LoginPartial.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Shared/Components/Filter/Default.cshtml">
     <Files>
       <File FileName="wwwroot/scss/theme/_job-single.scss" Line="13" Column="44" />
       <File FileName="Views/Home/BurialList.cshtml" />
@@ -12,7 +12,7 @@
       <File FileName="OperationDigger.csproj" />
       <File FileName="Startup.cs" />
       <File FileName="Views/Shared/_Layout.cshtml" />
-      <File FileName="Views/Shared/_LoginPartial.cshtml" Line="25" Column="2" />
+      <File FileName="Views/Shared/_LoginPartial.cshtml" Line="17" Column="5" />
       <File FileName="Areas/Identity/IdentityHostingStartup.cs" />
       <File FileName="Views/_ViewImports.cshtml" />
       <File FileName="Areas/Identity/Pages/Account/Login.cshtml" />
@@ -21,6 +21,7 @@
       <File FileName="Areas/Identity/Pages/_ValidationScriptsPartial.cshtml" />
       <File FileName="Views/Shared/Error.cshtml" />
       <File FileName="Views/Shared/_ValidationScriptsPartial.cshtml" />
+      <File FileName="Views/Shared/Components/Filter/Default.cshtml" Line="7" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -29,7 +30,13 @@
             <Node name="OperationDigger" expanded="True">
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
-                <Node name="Shared" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="Components" expanded="True">
+                    <Node name="Filter" expanded="True">
+                      <Node name="Default.cshtml" selected="True" />
+                    </Node>
+                  </Node>
+                </Node>
               </Node>
             </Node>
           </Node>

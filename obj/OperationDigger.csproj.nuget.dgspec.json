@@ -14,7 +14,7 @@
         "outputPath": "/Users/collinrlenon/Projects/intex/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/collinrlenon/.nuget/NuGet/NuGet.Config"
+          "/Users/collinrlenon/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -38,10 +38,6 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Microsoft.AspNet.Identity.EntityFramework": {
-              "target": "Package",
-              "version": "[2.2.3, )"
-            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.5, )"

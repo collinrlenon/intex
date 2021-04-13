@@ -227,11 +227,7 @@ C:/Users/hayde/Source/Repos/collinrlenon/intex/bin/Debug/net5.0/Microsoft.AspNet
 /Users/collinrlenon/Projects/intex/bin/Debug/net5.0/OperationDigger.pdb
 /Users/collinrlenon/Projects/intex/bin/Debug/net5.0/OperationDigger.Views.dll
 /Users/collinrlenon/Projects/intex/bin/Debug/net5.0/OperationDigger.Views.pdb
-/Users/collinrlenon/Projects/intex/bin/Debug/net5.0/EntityFramework.SqlServer.dll
-/Users/collinrlenon/Projects/intex/bin/Debug/net5.0/EntityFramework.dll
 /Users/collinrlenon/Projects/intex/bin/Debug/net5.0/Humanizer.dll
-/Users/collinrlenon/Projects/intex/bin/Debug/net5.0/Microsoft.AspNet.Identity.Core.dll
-/Users/collinrlenon/Projects/intex/bin/Debug/net5.0/Microsoft.AspNet.Identity.EntityFramework.dll
 /Users/collinrlenon/Projects/intex/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.Internal.dll
 /Users/collinrlenon/Projects/intex/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 /Users/collinrlenon/Projects/intex/bin/Debug/net5.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -406,7 +402,6 @@ C:/Users/hayde/Source/Repos/collinrlenon/intex/bin/Debug/net5.0/Microsoft.AspNet
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Areas/Identity/Pages/_ViewStart.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Pages/Shared/_PageLayout.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/AddNotes.cshtml.g.cs
-/Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/Burial.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/BurialDetails.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/BurialList.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/CreateBurial.cshtml.g.cs

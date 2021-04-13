@@ -3,20 +3,20 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomeController.cs">
     <Files>
       <File FileName="Views/Home/BurialDetails.cshtml" Line="244" Column="98" />
-      <File FileName="Views/Home/BurialList.cshtml" Line="23" Column="11" />
+      <File FileName="Views/Home/BurialList.cshtml" />
       <File FileName="Controllers/HomeController.cs" Line="157" Column="10" />
       <File FileName="Views/Home/CreateBurial.cshtml" />
       <File FileName="Views/Home/EditBurial.cshtml" />
       <File FileName="Views/Home/Index.cshtml" />
       <File FileName="Views/Shared/_Layout.cshtml" />
       <File FileName="Models/Burial.cs" />
-      <File FileName="Models/ebdbContext.cs" Line="21" Column="42" />
-      <File FileName="Components/FilterViewComponent.cs" Line="47" Column="2" />
-      <File FileName="Infrastructure/PaginationTagHelpers.cs" Line="81" Column="56" />
-      <File FileName="Models/ViewModels/BurialListViewModel.cs" Line="9" Column="1" />
-      <File FileName="Models/ViewModels/FilterViewModel.cs" Line="28" Column="47" />
-      <File FileName="Views/Shared/Components/Filter/Default.cshtml" Line="82" Column="7" />
-      <File FileName="Models/ViewModels/PageNumbering.cs" Line="1" Column="1" />
+      <File FileName="Models/ebdbContext.cs" />
+      <File FileName="Components/FilterViewComponent.cs" />
+      <File FileName="Infrastructure/PaginationTagHelpers.cs" />
+      <File FileName="Models/ViewModels/BurialListViewModel.cs" />
+      <File FileName="Models/ViewModels/FilterViewModel.cs" />
+      <File FileName="Views/Shared/Components/Filter/Default.cshtml" />
+      <File FileName="Models/ViewModels/PageNumbering.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

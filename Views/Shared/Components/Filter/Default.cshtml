@@ -4,7 +4,7 @@
 <div id="accordion">
     <div class="card">
         <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
+            <h5 class="mb-0 text-center">
                 <button class="btn btn-link btn-lg" style="color: #F89D29!important;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                     Filter
                 </button>
@@ -52,15 +52,17 @@
                         </div>
                     </div>
                     <br />
-                    <input type="submit" value="Filter" class="btn btn-primary" />
-                    <a asp-action="BurialList" asp-route-id="" class="btn btn-primary">Clear</a>
+                    <div class="text-center" style="justify-content:center!important">
+                        <input type="submit" value="Filter" class="btn btn-primary" />
+                        <a asp-action="BurialList" asp-route-id="" class="btn btn-primary">Clear</a>
+                    </div>
                 }
             </div>
         </div>
     </div>
     <div class="card">
         <div class="card-header" id="headingTwo">
-            <h5 class="mb-0">
+            <h5 class="mb-0 text-center">
                 <button class="btn btn-link btn-lg collapsed" style="color: #F89D29!important;" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     Search
                 </button>
@@ -75,8 +77,10 @@
                             @Html.TextBox("searchBox", "", new { @class = "form-control" })
                         </div>
                     </div>
-                    <button class="btn btn-fill btn-md btn-success" type="submit">Search</button>
-                    <a asp-action="BurialList" asp-route-id="" class="btn btn-primary">Clear</a>
+                    <div class="text-center" style="justify-content:center!important">
+                        <button class="btn btn-fill btn-md btn-success" style="background-color: #F89D29!important;" type="submit">Search</button>
+                        <a asp-action="BurialList" asp-route-id="" class="btn btn-primary">Clear</a>
+                    </div>
                 }
             </div>
         </div>

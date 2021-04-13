@@ -44,19 +44,13 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="CreateBurial">Create Burial</a></li>
-                        <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="BurialList">Burial Summary List</a></li>
-                        <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="PhotoGallery">Photo Gallery</a></li>
                         <li class="nav-item dropdown">
                             <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">More <i class="fas fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" asp-controller="Home" asp-action="AddNotes"> Add Field Notes</a></li>
-                                <li><a class="dropdown-item" asp-controller="Home" asp-action="AddMummy">Add Mummy Information</a></li>
-                                <li><a class="dropdown-item" asp-controller="Home" asp-action="DeleteRecords">Delete Records</a></li>
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="CreateBurial">Create Burial</a></li>
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="BurialList">Burial Summary List</a></li>
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="PhotoGallery">Photo Gallery</a></li>
                                 <li><a class="dropdown-item" asp-controller="Home" asp-action="ManageUsers">Manage User Accounts</a></li>
-                                <li><a class="dropdown-item" asp-controller="Home" asp-action="UploadPhotos">Upload Photos</a></li>
-                                <li><a class="dropdown-item" asp-controller="Home" asp-action="UploadNotes">Upload Notes</a></li>
-                                <li><a class="dropdown-item" asp-controller="Home" asp-action="UploadBooks">Upload Books</a></li>
                             </ul>
                         </li><!--//dropdown-->
                         <partial name="_LoginPartial" />
@@ -91,13 +85,13 @@
                     <div class="footer-col-inner">
                         <h3 class="col-title">More</h3>
                         <ul class="footer-menu list-unstyled">
-                            <li><a  class="text-link" asp-controller="Home" asp-action="AddNotes">Add Field Notes</a></li>
-                            <li><a  class="text-link" asp-controller="Home" asp-action="AddMummy">Add Mummy Information</a></li>
-                            <li><a  class="text-link" asp-controller="Home" asp-action="DeleteRecords">Delete Records</a></li>
-                            <li><a  class="text-link" asp-controller="Home" asp-action="ManageUsers">Manage User Accounts</a></li>
-                            <li><a  class="text-link" asp-controller="Home" asp-action="UploadPhotos">Upload Photos</a></li>
-                            <li><a  class="text-link" asp-controller="Home" asp-action="UploadNotes">Upload Notes</a></li>
-                            <li><a  class="text-link" asp-controller="Home" asp-action="UploadBooks">Upload Books</a></li>
+                            <li><a class="text-link" asp-controller="Home" asp-action="AddNotes">Add Field Notes</a></li>
+                            <li><a class="text-link" asp-controller="Home" asp-action="AddMummy">Add Mummy Information</a></li>
+                            <li><a class="text-link" asp-controller="Home" asp-action="DeleteRecords">Delete Records</a></li>
+                            <li><a class="text-link" asp-controller="Home" asp-action="ManageUsers">Manage User Accounts</a></li>
+                            <li><a class="text-link" asp-controller="Home" asp-action="UploadPhotos">Upload Photos</a></li>
+                            <li><a class="text-link" asp-controller="Home" asp-action="UploadNotes">Upload Notes</a></li>
+                            <li><a class="text-link" asp-controller="Home" asp-action="UploadBooks">Upload Books</a></li>
                         </ul>
                     </div>
                 </div><!--//footer-col-->

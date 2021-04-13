@@ -401,7 +401,6 @@ C:/Users/hayde/Source/Repos/collinrlenon/intex/bin/Debug/net5.0/Microsoft.AspNet
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Areas/Identity/Pages/_ViewImports.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Areas/Identity/Pages/_ViewStart.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Pages/Shared/_PageLayout.cshtml.g.cs
-/Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/AddNotes.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/BurialDetails.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/BurialList.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/CreateBurial.cshtml.g.cs
@@ -410,9 +409,6 @@ C:/Users/hayde/Source/Repos/collinrlenon/intex/bin/Debug/net5.0/Microsoft.AspNet
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/Index.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/ManageUsers.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/PhotoGallery.cshtml.g.cs
-/Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/UploadBooks.cshtml.g.cs
-/Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/UploadNotes.cshtml.g.cs
-/Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/UploadPhotos.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Shared/Components/Filter/Default.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Shared/Components/NavigationMenu/Default.cshtml.g.cs
 /Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Shared/Error.cshtml.g.cs

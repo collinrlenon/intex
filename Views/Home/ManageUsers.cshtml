@@ -1,82 +1,98 @@
 ﻿@model IQueryable<OperationDiggerUser>
+
 @inject UserManager<OperationDiggerUser> _userManager
+
 @{
     ViewData["Title"] = "Manage Users";
 }
-<section class="heading-section section section-on-bg">
-    <div class="hero-wrapper">
-        <div class="list-hero-holder"></div>
-        <div class="hero-mask-gradient"></div>
-    </div><!--//hero-wrapper-->
-    <div class="container heading-content">
-        <h2 class="headline">@ViewData["Title"]</h2>
-        <div class="meta">See details below</div>
-    </div><!--//container-->
-</section><!--//heading-section-->
-<br />
-<table class="table" id="myTable">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col" class="text-dark">User Id</th>
-            <th scope="col" class="text-dark">User Name</th>
-            <th scope="col" class="text-dark">Email</th>
-            <th scope="col" class="text-dark">Phone</th>
-            <th scope="col" class="text-dark">Approve</th>
-            <th scope="col" class="text-dark">Revoke</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var x in Model)
-        {
-            var roleList = await _userManager.GetRolesAsync(x);
-            string rolesDisplay = "";
-            if (roleList.Count != 0)
-            {
-                foreach (var role in roleList)
+
+
+<body class="job-single-page">
+    <section class="heading-section section section-on-bg">
+        <div class="hero-wrapper">
+            <div class="hero-holder"></div>
+            <div class="hero-mask-gradient"></div>
+        </div><!--//hero-wrapper-->
+        <div class="container heading-content">
+            <h2 class="headline">@ViewData["Title"]</h2>
+            <div class="meta">See details below</div>
+        </div><!--//container-->
+    </section><!--//heading-section-->
+
+
+
+    <div class="m-5">
+
+
+        <table class="table" id="myTable">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" class="text-dark">User Id</th>
+                    <th scope="col" class="text-dark">User Name</th>
+                    <th scope="col" class="text-dark">Email</th>
+                    <th scope="col" class="text-dark">Phone</th>
+                    <th scope="col" class="text-dark">Approve</th>
+                    <th scope="col" class="text-dark">Revoke</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model)
                 {
-                    rolesDisplay += role + ", ";
+                    var roleList = await _userManager.GetRolesAsync(x);
+                    string rolesDisplay = "";
+                    if (roleList.Count != 0)
+                    {
+                        foreach (var role in roleList)
+                        {
+                            rolesDisplay += role + ", ";
+                        }
+                        rolesDisplay = rolesDisplay.Substring(0, rolesDisplay.Length - 2);
+                    }
+                    else
+                    {
+                        rolesDisplay = "None";
+                    }
+                    <tr>
+                        <td class="text-dark">@x.Id</td>
+                        <td class="text-dark">@x.UserName</td>
+                        <td class="text-dark">@x.Email</td>
+                        <td class="text-dark">@x.PhoneNumber</td>
+
+                        <td>
+                            @if (roleList.Contains("User"))
+                            {
+                                @Html.ActionLink("Approve", "ApproveResearcher", "Home", new { userId = x.Id })
+                            }
+                            else
+                            {
+                                <span>No approval needed</span>
+                            }
+                        </td>
+                        <td>
+                            @if (roleList.Contains("Researcher"))
+                            {
+                                @Html.ActionLink("Revoke", "RevokeResearcher", "Home", new { userId = x.Id })
+                            }
+                            else
+                            {
+                                <span>No permissions to revoke</span>
+                            }
+                        </td>
+                    </tr>
                 }
-                rolesDisplay = rolesDisplay.Substring(0, rolesDisplay.Length - 2);
-            }
-            else
-            {
-                rolesDisplay = "None";
-            }
-            <tr>
-                <td class="text-dark">@x.Id</td>
-                <td class="text-dark">@x.UserName</td>
-                <td class="text-dark">@x.Email</td>
-                <td class="text-dark">@x.PhoneNumber</td>
-
-                <td>
-                    @if (roleList.Contains("User"))
-                    {
-                        @Html.ActionLink("Approve", "ApproveResearcher", "Home", new { userId = x.Id })
-                    }
-                    else
-                    {
-                        <span>No approval needed</span>
-                    }
-                </td>
-                <td>
-                    @if (roleList.Contains("Researcher"))
-                    {
-                        @Html.ActionLink("Revoke", "RevokeResearcher", "Home", new { userId = x.Id })
-                    }
-                    else
-                    {
-                        <span>No permissions to revoke</span>
-                    }
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-<div class="m-2">
-    <form method="post" asp-action="AddUser">
-        <button type="submit" class="btn btn-warning">Add New User</button>
-    </form>
-</div>
+            </tbody>
+        </table>
+        <div class="m-2">
+            <form method="post" asp-action="AddUser">
+                <button type="submit" class="btn btn-warning" style="font-size:medium!important">Add New User</button>
+            </form>
+        </div>
 
 
-
+        <!-- Javascript -->
+        <script src="assets/plugins/popper.min.js"></script>
+        <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/plugins/vanilla-back-to-top.min.js"></script>
+        <script src="assets/plugins/smoothscroll.min.js"></script>
+        <script src="assets/js/main.js"></script>
+</body>

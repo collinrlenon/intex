@@ -1,50 +1,65 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-    @model IEnumerable<OperationDigger.Models.MainModel>
-*@
-
+﻿@model IQueryable<OperationDiggerUser>
+@inject UserManager<OperationDiggerUser> _userManager
 @{
     ViewData["Title"] = "Manage Users";
 }
-
-
 
 <table class="table" id="myTable">
     <thead class="thead-dark">
         <tr>
             <th scope="col" class="text-dark">User Id</th>
-            <th scope="col" class="text-dark">Name</th>
-            <th scope="col" class="text-dark">Address</th>
+            <th scope="col" class="text-dark">User Name</th>
             <th scope="col" class="text-dark">Email</th>
             <th scope="col" class="text-dark">Phone</th>
-
-            <th scope="col" class="text-dark"></th>
-            <th scope="col" class="text-dark"></th>
+            <th scope="col" class="text-dark">Approve</th>
+            <th scope="col" class="text-dark">Revoke</th>
         </tr>
     </thead>
     <tbody>
-</table>
-@*  @foreach (MainModel x in Model)
-                {
-                    <tr>
-                        <td class="text-light">@x.UserId</td>
-                        <td class="text-light">@x.Name</td>
-                        <td class="text-light">@x.Email</td>
-                        <td class="text-light">@x.Address</td>
+  @foreach (var x in Model)
+  {
+      var roleList = await _userManager.GetRolesAsync(x);
+      string rolesDisplay = "";
+      if (roleList.Count != 0)
+      {
+          foreach (var role in roleList)
+          {
+              rolesDisplay += role + ", ";
+          }
+          rolesDisplay = rolesDisplay.Substring(0, rolesDisplay.Length - 2);
+      }
+      else
+      {
+          rolesDisplay = "None";
+      }
+    <tr>
+        <td class="text-light">@x.Id</td>
+        <td class="text-light">@x.UserName</td>
+        <td class="text-light">@x.Email</td>
+        <td class="text-light">@x.PhoneNumber</td>
 
-                        <td>
-                            <form method="post" asp-action="Edit" id="@x.UserId">
-                                <input type="hidden" value="@x.UserId" name="id" />
-                                <button type="submit" class="btn btn-warning">Edit User</button>
-                            </form>
-                        </td>
-                        <td>
-                            <form method="post" asp-action="Delete" asp-route-id="@x.UserId">
-                                <button type="submit" class="btn btn-danger">Delete User</button>
-                            </form>
-                        </td>
-                    </tr>
+        <td>
+            @if (roleList.Contains("User"))
+                {
+                    @Html.ActionLink("Approve", "ApproveResearcher", "Home", new { userId = x.Id })
                 }
+                else
+                {
+                    <span>No approval needed</span>
+                }
+        </td>
+        <td>
+            @if (roleList.Contains("Researcher"))
+            {
+                @Html.ActionLink("Revoke", "RevokeResearcher", "Home", new { userId = x.Id })
+            }
+            else
+            {
+                <span>No permissions to revoke</span>
+            }
+        </td>
+    </tr>
+}
             </tbody>
         </table>
         <div class="m-2">
@@ -53,5 +68,5 @@
             </form>
         </div>
 
-    *@
+    
 

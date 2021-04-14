@@ -42,18 +42,12 @@ namespace OperationDigger
 
             services.AddDbContext<OperationDiggerContext>(opts =>
             {
-                opts.UseNpgsql(Configuration.GetConnectionString("OperationDiggerConnection"));
+                opts.UseNpgsql(Configuration.GetConnectionString("OpsDiggConnection"));
             });
 
+
             services.AddDefaultIdentity<OperationDiggerUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<OperationDiggerContext>();
-
-            //var connectionString = Configuration.GetConnectionString("OperationDiggerConnection");
-            ////MigrationManager.ThrowIfNotApplied(connectionString);
-            //services.AddSingleton<DbConnection, NpgsqlConnection>(provider => new NpgsqlConnection(connectionString));
-
-            //services.AddTransient<IUserStore<IdentityUser<long>>, UserStore>();
-            //services.AddTransient<IRoleStore<IdentityRole<long>>, RoleStore>();
+                .AddRoles<IdentityRole>().AddEntityFrameworkStores<OperationDiggerContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -33,11 +33,6 @@ namespace OperationDigger.Controllers
             return View();
         }
 
-        public IActionResult AddNotes()
-        {
-            return View();
-        }
-
         public IActionResult ResearchBlog()
         {
             return View();
@@ -87,21 +82,6 @@ namespace OperationDigger.Controllers
         public IActionResult ViewUser(string userId)
         {
             return View(_userManager.Users.Where(u => u.Id == userId).FirstOrDefault());
-        }
-
-        public IActionResult UploadBooks()
-        {
-            return View();
-        }
-
-        public IActionResult UploadNotes()
-        {
-            return View();
-        }
-
-        public IActionResult UploadPhotos()
-        {
-            return View();
         }
 
         public IActionResult PhotoGallery()
@@ -247,11 +227,9 @@ namespace OperationDigger.Controllers
         {
             if (ModelState.IsValid)
             {
-
-                int currentID = burial.BurialId;
-
                 _context.Add(burial);
                 _context.SaveChanges();
+
                 return RedirectToAction("BurialList");
             }
             return View(burial);

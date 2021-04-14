@@ -3,12 +3,12 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/PhotoGallery.cshtml">
     <Files>
       <File FileName="Areas/Identity/Pages/Account/Login.cshtml" Line="37" Column="52" />
-      <File FileName="Views/Home/CreateBurial.cshtml" Line="954" Column="59" />
-      <File FileName="Models/Burial.cs" Line="110" Column="29" />
-      <File FileName="Views/Home/EditBurial.cshtml" Line="948" Column="23" />
-      <File FileName="Views/Shared/_Layout.cshtml" Line="55" Column="55" />
-      <File FileName="Views/Home/Index.cshtml" Line="28" Column="159" />
-      <File FileName="Controllers/HomeController.cs" Line="274" Column="1" />
+      <File FileName="Views/Home/CreateBurial.cshtml" />
+      <File FileName="Models/Burial.cs" />
+      <File FileName="Views/Home/EditBurial.cshtml" />
+      <File FileName="Views/Shared/_Layout.cshtml" />
+      <File FileName="Views/Home/Index.cshtml" />
+      <File FileName="Controllers/HomeController.cs" />
       <File FileName="Views/Home/PhotoGallery.cshtml" Line="18" Column="28" />
     </Files>
     <Pads>

@@ -3,7 +3,9 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Views/Shared/_Layout.cshtml">
     <Files>
       <File FileName="Views/Home/ManageUsers.cshtml" Line="87" Column="96" />
-      <File FileName="Views/Shared/_Layout.cshtml" Line="51" Column="60" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="99" Column="48" />
+      <File FileName="Views/Home/CreateBurial.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Home/EditBurial.cshtml" Line="24" Column="40" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,6 +13,7 @@
           <Node name="OperationDigger" expanded="True">
             <Node name="OperationDigger" expanded="True">
               <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
                 <Node name="Shared" expanded="True">
                   <Node name="_Layout.cshtml" selected="True" />
                 </Node>

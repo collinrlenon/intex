@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 //using Microsoft.AspNet.Identity.EntityFramework;
 //using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
@@ -48,6 +49,13 @@ namespace OperationDigger
 
             services.AddDefaultIdentity<OperationDiggerUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>().AddEntityFrameworkStores<OperationDiggerContext>();
+
+            //services.AddAuthorization(options =>
+            //{
+            //    options.FallbackPolicy = new AuthorizationPolicyBuilder()
+            //        .RequireAuthenticatedUser()
+            //        .Build();
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

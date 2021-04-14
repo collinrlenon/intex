@@ -9,39 +9,57 @@
         height: 360px;
     }
 
-    .create-hero-holder {
-        background: $text-color-primary url('../images/hero/create.jpg') no-repeat 50% 50%;
-        @include background-size(cover);
+    .job-single-page .create-hero-holder {
+        background: #35373C url("../images/hero/create.jpg") no-repeat 50% 50%;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         height: 360px;
     }
 
-    .list-hero-holder {
-        background: $text-color-primary url('../images/hero/list.jpg') no-repeat 50% 50%;
-        @include background-size(cover);
+    .job-single-page .list-hero-holder {
+        background: #35373C url("../images/hero/list.jpg") no-repeat 50% 50%;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         height: 360px;
     }
 
-    .edit-hero-holder {
-        background: $text-color-primary url('../images/hero/edit.jpg') no-repeat 50% 50%;
-        @include background-size(cover);
+    .job-single-page .edit-hero-holder {
+        background: #35373C url("../images/hero/edit.jpg") no-repeat 50% 50%;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         height: 360px;
     }
 
-    .delete-hero-holder {
-        background: $text-color-primary url('../images/hero/delete.jpg') no-repeat 50% 50%;
-        @include background-size(cover);
+    .job-single-page .delete-hero-holder {
+        background: #35373C url("../images/hero/delete.jpg") no-repeat 50% 50%;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         height: 360px;
     }
 
-    .photo-hero-holder {
-        background: $text-color-primary url('../images/hero/photo.jpg') no-repeat 50% 50%;
-        @include background-size(cover);
+    .job-single-page .details-hero-holder {
+        background: #35373C url("../images/hero/details.jpg") no-repeat 50% 50%;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         height: 360px;
     }
 
-    .details-hero-holder {
-        background: $text-color-primary url('../images/hero/details.jpg') no-repeat 50% 50%;
-        @include background-size(cover);
+    .job-single-page .photo-hero-holder {
+        background: #35373C url("../images/hero/photo.jpg") no-repeat 50% 50%;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         height: 360px;
     }
 

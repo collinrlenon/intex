@@ -9163,26 +9163,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hayde\\.nuget\\packages\\": {}
+    "/Users/haydenthomas/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hayde\\Source\\Repos\\collinrlenon\\intex\\OperationDigger.csproj",
+      "projectUniqueName": "/Users/haydenthomas/Projects/intex/OperationDigger.csproj",
       "projectName": "OperationDigger",
-      "projectPath": "C:\\Users\\hayde\\Source\\Repos\\collinrlenon\\intex\\OperationDigger.csproj",
-      "packagesPath": "C:\\Users\\hayde\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hayde\\Source\\Repos\\collinrlenon\\intex\\obj\\",
+      "projectPath": "/Users/haydenthomas/Projects/intex/OperationDigger.csproj",
+      "packagesPath": "/Users/haydenthomas/.nuget/packages/",
+      "outputPath": "/Users/haydenthomas/Projects/intex/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\hayde\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/haydenthomas/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -9268,7 +9266,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
       }
     }
   }

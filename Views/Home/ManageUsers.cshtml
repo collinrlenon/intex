@@ -3,7 +3,17 @@
 @{
     ViewData["Title"] = "Manage Users";
 }
-
+<section class="heading-section section section-on-bg">
+    <div class="hero-wrapper">
+        <div class="list-hero-holder"></div>
+        <div class="hero-mask-gradient"></div>
+    </div><!--//hero-wrapper-->
+    <div class="container heading-content">
+        <h2 class="headline">@ViewData["Title"]</h2>
+        <div class="meta">See details below</div>
+    </div><!--//container-->
+</section><!--//heading-section-->
+<br />
 <table class="table" id="myTable">
     <thead class="thead-dark">
         <tr>
@@ -16,57 +26,57 @@
         </tr>
     </thead>
     <tbody>
-  @foreach (var x in Model)
-  {
-      var roleList = await _userManager.GetRolesAsync(x);
-      string rolesDisplay = "";
-      if (roleList.Count != 0)
-      {
-          foreach (var role in roleList)
-          {
-              rolesDisplay += role + ", ";
-          }
-          rolesDisplay = rolesDisplay.Substring(0, rolesDisplay.Length - 2);
-      }
-      else
-      {
-          rolesDisplay = "None";
-      }
-    <tr>
-        <td class="text-light">@x.Id</td>
-        <td class="text-light">@x.UserName</td>
-        <td class="text-light">@x.Email</td>
-        <td class="text-light">@x.PhoneNumber</td>
-
-        <td>
-            @if (roleList.Contains("User"))
-                {
-                    @Html.ActionLink("Approve", "ApproveResearcher", "Home", new { userId = x.Id })
-                }
-                else
-                {
-                    <span>No approval needed</span>
-                }
-        </td>
-        <td>
-            @if (roleList.Contains("Researcher"))
+        @foreach (var x in Model)
+        {
+            var roleList = await _userManager.GetRolesAsync(x);
+            string rolesDisplay = "";
+            if (roleList.Count != 0)
             {
-                @Html.ActionLink("Revoke", "RevokeResearcher", "Home", new { userId = x.Id })
+                foreach (var role in roleList)
+                {
+                    rolesDisplay += role + ", ";
+                }
+                rolesDisplay = rolesDisplay.Substring(0, rolesDisplay.Length - 2);
             }
             else
             {
-                <span>No permissions to revoke</span>
+                rolesDisplay = "None";
             }
-        </td>
-    </tr>
-}
-            </tbody>
-        </table>
-        <div class="m-2">
-            <form method="post" asp-action="AddUser">
-                <button type="submit" class="btn btn-warning">Add New User</button>
-            </form>
-        </div>
+            <tr>
+                <td class="text-dark">@x.Id</td>
+                <td class="text-dark">@x.UserName</td>
+                <td class="text-dark">@x.Email</td>
+                <td class="text-dark">@x.PhoneNumber</td>
 
-    
+                <td>
+                    @if (roleList.Contains("User"))
+                    {
+                        @Html.ActionLink("Approve", "ApproveResearcher", "Home", new { userId = x.Id })
+                    }
+                    else
+                    {
+                        <span>No approval needed</span>
+                    }
+                </td>
+                <td>
+                    @if (roleList.Contains("Researcher"))
+                    {
+                        @Html.ActionLink("Revoke", "RevokeResearcher", "Home", new { userId = x.Id })
+                    }
+                    else
+                    {
+                        <span>No permissions to revoke</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="m-2">
+    <form method="post" asp-action="AddUser">
+        <button type="submit" class="btn btn-warning">Add New User</button>
+    </form>
+</div>
+
+
 

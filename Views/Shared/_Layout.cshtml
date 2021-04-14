@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@inject SignInManager<OperationDiggerUser> _signInManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>@ViewData["Title"] - OperationDigger</title>
@@ -13,7 +15,7 @@
     <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="~/lib/fontawesome/css/all.min.css" />
     @*<link rel="stylesheet" href="~/css/slider.css" />
-    <link rel="stylesheet" href="~/js/slider.js" />*@
+        <link rel="stylesheet" href="~/js/slider.js" />*@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -33,7 +35,7 @@
     <header id="header" class="header">
         <div class="container">
             <h1 class="logo">
-                <a asp-controller="Home" asp-action="Index"><img src="~/assets/images/mummy.png" alt="" width="50px"><span class="text">Fag el-Gamous</span></a>
+                <a asp-controller="Home" asp-action="Index"><img src="~/assets/images/mummy.png" alt="" width="40"><span class="text">Fag el-Gamous</span></a>
             </h1><!--//logo-->
             <nav class="main-nav navbar navbar-right navbar-expand-md">
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse">
@@ -44,15 +46,32 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a class="nav-item" asp-controller="Home" asp-action="ManageUsers">Manage User Accounts</a></li>
+                        @if (_signInManager.IsSignedIn(User) && User.IsInRole("Researcher") || User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="CreateBurial">Create Burial</a></li>
+                        }
+                        <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="BurialList">Burial Summary List</a></li>
+                        <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="PhotoGallery">Photo Gallery</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">More <i class="fas fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="ResearchBlog">Research Blog</a></li>
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="SupportPage">Support</a></li>
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="AboutUs">About Us</a></li>
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="ContactUs">Contact Us</a></li>
+                                @if (_signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                                {
+                                    <li><a class="dropdown-item" asp-controller="Home" asp-action="ManageUsers">Manage Users</a></li>
+                                }
+                            </ul>
+                        </li><!--//dropdown-->
                         <partial name="_LoginPartial" />
-                        <li class="nav-item"><a class="nav-link login-trigger" href="#" data-bs-toggle="modal" data-bs-target="#login-modal">Log in</a></li>
-                        <li class="nav-item nav-item-cta last"><a class="btn-signup" href="#" data-bs-toggle="modal" data-bs-target="#signup-modal">Sign Up</a></li>
                     </ul><!--//nav-->
                 </div><!--//navabr-collapse-->
             </nav><!--//main-nav-->
         </div><!--//container-->
     </header><!--//header-->
+
 
     <div class="container-xxl">
         <main>
@@ -68,9 +87,8 @@
                     <div class="footer-col-inner">
                         <h3 class="col-title">About</h3>
                         <ul class="footer-menu list-unstyled">
-                            <li><a class="text-link" asp-controller="Home" asp-action="#">Our Team</a><span class="badge bg-success">Hire Us!</span></li> 
-                            <li><a class="text-link" asp-controller="Home" asp-action="#">Contact Us</a></li>
-                            <li><a class="text-link" asp-controller="Home" asp-action="#">Published Research</a></li>
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="ResearchBlog">Research Blog</a></li>
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="AboutUs">About Us</a></li>
                         </ul>
                     </div><!--//footer-col-inner-->
                 </div><!--//footer-col-->
@@ -79,11 +97,14 @@
                         <h3 class="col-title">Upload Links</h3>
                         <ul class="footer-menu list-unstyled">
                             <li><a class="text-link" asp-controller="Home" asp-action="Burial">Burial Summary List & Records</a></li>
-                            <li><a class="text-link" asp-controller="Home" asp-action="AddNotes">Add Field Notes</a></li>
-                            <li><a class="text-link" asp-controller="Home" asp-action="UploadPhotos">Upload Photos</a></li>
-                            <li><a class="text-link" asp-controller="Home" asp-action="UploadNotes">Upload Notes</a></li>
-                            <li><a class="text-link" asp-controller="Home" asp-action="UploadBooks">Upload Books</a></li>
-                            <li><a class="text-link" asp-controller="Home" asp-action="ManageUsers">Manage User Accounts</a></li>
+                            @if (_signInManager.IsSignedIn(User) && User.IsInRole("Researcher") || User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="CreateBurial">Create Burial</a></li>
+                            }
+                            @if (_signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                            {
+                                <li><a class="text-link" asp-controller="Home" asp-action="ManageUsers">Manage User Accounts</a></li>
+                            }
                         </ul>
                     </div>
                 </div><!--//footer-col-->
@@ -93,8 +114,8 @@
                         <ul class="footer-menu list-unstyled">
                             <li><a class="text-link" href="#">Sign up</a></li>
                             <li><a class="text-link" href="#">Login</a></li>
-                            <li><a class="text-link" href="#">FAQs</a></li>
-                            <li><a class="text-link" href="#">Support</a></li>
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="ContactUs">Contact Us</a></li>
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="SupportPage">Support</a></li>
 
                         </ul>
                     </div>
@@ -120,7 +141,7 @@
                     <li class="list-inline-item"><a href="https://vimeo.com/byuanimation" target="_blank"><i class="fab fa-vimeo-v"></i></a></li>
                 </ul>
 
-                <small class="copyright">&#169;BYU 2021 | Intex Group 2-2 | Audrey Chigarira | Hayden Thomas | Collin Lenon | Garrett Farnsworth</small>
+                <small class="copyright">&#169;BYU 2021 | Intex Group 2-2 | Audrey Chigarira | Collin Lenon | Hayden Thomas | Garrett Farnsworth</small>
             </div>
         </div><!--//container-->
     </footer><!--//footer-->
@@ -134,143 +155,144 @@
                 </div>
                 <div class="modal-body">
                     <div class="video-container ratio ratio-16x9">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Dtw2vfKihXA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                </div><!--//modal-body-->
-            </div><!--//modal-content-->
-        </div><!--//modal-dialog-->
-    </div><!--//modal-->
-    <!-- Login Modal -->
-    <div class="modal modal-auth modal-login" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 id="loginModalLabel" class="modal-title text-center">Log in to your account</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="social-login text-center">
-                        <ul class="social-buttons list-unstyled">
-                            <li><a href="#" class="btn btn-social btn-google w-100"><span class="icon-holder"><i class="fab fa-google"></i></span><span class="btn-text">Log in with Google</span></a></li>
-                            <li><a href="#" class="btn btn-social btn-facebook w-100"><span class="icon-holder"><i class="fab fa-facebook-f"></i></span><span class="btn-text">Log in with Facebook</span></a></li>
-                        </ul>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Dtw2vfKihXA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div><!--//modal-body-->
+                </div><!--//modal-content-->
+            </div><!--//modal-dialog-->
+        </div><!--//modal-->
+        <!-- Login Modal -->
+        <div class="modal modal-auth modal-login" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 id="loginModalLabel" class="modal-title text-center">Log in to your account</h4>
                     </div>
-                    <div class="divider">
-                        <span class="or-text">OR</span>
+                    <div class="modal-body">
+                        <div class="social-login text-center">
+                            <ul class="social-buttons list-unstyled">
+                                <li><a href="#" class="btn btn-social btn-google w-100"><span class="icon-holder"><i class="fab fa-google"></i></span><span class="btn-text">Log in with Google</span></a></li>
+                                <li><a href="#" class="btn btn-social btn-facebook w-100"><span class="icon-holder"><i class="fab fa-facebook-f"></i></span><span class="btn-text">Log in with Facebook</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="divider">
+                            <span class="or-text">OR</span>
+                        </div>
+                        <div class="login-form-container">
+                            <form class="login-form">
+                                <div class="form-item email">
+                                    <i class="material-icons icon">&#xE0BE;</i>
+                                    <label class="sr-only" for="login-email">Email</label>
+                                    <input id="login-email" name="login-email" type="email" class="form-control login-email" placeholder="Email">
+                                </div>
+                                <div class="form-item password">
+                                    <i class="material-icons icon">&#xE897;</i>
+                                    <label class="sr-only" for="login-password">Password</label>
+                                    <input id="login-password" name="login-password" type="password" class="form-control login-password" placeholder="Password">
+                                    <div class="extra">
+
+                                        <div class="form-check remember">
+                                            <input class="form-check-input" type="checkbox" value="" id="RememberPassword">
+                                            <label class="form-check-label" for="RememberPassword">
+                                                Remember me
+                                            </label>
+                                        </div>
+                                        <div class="forgotten-password">
+                                            <a href="#" id="resetpass-link" data-bs-toggle="modal" data-bs-target="#resetpass-modal">Forgotten password?</a>
+                                        </div>
+                                    </div><!--//extra-->
+                                </div>
+                                <button type="submit" class="btn btn-cta w-100 btn-primary">Log in</button>
+                            </form>
+                        </div><!--//login-form-container-->
+
+                        <div class="option-container">
+                            <div class="lead-text">Don't have an account?</div>
+                            <a class="signup-link btn btn-ghost-alt" id="signup-link" href="#">Sign Up</a>
+                        </div><!--//option-container-->
+                    </div><!--//modal-body-->
+
+                </div><!--//modal-content-->
+            </div><!--//modal-dialog-->
+        </div><!--//modal-->
+        <!-- Signup Modal -->
+        <div class="modal modal-auth modal-signup" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 id="signupModalLabel" class="modal-title text-center">Sign up to start your 30 day free trial!</h4>
                     </div>
-                    <div class="login-form-container">
-                        <form class="login-form">
-                            <div class="form-item email">
-                                <i class="material-icons icon">&#xE0BE;</i>
-                                <label class="sr-only" for="login-email">Email</label>
-                                <input id="login-email" name="login-email" type="email" class="form-control login-email" placeholder="Email">
-                            </div>
-                            <div class="form-item password">
-                                <i class="material-icons icon">&#xE897;</i>
-                                <label class="sr-only" for="login-password">Password</label>
-                                <input id="login-password" name="login-password" type="password" class="form-control login-password" placeholder="Password">
-                                <div class="extra">
+                    <div class="modal-body">
+                        <div class="social-login text-center">
+                            <ul class="social-buttons list-unstyled">
+                                <li><a href="#" class="btn btn-social btn-google w-100"><span class="icon-holder"><i class="fab fa-google"></i></span><span class="btn-text">Sign up with Google</span></a></li>
+                                <li><a href="#" class="btn btn-social btn-facebook w-100"><span class="icon-holder"><i class="fab fa-facebook-f"></i></span><span class="btn-text">Sign up with Facebook</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="divider">
+                            <span class="or-text">OR</span>
+                        </div>
+                        <div class="login-form-container">
+                            <form class="login-form">
+                                <div class="form-item full-name">
+                                    <i class="material-icons icon">&#xE7FD;</i>
+                                    <label class="sr-only" for="signup-fullname">Your Full Name</label>
+                                    <input id="signup-fullname" name="signup-fullname" type="text" class="form-control signup-email" placeholder="Your Full Name">
+                                </div>
+                                <div class="form-item email">
+                                    <i class="material-icons icon">&#xE0BE;</i>
+                                    <label class="sr-only" for="signup-email">Your Email</label>
+                                    <input id="signup-email" name="signup-email" type="email" class="form-control signup-email" placeholder="Your Email">
+                                </div>
+                                <div class="form-item password">
+                                    <i class="material-icons icon">&#xE897;</i>
+                                    <label class="sr-only" for="signup-password">Create a Password</label>
+                                    <input id="signup-password" name="signup-password" type="password" class="form-control signup-password" placeholder="Create a Password">
+                                </div>
+                                <div class="legal-note">By signing up, you agree to our terms of services and privacy policy.</div>
+                                <button type="submit" class="btn w-100 btn-primary btn-cta">Sign up</button>
 
-                                    <div class="form-check remember">
-                                        <input class="form-check-input" type="checkbox" value="" id="RememberPassword">
-                                        <label class="form-check-label" for="RememberPassword">
-                                            Remember me
-                                        </label>
-                                    </div>
-                                    <div class="forgotten-password">
-                                        <a href="#" id="resetpass-link" data-bs-toggle="modal" data-bs-target="#resetpass-modal">Forgotten password?</a>
-                                    </div>
-                                </div><!--//extra-->
-                            </div>
-                            <button type="submit" class="btn btn-cta w-100 btn-primary">Log in</button>
-                        </form>
-                    </div><!--//login-form-container-->
-
-                    <div class="option-container">
-                        <div class="lead-text">Don't have an account?</div>
-                        <a class="signup-link btn btn-ghost-alt" id="signup-link" href="#">Sign Up</a>
-                    </div><!--//option-container-->
-                </div><!--//modal-body-->
-
-            </div><!--//modal-content-->
-        </div><!--//modal-dialog-->
-    </div><!--//modal-->
-    <!-- Signup Modal -->
-    <div class="modal modal-auth modal-signup" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 id="signupModalLabel" class="modal-title text-center">Sign up to start your 30 day free trial!</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="social-login text-center">
-                        <ul class="social-buttons list-unstyled">
-                            <li><a href="#" class="btn btn-social btn-google w-100"><span class="icon-holder"><i class="fab fa-google"></i></span><span class="btn-text">Sign up with Google</span></a></li>
-                            <li><a href="#" class="btn btn-social btn-facebook w-100"><span class="icon-holder"><i class="fab fa-facebook-f"></i></span><span class="btn-text">Sign up with Facebook</span></a></li>
-                        </ul>
+                            </form>
+                        </div><!--//login-form-container-->
+                        <div class="option-container">
+                            <div class="lead-text">Already have an account?</div>
+                            <a class="login-link btn btn-ghost-alt" id="login-link" href="#">Log in</a>
+                        </div><!--//option-container-->
+                    </div><!--//modal-body-->
+                </div><!--//modal-content-->
+            </div><!--//modal-dialog-->
+        </div><!--//modal-->
+        <!-- Reset Password Modal -->
+        <div class="modal modal-auth modal-resetpass" id="resetpass-modal" tabindex="-1" role="dialog" aria-labelledby="resetpassModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 id="resetpassModalLabel" class="modal-title text-center">Forgot your password?</h4>
                     </div>
-                    <div class="divider">
-                        <span class="or-text">OR</span>
-                    </div>
-                    <div class="login-form-container">
-                        <form class="login-form">
-                            <div class="form-item full-name">
-                                <i class="material-icons icon">&#xE7FD;</i>
-                                <label class="sr-only" for="signup-fullname">Your Full Name</label>
-                                <input id="signup-fullname" name="signup-fullname" type="text" class="form-control signup-email" placeholder="Your Full Name">
-                            </div>
-                            <div class="form-item email">
-                                <i class="material-icons icon">&#xE0BE;</i>
-                                <label class="sr-only" for="signup-email">Your Email</label>
-                                <input id="signup-email" name="signup-email" type="email" class="form-control signup-email" placeholder="Your Email">
-                            </div>
-                            <div class="form-item password">
-                                <i class="material-icons icon">&#xE897;</i>
-                                <label class="sr-only" for="signup-password">Create a Password</label>
-                                <input id="signup-password" name="signup-password" type="password" class="form-control signup-password" placeholder="Create a Password">
-                            </div>
-                            <div class="legal-note">By signing up, you agree to our terms of services and privacy policy.</div>
-                            <button type="submit" class="btn w-100 btn-primary btn-cta">Sign up</button>
+                    <div class="modal-body">
+                        <div class="resetpass-form-container">
+                            <p class="intro">We'll email you a link to a page where you can easily create a new password.</p>
+                            <form class="resetpass-form">
+                                <div class="form-item email">
+                                    <label class="sr-only" for="reg-email">Your Email</label>
+                                    <input id="reg-email" name="reg-email" type="email" class="form-control login-email" placeholder="Your Email">
+                                </div>
+                                <button type="submit" class="btn w-100 btn-secondary btn-cta">Reset Password</button>
+                            </form>
+                        </div><!--//resetpass-form-container-->
+                        <div class="option-container">
+                            <div class="lead-text">I want to <a class="back-to-login-link" id="back-to-login-link" href="#">return to login</a></div>
+                        </div><!--//option-container-->
+                    </div><!--//modal-body-->
+                </div><!--//modal-content-->
+            </div><!--//modal-dialog-->
+        </div><!--//modal-->
 
-                        </form>
-                    </div><!--//login-form-container-->
-                    <div class="option-container">
-                        <div class="lead-text">Already have an account?</div>
-                        <a class="login-link btn btn-ghost-alt" id="login-link" href="#">Log in</a>
-                    </div><!--//option-container-->
-                </div><!--//modal-body-->
-            </div><!--//modal-content-->
-        </div><!--//modal-dialog-->
-    </div><!--//modal-->
-    <!-- Reset Password Modal -->
-    <div class="modal modal-auth modal-resetpass" id="resetpass-modal" tabindex="-1" role="dialog" aria-labelledby="resetpassModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 id="resetpassModalLabel" class="modal-title text-center">Forgot your password?</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="resetpass-form-container">
-                        <p class="intro">We'll email you a link to a page where you can easily create a new password.</p>
-                        <form class="resetpass-form">
-                            <div class="form-item email">
-                                <label class="sr-only" for="reg-email">Your Email</label>
-                                <input id="reg-email" name="reg-email" type="email" class="form-control login-email" placeholder="Your Email">
-                            </div>
-                            <button type="submit" class="btn w-100 btn-secondary btn-cta">Reset Password</button>
-                        </form>
-                    </div><!--//resetpass-form-container-->
-                    <div class="option-container">
-                        <div class="lead-text">I want to <a class="back-to-login-link" id="back-to-login-link" href="#">return to login</a></div>
-                    </div><!--//option-container-->
-                </div><!--//modal-body-->
-            </div><!--//modal-content-->
-        </div><!--//modal-dialog-->
-    </div><!--//modal-->
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
 </body>
 </html>

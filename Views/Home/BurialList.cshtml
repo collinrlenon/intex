@@ -1,4 +1,5 @@
 ﻿@model BurialListViewModel
+@inject SignInManager<OperationDiggerUser> _signInManager
 
 @{
     ViewData["Title"] = "Burial Summary List";
@@ -9,7 +10,7 @@
 <body class="job-single-page">
     <section class="heading-section section section-on-bg">
         <div class="hero-wrapper">
-            <div class="hero-holder"></div>
+            <div class="list-hero-holder"></div>
             <div class="hero-mask-gradient"></div>
         </div><!--//hero-wrapper-->
         <div class="container heading-content">
@@ -61,11 +62,18 @@
                                             <td class="text-dark">@b.AritifactFound2</td>
                                             @*<td class="text-dark">@b.CreatedAtDate</td>
                                                 <td class="text-dark">@b.CreatedAtTime</td>*@
-                                            <td>
-                                                <a asp-action="EditBurial" asp-route-id="@b.BurialId">Edit</a> |
-                                                <a asp-action="BurialDetails" asp-route-id="@b.BurialId">Details</a> |
-                                                <a asp-action="DeleteBurial" asp-route-id="@b.BurialId">Delete</a>
-                                            </td>
+                                        <td>
+                                            @if (_signInManager.IsSignedIn(User) && User.IsInRole("Researcher") || User.IsInRole("Admin"))
+                                            {
+                                                <a asp-action="EditBurial" asp-route-id="@b.BurialId">Edit | </a>
+                                            }
+                                            <a asp-action="BurialDetails" asp-route-id="@b.BurialId">Details</a>
+                                            @if (_signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                                            {
+                                                <a asp-action="DeleteBurial" asp-route-id="@b.BurialId"> | Delete</a>
+                                            }
+
+                                        </td>
                                         </tr>
                                     }
                                 </tbody>
@@ -90,11 +98,10 @@
 
 
 
-<script>
-    $(document).ready(function () {
+<script>$(document).ready(function () {
         $('.dropdown-submenu a.test').on("click", function (e) {
-        $(this).next('ul').toggle();
-        e.stopPropagation();
-        e.preventDefault();
-    });
-});</script>
+            $(this).next('ul').toggle();
+            e.stopPropagation();
+            e.preventDefault();
+        });
+    });</script>

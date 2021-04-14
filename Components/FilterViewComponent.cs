@@ -14,6 +14,7 @@ namespace OperationDigger.Components
             _context = context;
         }
 
+        //View component info for the list filter
         public IViewComponentResult Invoke()
         {
             ViewBag.Gender = _context.Burials.Where(x => x.Gender != null).Select(x => x.Gender).Distinct().ToList();

@@ -5,6 +5,10 @@ using OperationDigger.Models;
 using Microsoft.Extensions.Logging;
 using OperationDigger.Models.ViewModels;
 using OperationDigger.Data;
+using OperationDigger.Areas.Identity.Data;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
 
 namespace OperationDigger.Controllers
 {
@@ -14,14 +18,16 @@ namespace OperationDigger.Controllers
 
         private readonly ebdbContext _context;
 
+        private readonly UserManager<OperationDiggerUser> _userManager;
+
         private readonly OperationDiggerContext _ctx;
-        public HomeController(ILogger<HomeController> logger, ebdbContext context, OperationDiggerContext ctx)
+        public HomeController(ILogger<HomeController> logger, ebdbContext context, OperationDiggerContext ctx, UserManager<OperationDiggerUser> userManager)
         {
             _logger = logger;
             _context = context;
             _ctx = ctx;
+            _userManager = userManager;
         }
-
         public IActionResult Index()
         {
             return View();
@@ -32,9 +38,34 @@ namespace OperationDigger.Controllers
             return View();
         }
 
+        //[Authorize(Roles = "Admin")]
         public IActionResult ManageUsers()
         {
-            return View();
+            IQueryable<OperationDiggerUser> users = _userManager.Users.ToList().AsQueryable();
+
+            return View(users);
+        }
+
+        public async Task<IActionResult> ApproveResearcher(string userId)
+        {
+            OperationDiggerUser user = await _userManager.FindByIdAsync(userId);
+            await _userManager.AddToRoleAsync(user, "Researcher");
+            await _userManager.RemoveFromRoleAsync(user, "User");
+
+            return RedirectToAction("ManageUsers");
+        }
+        public async Task<IActionResult> RevokeResearcher(string userId)
+        {
+            OperationDiggerUser user = await _userManager.FindByIdAsync(userId);
+            await _userManager.AddToRoleAsync(user, "User");
+            await _userManager.RemoveFromRoleAsync(user, "Researcher");
+
+            return RedirectToAction("ManageUsers");
+        }
+
+        public IActionResult ViewUser(string userId)
+        {
+            return View(_userManager.Users.Where(u => u.Id == userId).FirstOrDefault());
         }
 
         public IActionResult UploadBooks()

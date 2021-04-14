@@ -10,7 +10,7 @@ using OperationDigger.Data;
 namespace OperationDigger.Migrations.OperationDigger
 {
     [DbContext(typeof(OperationDiggerContext))]
-    [Migration("20210413054600_Id")]
+    [Migration("20210414011754_Id")]
     partial class Id
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

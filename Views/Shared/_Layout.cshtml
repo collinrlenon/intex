@@ -44,15 +44,7 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">More <i class="fas fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" asp-controller="Home" asp-action="CreateBurial">Create Burial</a></li>
-                                <li><a class="dropdown-item" asp-controller="Home" asp-action="BurialList">Burial Summary List</a></li>
-                                <li><a class="dropdown-item" asp-controller="Home" asp-action="PhotoGallery">Photo Gallery</a></li>
-                                <li><a class="dropdown-item" asp-controller="Home" asp-action="ManageUsers">Manage User Accounts</a></li>
-                            </ul>
-                        </li><!--//dropdown-->
+                        <li><a class="nav-item" asp-controller="Home" asp-action="ManageUsers">Manage User Accounts</a></li>
                         <partial name="_LoginPartial" />
                         <li class="nav-item"><a class="nav-link login-trigger" href="#" data-bs-toggle="modal" data-bs-target="#login-modal">Log in</a></li>
                         <li class="nav-item nav-item-cta last"><a class="btn-signup" href="#" data-bs-toggle="modal" data-bs-target="#signup-modal">Sign Up</a></li>
@@ -77,21 +69,21 @@
                         <h3 class="col-title">About</h3>
                         <ul class="footer-menu list-unstyled">
                             <li><a class="text-link" asp-controller="Home" asp-action="#">Our Team</a><span class="badge bg-success">Hire Us!</span></li> 
-                            <li><a class="text-link" asp-controller="Home" asp-action="ContactPage">Contact Us</a></li>
+                            <li><a class="text-link" asp-controller="Home" asp-action="#">Contact Us</a></li>
+                            <li><a class="text-link" asp-controller="Home" asp-action="#">Published Research</a></li>
                         </ul>
                     </div><!--//footer-col-inner-->
                 </div><!--//footer-col-->
                 <div class="footer-col col-6 col-md-3">
                     <div class="footer-col-inner">
-                        <h3 class="col-title">More</h3>
+                        <h3 class="col-title">Upload Links</h3>
                         <ul class="footer-menu list-unstyled">
+                            <li><a class="text-link" asp-controller="Home" asp-action="Burial">Burial Summary List & Records</a></li>
                             <li><a class="text-link" asp-controller="Home" asp-action="AddNotes">Add Field Notes</a></li>
-                            <li><a class="text-link" asp-controller="Home" asp-action="AddMummy">Add Mummy Information</a></li>
-                            <li><a class="text-link" asp-controller="Home" asp-action="DeleteRecords">Delete Records</a></li>
-                            <li><a class="text-link" asp-controller="Home" asp-action="ManageUsers">Manage User Accounts</a></li>
                             <li><a class="text-link" asp-controller="Home" asp-action="UploadPhotos">Upload Photos</a></li>
                             <li><a class="text-link" asp-controller="Home" asp-action="UploadNotes">Upload Notes</a></li>
                             <li><a class="text-link" asp-controller="Home" asp-action="UploadBooks">Upload Books</a></li>
+                            <li><a class="text-link" asp-controller="Home" asp-action="ManageUsers">Manage User Accounts</a></li>
                         </ul>
                     </div>
                 </div><!--//footer-col-->
@@ -101,9 +93,9 @@
                         <ul class="footer-menu list-unstyled">
                             <li><a class="text-link" href="#">Sign up</a></li>
                             <li><a class="text-link" href="#">Login</a></li>
-                            <li><a class="text-link" href="#">Become our partner</a></li>
                             <li><a class="text-link" href="#">FAQs</a></li>
-                            <li><a class="text-link" asp-controller="Home" asp-action="Burial">Burial Summary List & Records</a></li>
+                            <li><a class="text-link" href="#">Support</a></li>
+
                         </ul>
                     </div>
                 </div><!--//footer-col-->
@@ -121,14 +113,14 @@
             <div class="divider"></div>
             <div class="footer-bottom text-center">
                 <ul class="social-media list-inline">
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="https://twitter.com/BYU?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.facebook.com/BYU"><i class="fab fa-facebook-f"></i></a></li>
                     <li class="list-inline-item"><a href="https://github.com/collinrlenon/intex" target="_blank"><i class="fab fa-github"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.instagram.com/brighamyounguniversity/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="https://vimeo.com/byuanimation" target="_blank"><i class="fab fa-vimeo-v"></i></a></li>
                 </ul>
 
-                <small class="copyright">BYU Intext Group 2-2 | Audrey chigarira | Hayden Thomas | Collin Lenon | Garrett Farnsworth</small>
+                <small class="copyright">&#169;BYU 2021 | Intex Group 2-2 | Audrey Chigarira | Hayden Thomas | Collin Lenon | Garrett Farnsworth</small>
             </div>
         </div><!--//container-->
     </footer><!--//footer-->
@@ -142,8 +134,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="video-container ratio ratio-16x9">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/5nEzCv5u1O8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    </div><!--//video-container-->
-                </div><!--//modal-body-->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Dtw2vfKihXA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                </div><!--//modal-body-->
             </div><!--//modal-content-->
         </div><!--//modal-dialog-->
     </div><!--//modal-->

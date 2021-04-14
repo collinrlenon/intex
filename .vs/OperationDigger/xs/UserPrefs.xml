@@ -1,25 +1,26 @@
 ﻿<Properties StartupConfiguration="{93CC3AA0-8FAC-4082-8681-D1C43A9680CF}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/Identity/Pages/Account/ConfirmEmail.cshtml">
     <Files>
-      <File FileName="Views/Home/ManageUsers.cshtml" Line="87" Column="96" />
-      <File FileName="Views/Shared/_Layout.cshtml" />
-      <File FileName="Views/Home/CreateBurial.cshtml" />
-      <File FileName="Views/Home/EditBurial.cshtml" />
-      <File FileName="Controllers/HomeController.cs" Line="257" Column="35" />
-      <File FileName="Controllers/RoleController.cs" />
-      <File FileName="Startup.cs" />
-      <File FileName="Views/Home/BurialDetails.cshtml" />
-      <File FileName="Views/Home/BurialList.cshtml" />
+      <File FileName="Areas/Identity/Pages/Account/ConfirmEmail.cshtml" Line="120" Column="11" />
+      <File FileName="Areas/Identity/Pages/Account/RegisterConfirmation.cshtml" Line="1" Column="1" />
+      <File FileName="Areas/Identity/Pages/Account/Login.cshtml" Line="20" Column="45" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="OperationDigger" expanded="True">
             <Node name="OperationDigger" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="HomeController.cs" selected="True" />
+              <Node name="Areas" expanded="True">
+                <Node name="Identity" expanded="True">
+                  <Node name="Pages" expanded="True">
+                    <Node name="Account" expanded="True">
+                      <Node name="ConfirmEmail.cshtml" selected="True" />
+                    </Node>
+                  </Node>
+                </Node>
               </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
                 <Node name="Shared" expanded="True" />
@@ -33,9 +34,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/collinrlenon/Projects/intex/Controllers/HomeController.cs" relfile="Controllers/HomeController.cs" line="267" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

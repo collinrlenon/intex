@@ -1,16 +1,28 @@
 ﻿@page
 @model ConfirmEmailModel
 @{
-    ViewData["Title"] = "Confirm email";
+    ViewData["Title"] = "Confirm Email";
 }
-<section class="heading-section section section-on-bg">
-    <div class="hero-wrapper">
-        <div class="list-hero-holder"></div>
-        <div class="hero-mask-gradient"></div>
-    </div><!--//hero-wrapper-->
-    <div class="container heading-content">
-        <h2 class="headline">@ViewData["Title"]</h2>
-        <div class="meta">See details below</div>
-    </div><!--//container-->
-</section><!--//heading-section-->
-<h1>@ViewData["Title"]</h1>
+
+<body class="job-single-page">
+    <section class="heading-section section section-on-bg">
+        <div class="hero-wrapper">
+            <div class="hero-holder"></div>
+            <div class="hero-mask-gradient"></div>
+        </div><!--//hero-wrapper-->
+        <div class="container heading-content">
+            <h2 class="headline">@ViewData["Title"]</h2>
+            <div class="meta">See details below</div>
+        </div><!--//container-->
+    </section><!--//heading-section-->
+    <div class="m-5">
+
+        <h1>@ViewData["Title"]</h1>
+
+    </div>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/vanilla-back-to-top.min.js"></script>
+    <script src="assets/plugins/smoothscroll.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>

@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{93CC3AA0-8FAC-4082-8681-D1C43A9680CF}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/CreateBurial.cshtml">
     <Files>
       <File FileName="Areas/Identity/Pages/Account/Login.cshtml" Line="37" Column="52" />
       <File FileName="Views/Home/CreateBurial.cshtml" Line="299" Column="142" />
-      <File FileName="Models/Burial.cs" Line="114" Column="58" />
-      <File FileName="Views/Home/EditBurial.cshtml" Line="992" Column="12" />
-      <File FileName="Views/Shared/_Layout.cshtml" Line="283" Column="54" />
-      <File FileName="Views/Home/Index.cshtml" Line="142" Column="39" />
+      <File FileName="Models/Burial.cs" />
+      <File FileName="Views/Home/EditBurial.cshtml" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="37" Column="30" />
+      <File FileName="Views/Home/Index.cshtml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,7 +18,7 @@
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
+                  <Node name="CreateBurial.cshtml" selected="True" />
                 </Node>
                 <Node name="Shared" expanded="True" />
               </Node>

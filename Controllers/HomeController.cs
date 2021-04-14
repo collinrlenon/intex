@@ -38,6 +38,26 @@ namespace OperationDigger.Controllers
             return View();
         }
 
+        public IActionResult ResearchBlog()
+        {
+            return View();
+        }
+
+        public IActionResult SupportPage()
+        {
+            return View();
+        }
+
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
+
+        public IActionResult ContactUs()
+        {
+            return View();
+        }
+
         [Authorize(Roles = "Admin")]
         public IActionResult ManageUsers()
         {

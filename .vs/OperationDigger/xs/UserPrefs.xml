@@ -1,15 +1,11 @@
 ﻿<Properties StartupConfiguration="{93CC3AA0-8FAC-4082-8681-D1C43A9680CF}|Default">
   <MonoDevelop.Ide.ItemProperties.OperationDigger PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/Identity/Pages/Account/Login.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Areas/Identity/Pages/Account/Register.cshtml">
     <Files>
-      <File FileName="Views/Home/BurialDetails.cshtml" Line="14" Column="33" />
-      <File FileName="Views/Home/BurialList.cshtml" Line="13" Column="25" />
-      <File FileName="Views/Home/CreateBurial.cshtml" Line="11" Column="25" />
-      <File FileName="Views/Home/DeleteBurial.cshtml" Line="10" Column="25" />
-      <File FileName="Views/Home/EditBurial.cshtml" Line="11" Column="25" />
-      <File FileName="Views/Home/PhotoGallery.cshtml" Line="15" Column="25" />
-      <File FileName="Views/Shared/_LoginPartial.cshtml" Line="21" Column="10" />
-      <File FileName="Areas/Identity/Pages/Account/Login.cshtml" Line="9" Column="26" />
+      <File FileName="Areas/Identity/Pages/Account/Login.cshtml" Line="54" Column="109" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="115" Column="98" />
+      <File FileName="Controllers/HomeController.cs" Line="48" Column="27" />
+      <File FileName="Areas/Identity/Pages/Account/Register.cshtml" Line="25" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,18 +14,16 @@
             <Node name="OperationDigger" expanded="True">
               <Node name="Areas" expanded="True">
                 <Node name="Identity" expanded="True">
-                  <Node name="Data" expanded="True" />
                   <Node name="Pages" expanded="True">
                     <Node name="Account" expanded="True">
-                      <Node name="Login.cshtml" selected="True" />
+                      <Node name="Register.cshtml" selected="True" />
                     </Node>
                   </Node>
                 </Node>
               </Node>
               <Node name="Controllers" expanded="True" />
-              <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
               </Node>
             </Node>
           </Node>

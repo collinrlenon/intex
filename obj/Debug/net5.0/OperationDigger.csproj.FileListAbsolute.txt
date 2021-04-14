@@ -634,3 +634,9 @@ C:/Users/hayde/Source/Repos/collinrlenon/intex/obj/Debug/net5.0/OperationDigger.
 /Users/haydenthomas/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/ContactUs.cshtml.g.cs
 /Users/haydenthomas/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/AboutUs.cshtml.g.cs
 /Users/haydenthomas/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/ResearchBlog.cshtml.g.cs
+/Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/AboutUs.cshtml.g.cs
+/Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/ContactUs.cshtml.g.cs
+/Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/ResearchBlog.cshtml.g.cs
+/Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Home/SupportPage.cshtml.g.cs
+/Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Role/Create.cshtml.g.cs
+/Users/collinrlenon/Projects/intex/obj/Debug/net5.0/Razor/Views/Role/Index.cshtml.g.cs

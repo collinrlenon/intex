@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/haydenthomas/Projects/intex/OperationDigger.csproj": {}
+    "/Users/collinrlenon/Projects/intex/OperationDigger.csproj": {}
   },
   "projects": {
-    "/Users/haydenthomas/Projects/intex/OperationDigger.csproj": {
+    "/Users/collinrlenon/Projects/intex/OperationDigger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/haydenthomas/Projects/intex/OperationDigger.csproj",
+        "projectUniqueName": "/Users/collinrlenon/Projects/intex/OperationDigger.csproj",
         "projectName": "OperationDigger",
-        "projectPath": "/Users/haydenthomas/Projects/intex/OperationDigger.csproj",
-        "packagesPath": "/Users/haydenthomas/.nuget/packages/",
-        "outputPath": "/Users/haydenthomas/Projects/intex/obj/",
+        "projectPath": "/Users/collinrlenon/Projects/intex/OperationDigger.csproj",
+        "packagesPath": "/Users/collinrlenon/.nuget/packages/",
+        "outputPath": "/Users/collinrlenon/Projects/intex/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/haydenthomas/.config/NuGet/NuGet.Config"
+          "/Users/collinrlenon/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -105,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,8 +1,8 @@
 @model Burial
-
-@{
-    ViewData["Title"] = "Burial Details";
-}
+@inject IAuthorizationService AuthorizationService
+@inject UserManager<OperationDiggerUser> _userManager
+@inject SignInManager<OperationDiggerUser> _signInManager
+@{ ViewData["Title"] = "Burial Details"; }
 
 <body class="job-single-page">
     <section class="heading-section section section-on-bg">
@@ -16,263 +16,594 @@
         </div><!--//container-->
     </section><!--//heading-section-->
 
+    <br />
     <div id="job-single-block">
         <div class="job-details">
             <div class="cta-container text-center">
                 <!--Form that will pass the data to the next view-->
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-12 mx-auto shadow-lg m-5 rounded" style="border: 3px solid black; background-color: #E4D4C8;">
-                            <div class="text-left text-dark">
+                        @*<div class="col-sm-12 mx-auto shadow-lg m-5 rounded" style="border: 3px solid black; background-color: #E4D4C8;">*@
+                        <div class="text-left text-dark">
 
-                                <!--Row 1-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Location ID:</b> @Model.LocationId</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Burial N/S:</b> @Model.BurialNs</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Low N/S:</b> @Model.LowNs</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>High N/S:</b> @Model.HighNs</p></div>
-                                </div>
-
-                                <!--Row 2-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Burial E/W:</b> @Model.BurialEw</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Low E/W:</b> @Model.LowEw</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>High E/W:</b> @Model.HighEw</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Burial Subplot:</b> @Model.BurialSubplot</p></div>
-                                </div>
-                                <!--Row 3-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Burial Number:</b> @Model.BurialNum</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Gender:</b> @Model.Gender</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Hair Color:</b> @Model.HairColor</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Year Exc:</b> @Model.YearExc</p></div>
-                                </div>
-
-                                <!--Row 4-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Month Exc:</b> @Model.MonthExc</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Day Exc:</b> @Model.DayExc</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Head Direction:</b> @Model.HeadDirection</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Postcrania Trauma:</b> @Model.PostcraniaTrauma</p></div>
-                                </div>
-
-                                <!--Row 5-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Skull Year:</b> @Model.YrSkull</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Skull Month:</b> @Model.MtSkull</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Skull Day:</b> @Model.DSkull</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Field Book:</b> @Model.FieldBook</p></div>
-                                </div>
-
-                                <!--Row 6-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Field Book Page #:</b> @Model.FieldBookPgnum</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Dex Initials:</b> @Model.DexInitials</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Dec Initials:</b> @Model.DecInitials</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>BYU Sample:</b> @Model.ByuSample</p></div>
-                                </div>
-
-                                <!--Row 7-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Body Analysis:</b> @Model.BodyAnalysis</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Skull Mag:</b> @Model.SkullMag</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Postcrania Mag:</b> @Model.PostcraniaMag</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Skull Sex:</b> @Model.SexSkull</p></div>
-                                </div>
-
-                                <!--Row 8-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Skull Age:</b> @Model.AgeSkull</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Shelf Rack:</b> @Model.RackShelf</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Skull Trauma:</b> @Model.SkullTrauma</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Cribra Orbitala:</b> @Model.CribraOrbitala</p></div>
-                                </div>
-
-                                <!--Row 9-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Porotic Hyper:</b> @Model.PoroticHyperostosis</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Porotic Hyper Loc:</b> @Model.PoroticHyperostosisLoc</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Metopic Suture:</b> @Model.MetopicSuture</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Button Osteoma:</b> @Model.ButtonOsteoma</p></div>
-                                </div>
-
-                                <!--Row 10-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Ost Comment:</b> @Model.OsteologyUnknownComment</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Temp Mand Joint Osteo:</b> @Model.TemporalMandibularJointOsteoarthritis</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Linear Hypo Enamel:</b> @Model.LinearHypoplasiaEnamel</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Hill Burials:</b> @Model.HillBurialsA</p></div>
-                                </div>
-
-                                <!--Row 11-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Tomb:</b> @Model.Tomb</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>West To Head:</b> @Model.WestToHead</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>West To Feet:</b> @Model.WestToFeet</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Burial Preserve:</b> @Model.BurialPreservation</p></div>
-                                </div>
-
-                                <!--Row 12-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Burial Wrapping:</b> @Model.BurialWrapping</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Burial Ac:</b> @Model.BurialAc</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Burial Gend Meth:</b> @Model.BurialGendMeth</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Age Code:</b> @Model.AgeCode</p></div>
-                                </div>
-
-                                <!--Row 13-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Burial Age Death:</b> @Model.BurialAgeDeath</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Burial Age Meth:</b> @Model.BurialAgeMeth</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Burial Hc:</b> @Model.BurialHc</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Burial St:</b> @Model.BurialSt</p></div>
-                                </div>
-
-                                <!--Row 14-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Len M:</b> @Model.LenM</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Len Cm:</b> @Model.LenCm</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Cluster:</b> @Model.Cluster</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Face Bundle:</b> @Model.FaceBundle</p></div>
-                                </div>
-
-                                <!--Row 15-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Ost Notes:</b> @Model.OsteologyNotes</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Burial Depth:</b> @Model.BurialDepth</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>South To Head:</b> @Model.SouthToHead</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>South To Feet:</b> @Model.SouthToFeet</p></div>
-                                </div>
-
-                                <!--Row 16-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Length:</b> @Model.Length</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Art Found:</b> @Model.AritifactFound</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Art Found Desc:</b> @Model.AritifactFoundDesc</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Burial Goods:</b> @Model.AritifactFound2</p></div>
-                                </div>
-
-                                <!--Row 17-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Burial Situation:</b> @Model.BurialSituation</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Sample Number:</b> @Model.SampleNumber</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Gender Ge:</b> @Model.GenderGe</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Ge Function:</b> @Model.GeFunction</p></div>
-                                </div>
-
-                                <!--Row 18-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Basliar Suture:</b> @Model.BasliarSuture</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Ventral Arc:</b> @Model.VentralArc</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Subpubic Angle:</b> @Model.SubpubicAngle</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Sciatic Notch:</b> @Model.SciaticNotch</p></div>
-                                </div>
-
-                                <!--Row 19-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Pubic Bone:</b> @Model.PubicBone</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Preaur Sulcus:</b> @Model.PreaurSulcus</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Medial Ip Ramus:</b> @Model.MedialIpRamus</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Dorsal Pitting:</b> @Model.DorsalPitting</p></div>
-                                </div>
-
-                                <!--Row 20-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Foreman Magnum:</b> @Model.ForemanMagnum</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Femur Head:</b> @Model.FemurHead</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Humerus Head:</b> @Model.HumerusHead</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Osteophytosis:</b> @Model.Osteophytosis</p></div>
-                                </div>
-
-                                <!--Row 21-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Pubic Symphysis:</b> @Model.PubicSymphysis</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Humerus:</b> @Model.Humerus</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Femur Length:</b> @Model.FemurLength</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Humerus Length:</b> @Model.HumerusLength</p></div>
-                                </div>
-
-                                <!--Row 23-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Tibia Length:</b> @Model.TibiaLength</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Robust:</b> @Model.Robust</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Supraorbital Ridges:</b> @Model.SupraorbitalRidges</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Orbit Edge:</b> @Model.OrbitEdge</p></div>
-                                </div>
-
-                                <!--Row 24-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Parietal Bossing:</b> @Model.ParietalBossing</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Gonian:</b> @Model.Gonian</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Nuchal Crest:</b> @Model.NuchalCrest</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Zygomatic Crest:</b> @Model.ZygomaticCrest</p></div>
-                                </div>
-
-                                <!--Row 25-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Cranial Suture:</b> @Model.CranialSuture</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Max Cranial Len:</b> @Model.MaximumCranialLength</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>MaximumCranialBreadth:</b> @Model.MaximumCranialBreadth</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Basion Bregma Height:</b> @Model.BasionBregmaHeight</p></div>
-                                </div>
-
-                                <!--Row 26-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Basion Nasion:</b> @Model.BasionNasion</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Basion Pros Length:</b> @Model.BasionProsthionLength</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Biz Diameter:</b> @Model.BizygomaticDiameter</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Nasion Prosthion:</b> @Model.NasionProsthion</p></div>
-                                </div>
-
-                                <!--Row 27-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Max Nasal Breadth:</b> @Model.MaximumNasalBreadth</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Interorbital Breadth:</b> @Model.InterorbitalBreadth</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Pres Index:</b> @Model.PreservationIndex</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Desc Of Taken:</b> @Model.DescriptionOfTaken</p></div>
-                                </div>
-
-                                <!--Row 28-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Estimate Age:</b> @Model.EstimateAge</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Estimate Living Stature:</b> @Model.EstimateLivingStature</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Tooth Attrition:</b> @Model.ToothAttrition</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Tooth Eruption:</b> @Model.ToothEruption</p></div>
-                                </div>
-
-                                <!--Row 29-->
-                                <div class="form-group row mt-5" style="margin-bottom:0px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Pathology Anomalies:</b> @Model.PathologyAnomalies</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Epiphyseal Union:</b> @Model.EpiphysealUnion</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Hair Taken:</b> @Model.HairTaken</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Soft Tissue Taken:</b> @Model.SoftTissueTaken</p></div>
-                                </div>
-
-                                <!--Row 30-->
-                                <div class="form-group row mt-5" style="margin-bottom:15px!important;margin-left:20px!important;margin-right:10px!important;justify-content:center!important">
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Bone Taken:</b> @Model.BoneTaken</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Tooth Taken:</b> @Model.ToothTaken</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Textile Taken:</b> @Model.TextileTaken</p></div>
-                                    <div class="col-sm-3"><p style="margin-bottom:0px!important;"><b>Field Notes:</b> @Model.Notes</p></div>
-                                </div>
-
-                                <!--Row 31-->
-                                <div class="form-group row mt-5" style="margin-bottom:15px!important;margin-left:20px!important;margin-right:10px!important">
-                                    <div class="col-sm-3">
-                                        <p style="margin-bottom:0px!important;"><b>Photo:</b></p>
-                                        <img class="img-fluid" src="~/img/skull.png" alt="Burial Image" style="width:300px;height:300px">
+                            <div id="accordion">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" style="color:#F89D29!important; font-size:large;" data-toggle="collapse" data-target="#collapsePho" aria-expanded="true" aria-controls="collapsePho">
+                                                Photos
+                                            </button>
+                                        </h5>
                                     </div>
-                                    <div class="col-sm-3">
-                                        <p style="margin-bottom:0px!important;"><b>Field Notes:</b></p>
-                                        <img class="img-fluid" src="~/img/skull.png" alt="Burial Image" style="width:300px;height:300px">
+
+                                    <div id="collapsePho" class="collapse show" aria-labelledby="headingPho" data-parent="#accordion">
+                                        <div class="card-body text-center">
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <p style="margin-bottom:0px!important;"><b>Photo</b></p>
+                                                    <img class="img-fluid" src="~/img/skull.png" alt="Burial Image" style="width:300px;height:300px">
+                                                </div>
+                                                <div class="col-4">
+                                                    <p style="margin-bottom:0px!important;"><b>Field Notes</b></p>
+                                                    <img class="img-fluid" src="~/img/skull.png" alt="Burial Image" style="width:300px;height:300px">
+                                                </div>
+                                                <div class="col-4">
+                                                    <p style="margin-bottom:0px!important;"><b>Bone Books</b></p>
+                                                    <img class="img-fluid" src="~/img/skull.png" alt="Burial Image" style="width:300px;height:300px">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-3">
-                                        <p style="margin-bottom:0px!important;"><b>Bone Books:</b></p>
-                                        <img class="img-fluid" src="~/img/skull.png" alt="Burial Image" style="width:300px;height:300px">
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" style="color: #F89D29!important;font-size:large;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                Details #1
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Location ID:</td>
+                                                                <td>@Model.LocationId</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Burial North/South:</td>
+                                                                <td>@Model.BurialNs</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Low North/South:</td>
+                                                                <td>@Model.LowNs</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>High North/South:</td>
+                                                                <td>@Model.HighNs</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Burial East/West:</td>
+                                                                <td>@Model.BurialEw</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Low East/West:</td>
+                                                                <td>@Model.LowEw</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>High East/West:</td>
+                                                                <td>@Model.HighEw</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Burial Subplot:</td>
+                                                                <td>@Model.BurialSubplot</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Burial Number:</td>
+                                                                <td>@Model.BurialNum</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Gender:</td>
+                                                                <td>@Model.Gender</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Hair Color:</td>
+                                                                <td>@Model.HairColor</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Year Excavated:</td>
+                                                                <td>@Model.YearExc</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Month Excavated:</td>
+                                                                <td>@Model.MonthExc</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Day Excavated:</td>
+                                                                <td>@Model.DayExc</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Head Direction:</td>
+                                                                <td>@Model.HeadDirection</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Postcrania Trauma:</td>
+                                                                <td>@Model.PostcraniaTrauma</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Year on Skull:</td>
+                                                                <td>@Model.YrSkull</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Month on Skull:</td>
+                                                                <td>@Model.MtSkull</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Day on Skull:</td>
+                                                                <td>@Model.DSkull</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Field Book:</td>
+                                                                <td>@Model.FieldBook</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-6">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Field Book Page Number:</td>
+                                                                <td>@Model.FieldBookPgnum</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Data Entry Expert Initials:</td>
+                                                                <td>@Model.DexInitials</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Data Entry Checker Initials:</td>
+                                                                <td>@Model.DecInitials</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BYU Sample:</td>
+                                                                <td>@Model.ByuSample</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Body Analysis:</td>
+                                                                <td>@Model.BodyAnalysis</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Skull Magazine:</td>
+                                                                <td>@Model.SkullMag</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Postcrania Magazine:</td>
+                                                                <td>@Model.PostcraniaMag</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Sex Based on Skull:</td>
+                                                                <td>@Model.SexSkull</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Age Based on Skull:</td>
+                                                                <td>@Model.AgeSkull</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Shelf on Rack:</td>
+                                                                <td>@Model.RackShelf</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Skull Trauma:</td>
+                                                                <td>@Model.SkullTrauma</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Cirbra Orbitala:</td>
+                                                                <td>@Model.CribraOrbitala</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Porotic Hyper:</td>
+                                                                <td>@Model.PoroticHyperostosis</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Porotic Hyper Location:</td>
+                                                                <td>@Model.PoroticHyperostosisLoc</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Metopic Suture:</td>
+                                                                <td>@Model.MetopicSuture</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Button Osteoma:</td>
+                                                                <td>@Model.ButtonOsteoma</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Osteology Unknown Comment:</td>
+                                                                <td>@Model.OsteologyUnknownComment</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Temporal Mandibular Joint Osteoarthritis:</td>
+                                                                <td>@Model.TemporalMandibularJointOsteoarthritis</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Linear Hypoplasia Enamel:</td>
+                                                                <td>@Model.LinearHypoplasiaEnamel</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Hill Burial Area:</td>
+                                                                <td>@Model.LocationId</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" style="color: #F89D29 !important; font-size:large;" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                Details #2
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Tomb</td>
+                                                                <td>@Model.Tomb</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>West To Head:</td>
+                                                                <td>@Model.WestToHead</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>West To Feet:</td>
+                                                                <td>@Model.WestToFeet</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Burial Preservation:</td>
+                                                                <td>@Model.BurialPreservation</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Burial Wrapping:</td>
+                                                                <td>@Model.BurialWrapping</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Burial Adult or Child:</td>
+                                                                <td>@Model.BurialAc</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Burial Gender Method:</td>
+                                                                <td>@Model.BurialGendMeth</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Age Code:</td>
+                                                                <td>@Model.AgeCode</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Burial Age Death:</td>
+                                                                <td>@Model.BurialAgeDeath</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Burial Age Method:</td>
+                                                                <td>@Model.BurialAgeMeth</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Burial Hair Color:</td>
+                                                                <td>@Model.BurialHc</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Burial Sample Taken:</td>
+                                                                <td>@Model.BurialSt</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Length Meters:</td>
+                                                                <td>@Model.LenM</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Length Cm:</td>
+                                                                <td>@Model.LenCm</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Cluster:</td>
+                                                                <td>@Model.Cluster</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Face Bundle:</td>
+                                                                <td>@Model.FaceBundle</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Osteology Notes:</td>
+                                                                <td>@Model.OsteologyNotes</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Burial Depth:</td>
+                                                                <td>@Model.BurialDepth</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>South To Head:</td>
+                                                                <td>@Model.SouthToHead</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>South To Feet:</td>
+                                                                <td>@Model.SouthToFeet</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-6">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Length:</td>
+                                                                <td>@Model.Length</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Artifact Found:</td>
+                                                                <td>@Model.AritifactFound</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Art Found Description:</td>
+                                                                <td>@Model.AritifactFoundDesc</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Burial Goods:</td>
+                                                                <td>@Model.AritifactFound2</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Burial Situation:</td>
+                                                                <td>@Model.BurialSituation</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Sample Number:</td>
+                                                                <td>@Model.SampleNumber</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Gender Giles/Elliot:</td>
+                                                                <td>@Model.GenderGe</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Giles/Elliot Function:</td>
+                                                                <td>@Model.GeFunction</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Basliar Suture:</td>
+                                                                <td>@Model.BasliarSuture</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Ventral Arc:</td>
+                                                                <td>@Model.VentralArc</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Subpubic Angle:</td>
+                                                                <td>@Model.SubpubicAngle</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Sciatic Notch:</td>
+                                                                <td>@Model.SciaticNotch</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Pubic Bone:</td>
+                                                                <td>@Model.PubicBone</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Preaur Sulcus:</td>
+                                                                <td>@Model.PreaurSulcus</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Medial Ip Ramus:</td>
+                                                                <td>@Model.MedialIpRamus</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Dorsal Pitting:</td>
+                                                                <td>@Model.DorsalPitting</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Foreman Magnum:</td>
+                                                                <td>@Model.ForemanMagnum</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Femur Head:</td>
+                                                                <td>@Model.FemurHead</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Humerus Head:</td>
+                                                                <td>@Model.HumerusHead</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Osteophytosis:</td>
+                                                                <td>@Model.Osteophytosis</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" style="color: #F89D29!important; font-size:large;" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                Details #3
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Pubic Symphysis:</td>
+                                                                <td>@Model.PubicSymphysis</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Humerus:</td>
+                                                                <td>@Model.Humerus</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Femur Length:</td>
+                                                                <td>@Model.FemurLength</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Humerus Length:</td>
+                                                                <td>@Model.HumerusLength</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Tibia Length:</td>
+                                                                <td>@Model.TibiaLength</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Robust:</td>
+                                                                <td>@Model.Robust</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Supraorbital Ridges:</td>
+                                                                <td>@Model.SupraorbitalRidges</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Orbit Edge:</td>
+                                                                <td>@Model.AgeCode</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Parietal Bossing:</td>
+                                                                <td>@Model.ParietalBossing</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Gonian:</td>
+                                                                <td>@Model.Gonian</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Nuchal Crest:</td>
+                                                                <td>@Model.NuchalCrest</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Zygomatic Crest:</td>
+                                                                <td>@Model.ZygomaticCrest</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Cranial Suture:</td>
+                                                                <td>@Model.CranialSuture</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Maximum Cranial Len:</td>
+                                                                <td>@Model.MaximumCranialLength</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Maximum Cranial Breadth:</td>
+                                                                <td>@Model.MaximumCranialBreadth</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Basion Bregma Height:</td>
+                                                                <td>@Model.BasionBregmaHeight</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Basion Nasion:</td>
+                                                                <td>@Model.BasionNasion</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Basion Pros Length:</td>
+                                                                <td>@Model.BasionProsthionLength</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Bizygomatic Diameter:</td>
+                                                                <td>@Model.BizygomaticDiameter</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Nasion Prosthion:</td>
+                                                                <td>@Model.NasionProsthion</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-6">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Maximum Nasal Breadth:</td>
+                                                                <td>@Model.MaximumNasalBreadth</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Interorbital Breadth:</td>
+                                                                <td>@Model.InterorbitalBreadth</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Pres Index:</td>
+                                                                <td>@Model.PreservationIndex</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Description Of Taken:</td>
+                                                                <td>@Model.DescriptionOfTaken</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Estimate Age:</td>
+                                                                <td>@Model.EstimateAge</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Estimate Living Stature:</td>
+                                                                <td>@Model.EstimateLivingStature</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Tooth Attrition:</td>
+                                                                <td>@Model.ToothAttrition</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Tooth Eruption:</td>
+                                                                <td>@Model.ToothEruption</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Pathology Anomalies:</td>
+                                                                <td>@Model.PathologyAnomalies</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Epiphyseal Union:</td>
+                                                                <td>@Model.EpiphysealUnion</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Hair Taken:</td>
+                                                                <td>@Model.HairTaken</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Soft Tissue Taken:</td>
+                                                                <td>@Model.SoftTissueTaken</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Bone Taken:</td>
+                                                                <td>@Model.BoneTaken</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Tooth Taken:</td>
+                                                                <td>@Model.ToothTaken</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Textile Taken:</td>
+                                                                <td>@Model.TextileTaken</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Field Notes:</td>
+                                                                <td>@Model.Notes</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @*</div>*@
                     </div>
                 </div>
             </div><!--//job-details-->
@@ -288,7 +619,12 @@
 
     <div class="m-3">
         <a class="button btn btn-sm btn-secondary px-4 pt-2 float-right" style="font-size:small!important;margin:10px!important" asp-action="BurialList">Back to Burial List</a>
-        <a class="button btn btn-sm btn-secondary px-4 pt-2 float-right" style="font-size:small!important;margin:10px!important" asp-action="EditBurial" asp-route-id="@Model.BurialId">Edit Burial Record</a>
+        @if (_signInManager.IsSignedIn(User) && User.IsInRole("Researcher") || User.IsInRole("Admin"))
+        {
+            <a class="button btn btn-sm btn-secondary px-4 pt-2 float-right" style="font-size:small!important;margin:10px!important" asp-authorize asp-action="EditBurial" asp-route-id="@Model.BurialId">Edit Burial Record</a>
+        }
+
+
     </div>
 
 </body>

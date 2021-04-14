@@ -8,7 +8,7 @@
 <body class="job-single-page">
     <section class="heading-section section section-on-bg">
         <div class="hero-wrapper">
-            <div class="hero-holder"></div>
+            <div class="create-hero-holder"></div>
             <div class="hero-mask-gradient"></div>
         </div><!--//hero-wrapper-->
         <div class="container heading-content">
@@ -50,7 +50,7 @@
                                     <!--Burial N/S item-->
                                     <div class="col-sm-3">
                                         <label asp-for="BurialNs" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial N/S</label>
-                                        <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialNs" type="text">
+                                        <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialNs" type="text" required>
                                             <option value="">--</option>
                                             <option value="N">N (North)</option>
                                             <option value="S">S (South)</option>
@@ -61,14 +61,14 @@
                                     <!--SouthToHead item-->
                                     <div class="col-sm-3">
                                         <label asp-for="SouthToHead" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">South To Head (m)</label>
-                                        <input class="form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="SouthToHead" type="number" />
+                                        <input class="form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="SouthToHead" type="number" required />
                                         <span class="text-danger pl-3" asp-validation-for="SouthToHead"></span>
                                     </div>
 
                                     <!--AritifactFound2 item-->
                                     <div class="col-sm-3">
                                         <label asp-for="AritifactFound2" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial Goods</label>
-                                        <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="AritifactFound2" type="text">
+                                        <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="AritifactFound2" type="text" required>
                                             <option value="">--</option>
                                             <option value="Y">Y (Yes)</option>
                                             <option value="N">N (No)</option>
@@ -83,22 +83,29 @@
                                     <!--Low N/S item-->
                                     <div class="col-sm-3">
                                         <label asp-for="LowNs" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Low N/S</label>
-                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="LowNs" type="number" />
+                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="LowNs" type="number" required />
                                         <span class="text-danger pl-3" asp-validation-for="LowNs"></span>
                                     </div>
 
                                     <!--SouthToFeet item-->
                                     <div class="col-sm-3">
                                         <label asp-for="SouthToFeet" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">South To Feet (m)</label>
-                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="SouthToFeet" type="number" />
+                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="SouthToFeet" type="number" required />
                                         <span class="text-danger pl-3" asp-validation-for="SouthToFeet"></span>
                                     </div>
 
-                                    <!--Photo item-->
+                                    <!--PresIndex item-->
                                     <div class="col-sm-3">
-                                        <label class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Photo:</label>
-                                        <input type="file" name="img" accept="image/*">
-                                        <span class="text-danger pl-3"></span>
+                                        <label asp-for="PreservationIndex" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Preservation Index</label>
+                                        <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="PreservationIndex" type="text" required>
+                                            <option value="">--</option>
+                                            <option value="I">I</option>
+                                            <option value="II">II</option>
+                                            <option value="III">III</option>
+                                            <option value="IV">IV</option>
+                                            <option value="V">V</option>
+                                        </select>
+                                        <span class="text-danger pl-3" asp-validation-for="PreservationIndex"></span>
                                     </div>
                                 </div>
 
@@ -107,22 +114,27 @@
                                     <!--High N/S item-->
                                     <div class="col-sm-3">
                                         <label asp-for="HighNs" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">High N/S</label>
-                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="HighNs" type="number" />
+                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="HighNs" type="number" required />
                                         <span class="text-danger pl-3" asp-validation-for="HighNs"></span>
                                     </div>
 
                                     <!--WestToHead item-->
                                     <div class="col-sm-3">
                                         <label asp-for="WestToHead" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">West To Head (m)</label>
-                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="WestToHead" type="number" />
+                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="WestToHead" type="number" required />
                                         <span class="text-danger pl-3" asp-validation-for="WestToHead"></span>
                                     </div>
 
-                                    <!--Field Notes item-->
+                                    <!--HairTaken item-->
                                     <div class="col-sm-3">
-                                        <label class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Field Notes:</label>
-                                        <input type="file" name="img" accept="image/*">
-                                        <span class="text-danger pl-3"></span>
+                                        <label asp-for="HairTaken" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Hair Taken</label>
+                                        <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="HairTaken" type="text" required>
+                                            <option value="">--</option>
+                                            <option value="Y">Y (Yes)</option>
+                                            <option value="N">N (No)</option>
+                                            <option value="P">P (Pending)</option>
+                                        </select>
+                                        <span class="text-danger pl-3" asp-validation-for="HairTaken"></span>
                                     </div>
                                 </div>
 
@@ -131,7 +143,7 @@
                                     <!--Burial E/W item-->
                                     <div class="col-sm-3">
                                         <label asp-for="BurialEw" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial E/W</label>
-                                        <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialEw" type="text">
+                                        <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialEw" type="text" required>
                                             <option value="">--</option>
                                             <option value="E">E (East)</option>
                                             <option value="W">W (West)</option>
@@ -142,8 +154,96 @@
                                     <!--WestToFeet item-->
                                     <div class="col-sm-3">
                                         <label asp-for="WestToFeet" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">West To Feet (m)</label>
-                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="WestToFeet" type="number" />
+                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="WestToFeet" type="number" required />
                                         <span class="text-danger pl-3" asp-validation-for="WestToFeet"></span>
+                                    </div>
+
+                                    <!--AgeCode item-->
+                                    <div class="col-sm-3">
+                                        <label asp-for="AgeCode" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Age Code</label>
+                                        <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="AgeCode" type="text" required>
+                                            <option value="">--</option>
+                                            <option value="A">A (Adult)</option>
+                                            <option value="C">C (Child)</option>
+                                            <option value="I">I (Infant)</option>
+                                            <option value="N">N (Newborn)</option>
+                                        </select>
+                                        <span class="text-danger pl-3" asp-validation-for="AgeCode"></span>
+                                    </div>
+                                </div>
+
+                                <!--Row 5-->
+                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                    <!--Low E/W item-->
+                                    <div class="col-sm-3">
+                                        <label asp-for="LowEw" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Low E/W</label>
+                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="LowEw" type="number" required />
+                                        <span class="text-danger pl-3" asp-validation-for="LowEw"></span>
+                                    </div>
+
+                                    <!--Length item-->
+                                    <div class="col-sm-3">
+                                        <label asp-for="Length" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Length (m)</label>
+                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Length" type="number" required />
+                                        <span class="text-danger pl-3" asp-validation-for="Length"></span>
+                                    </div>
+
+                                    <!--Photo item-->
+                                    <div class="col-sm-3">
+                                        <label class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Photo:</label>
+                                        <input type="file" name="img" accept="image/*">
+                                        <span class="text-danger pl-3"></span>
+                                    </div>
+                                </div>
+
+                                <!--Row 6-->
+                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                    <!--High E/W item-->
+                                    <div class="col-sm-3">
+                                        <label asp-for="HighEw" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">High E/W</label>
+                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="HighEw" type="number" required />
+                                        <span class="text-danger pl-3" asp-validation-for="HighEw"></span>
+                                    </div>
+
+                                    <!--BurialDepth item-->
+                                    <div class="col-sm-3">
+                                        <label asp-for="BurialDepth" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial Depth (m)</label>
+                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialDepth" type="number" step=".01" required />
+                                        <span class="text-danger pl-3" asp-validation-for="BurialDepth"></span>
+                                    </div>
+
+                                    <!--Field Notes item-->
+                                    <div class="col-sm-3">
+                                        <label class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Field Notes:</label>
+                                        <input type="file" name="img" accept="image/*">
+                                        <span class="text-danger pl-3"></span>
+                                    </div>
+                                </div>
+
+                                <!--Row 7-->
+                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                    <!--BurialSubplot item-->
+                                    <div class="col-sm-3">
+                                        <label asp-for="BurialSubplot" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Area</label>
+                                        <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialSubplot" type="text" required>
+                                            <option value="">--</option>
+                                            <option value="NE">NE (North East)</option>
+                                            <option value="NW">NW (North West)</option>
+                                            <option value="SE">SE (South East)</option>
+                                            <option value="SW">SW (South West)</option>
+                                        </select>
+                                        <span class="text-danger pl-3" asp-validation-for="BurialSubplot"></span>
+                                    </div>
+
+                                    <!--Cluster item-->
+                                    <div class="col-sm-3">
+                                        <label asp-for="Cluster" class="col-sm-6 col-form-label text-left" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Cluster</label>
+                                        <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Cluster" type="text" required>
+                                            <option value="">--</option>
+                                            <option value="Y">Y (Yes)</option>
+                                            <option value="N">N (No)</option>
+                                        </select>
+                                        <span class="text-danger pl-3" asp-validation-for="Cluster"></span>
                                     </div>
 
                                     <!--Bone Books item-->
@@ -154,82 +254,28 @@
                                     </div>
                                 </div>
 
-                                <!--Row 5-->
-                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
-                                    <!--Low E/W item-->
-                                    <div class="col-sm-3">
-                                        <label asp-for="LowEw" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Low E/W</label>
-                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="LowEw" type="number" />
-                                        <span class="text-danger pl-3" asp-validation-for="LowEw"></span>
-                                    </div>
-
-                                    <!--Length item-->
-                                    <div class="col-sm-3">
-                                        <label asp-for="Length" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Length (m)</label>
-                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Length" type="number" />
-                                        <span class="text-danger pl-3" asp-validation-for="Length"></span>
-                                    </div>
-
-                                    <!--Hidden item-->
-                                    <div class="col-sm-3" style="visibility:hidden"></div>
-                                </div>
-
-                                <!--Row 6-->
-                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
-                                    <!--High E/W item-->
-                                    <div class="col-sm-3">
-                                        <label asp-for="HighEw" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">High E/W</label>
-                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="HighEw" type="number" />
-                                        <span class="text-danger pl-3" asp-validation-for="HighEw"></span>
-                                    </div>
-
-                                    <!--BurialDepth item-->
-                                    <div class="col-sm-3">
-                                        <label asp-for="BurialDepth" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial Depth (m)</label>
-                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialDepth" type="number" step=".01" />
-                                        <span class="text-danger pl-3" asp-validation-for="BurialDepth"></span>
-                                    </div>
-
-                                    <!--Hidden item-->
-                                    <div class="col-sm-3" style="visibility:hidden"></div>
-                                </div>
-
-                                <!--Row 7-->
-                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
-                                    <!--BurialSubplot item-->
-                                    <div class="col-sm-3">
-                                        <label asp-for="BurialSubplot" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Area</label>
-                                        <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialSubplot" type="text">
-                                            <option value="">--</option>
-                                            <option value="NE">NE (North East)</option>
-                                            <option value="NW">NW (North West)</option>
-                                            <option value="SE">SE (South East)</option>
-                                            <option value="SW">SW (South West)</option>
-                                        </select>
-                                        <span class="text-danger pl-3" asp-validation-for="BurialSubplot"></span>
-                                    </div>
-
-                                    <!--Hidden item-->
-                                    <div class="col-sm-3" style="visibility:hidden"></div>
-
-                                    <!--Hidden item-->
-                                    <div class="col-sm-3" style="visibility:hidden"></div>
-                                </div>
-
                                 <!--Row 8-->
                                 <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
                                     <!--BurialNum item-->
                                     <div class="col-sm-3">
                                         <label asp-for="BurialNum" class="col-sm-6 col-form-label text-left" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial Number</label>
-                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialNum" type="number" />
+                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialNum" type="number" required />
                                         <span class="text-danger pl-3" asp-validation-for="BurialNum"></span>
                                     </div>
 
-                                    <!--Hidden item-->
-                                    <div class="col-sm-3" style="visibility:hidden"></div>
+                                    <!--DateExc item-->
+                                    <div class="col-sm-3">
+                                        <label asp-for="DateExc" class="col-sm-6 col-form-label text-left" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Date</label>
+                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="DateExc" type="date" required />
+                                        <span class="text-danger pl-3" asp-validation-for="DateExc"></span>
+                                    </div>
 
-                                    <!--Hidden item-->
-                                    <div class="col-sm-3" style="visibility:hidden"></div>
+                                    <!--TimeCreatedAt item-->
+                                    <div class="col-sm-3">
+                                        <label asp-for="TimeCreatedAt" class="col-sm-6 col-form-label text-left" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Time</label>
+                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="TimeCreatedAt" type="time" required />
+                                        <span class="text-danger pl-3" asp-validation-for="TimeCreatedAt"></span>
+                                    </div>
                                 </div>
 
                                 <!--Row 9-->
@@ -237,8 +283,689 @@
                                     <!--Notes item-->
                                     <div class="col-sm-10">
                                         <label asp-for="Notes" class="col-sm-6 col-form-label text-left" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Field Notes</label>
-                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Notes" type="text" />
+                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Notes" type="text" required />
                                         <span class="text-danger pl-3" asp-validation-for="Notes"></span>
+                                    </div>
+                                </div>
+
+
+                                <!-- ACCORDION 1 -->
+
+
+                                <div id="accordion">
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="color:#F89D29;font-size:16px">
+                                                    Other Fields (Section 1)
+                                                </button>
+                                            </h5>
+                                        </div>
+
+                                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                            <div class="card-body">
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--Gender item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="Gender" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Gender</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Gender" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="Gender"></span>
+                                                    </div>
+
+                                                    <!--HairColor item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="HairColor" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Hair Color</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="HairColor" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="HairColor"></span>
+                                                    </div>
+
+                                                    <!--HeadDirection item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="HeadDirection" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Head Direction</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="HeadDirection" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="HeadDirection"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--PostcraniaTrauma item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="PostcraniaTrauma" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Postcrania Trauma</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="PostcraniaTrauma" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="PostcraniaTrauma"></span>
+                                                    </div>
+
+                                                    <!--FieldBookPgnum item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="FieldBookPgnum" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Field Book Page #</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="FieldBookPgnum" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="FieldBookPgnum"></span>
+                                                    </div>
+
+                                                    <!--DexInitials item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="DexInitials" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Dex Initials</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="DexInitials" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="DexInitials"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--DecInitials item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="DecInitials" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Dec Initials</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="DecInitials" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="DecInitials"></span>
+                                                    </div>
+
+                                                    <!--ByuSample item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="ByuSample" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">BYU Samples</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="ByuSample" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="ByuSample"></span>
+                                                    </div>
+
+                                                    <!--BodyAnalysis item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="BodyAnalysis" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Body Analysis</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BodyAnalysis" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="BodyAnalysis"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--SkullMag item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="SkullMag" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Skull Mag</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="SkullMag" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="SkullMag"></span>
+                                                    </div>
+
+                                                    <!--PostcraniaMag item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="PostcraniaMag" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Postcrania Mag</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="PostcraniaMag" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="PostcraniaMag"></span>
+                                                    </div>
+
+                                                    <!--SexSkull item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="SexSkull" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Skull Sex</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="SexSkull" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="SexSkull"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--AgeSkull item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="AgeSkull" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Skull Age</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="AgeSkull" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="AgeSkull"></span>
+                                                    </div>
+
+                                                    <!--RackShelf item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="RackShelf" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Shelf Rack</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="RackShelf" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="RackShelf"></span>
+                                                    </div>
+
+                                                    <!--SkullTrauma item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="SkullTrauma" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Skull Trauma</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="SkullTrauma" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="SkullTrauma"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--CribraOrbitala item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="CribraOrbitala" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Cribra Orbitala</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="CribraOrbitala" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="CribraOrbitala"></span>
+                                                    </div>
+
+                                                    <!--PoroticHyperostosis item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="PoroticHyperostosis" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Porotic Hyper</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="PoroticHyperostosis" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="PoroticHyperostosis"></span>
+                                                    </div>
+
+                                                    <!--PoroticHyperostosisLoc item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="PoroticHyperostosisLoc" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Porotic Hyper Loc</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="PoroticHyperostosisLoc" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="PoroticHyperostosisLoc"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--MetopicSuture item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="MetopicSuture" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Metopic Suture</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="MetopicSuture" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="MetopicSuture"></span>
+                                                    </div>
+
+                                                    <!--ButtonOsteoma item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="ButtonOsteoma" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Button Osteoma</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="ButtonOsteoma" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="ButtonOsteoma"></span>
+                                                    </div>
+
+                                                    <!--OsteologyUnknownComment item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="OsteologyUnknownComment" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Ost Comment</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="OsteologyUnknownComment" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="OsteologyUnknownComment"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--TemporalMandibularJointOsteoarthritis item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="TemporalMandibularJointOsteoarthritis" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Temp Mand Joint Osteo</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="TemporalMandibularJointOsteoarthritis" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="TemporalMandibularJointOsteoarthritis"></span>
+                                                    </div>
+
+                                                    <!--LinearHypoplasiaEnamel item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="LinearHypoplasiaEnamel" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Linear Hypo Enamel</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="LinearHypoplasiaEnamel" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="LinearHypoplasiaEnamel"></span>
+                                                    </div>
+
+                                                    <!--HillBurialsA item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="HillBurialsA" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Hill Burials</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="HillBurialsA" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="HillBurialsA"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--Tomb item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="Tomb" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Tomb</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Tomb" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="Tomb"></span>
+                                                    </div>
+
+                                                    <!--BurialPreservation item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="BurialPreservation" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial Preserve</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialPreservation" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="BurialPreservation"></span>
+                                                    </div>
+
+                                                    <!--BurialWrapping item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="BurialWrapping" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial Wrapping</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialWrapping" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="BurialWrapping"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--BurialAc item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="BurialAc" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial Ac</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialAc" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="BurialAc"></span>
+                                                    </div>
+
+                                                    <!--BurialGendMeth item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="BurialGendMeth" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial Gend Meth</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialGendMeth" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="BurialGendMeth"></span>
+                                                    </div>
+
+                                                    <!--BurialAgeDeath item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="BurialAgeDeath" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial Age Death</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialAgeDeath" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="BurialAgeDeath"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--BurialHc item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="BurialHc" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial Hc</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialHc" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="BurialHc"></span>
+                                                    </div>
+
+                                                    <!--BurialSt item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="BurialSt" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial St</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialSt" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="BurialSt"></span>
+                                                    </div>
+
+                                                    <!--LenM item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="LenM" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Len M</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="LenM" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="LenM"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--LenCm item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="LenCm" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Len Cm</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="LenCm" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="LenCm"></span>
+                                                    </div>
+
+                                                    <!--OsteologyNotes item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="OsteologyNotes" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Osteo Notes</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="OsteologyNotes" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="OsteologyNotes"></span>
+                                                    </div>
+
+                                                    <!--FaceBundle item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="FaceBundle" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Face Bundle</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="FaceBundle" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="FaceBundle"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- ACCORDION 2 -->
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="color:#F89D29;font-size:16px">
+                                                    Other Fields (Section 2)
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--AritifactFound item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="AritifactFound" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Aritifact Found</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="AritifactFound" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="AritifactFound"></span>
+                                                    </div>
+
+                                                    <!--AritifactFoundDesc item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="AritifactFoundDesc" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Aritifact Found Desc</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="AritifactFoundDesc" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="AritifactFoundDesc"></span>
+                                                    </div>
+
+                                                    <!--BurialSituation item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="BurialSituation" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Burial Situation</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BurialSituation" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="BurialSituation"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--SampleNumber item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="SampleNumber" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Sample Number</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="SampleNumber" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="SampleNumber"></span>
+                                                    </div>
+
+                                                    <!--GenderGe item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="GenderGe" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Gender GE</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="GenderGe" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="GenderGe"></span>
+                                                    </div>
+
+                                                    <!--GeFunction item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="GeFunction" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Ge Function</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="GeFunction" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="GeFunction"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--BasliarSuture item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="BasliarSuture" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Basliar Suture</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BasliarSuture" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="BasliarSuture"></span>
+                                                    </div>
+
+                                                    <!--VentralArc item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="VentralArc" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Ventral Arc</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="VentralArc" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="VentralArc"></span>
+                                                    </div>
+
+                                                    <!--SubpubicAngle item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="SubpubicAngle" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Subpubic Angle</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="SubpubicAngle" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="SubpubicAngle"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--SciaticNotch item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="SciaticNotch" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Sciatic Notch</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="SciaticNotch" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="SciaticNotch"></span>
+                                                    </div>
+
+                                                    <!--PubicBone item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="PubicBone" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Pubic Bone</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="PubicBone" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="PubicBone"></span>
+                                                    </div>
+
+                                                    <!--PreaurSulcus item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="PreaurSulcus" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Preaur Sulcus</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="PreaurSulcus" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="PreaurSulcus"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--MedialIpRamus item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="MedialIpRamus" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Medial Ip Ramus</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="MedialIpRamus" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="MedialIpRamus"></span>
+                                                    </div>
+
+                                                    <!--DorsalPitting item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="DorsalPitting" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Dorsal Pitting</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="DorsalPitting" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="DorsalPitting"></span>
+                                                    </div>
+
+                                                    <!--ForemanMagnum item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="ForemanMagnum" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Foreman Magnum</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="ForemanMagnum" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="ForemanMagnum"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--FemurHead item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="FemurHead" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Femur Head</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="FemurHead" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="FemurHead"></span>
+                                                    </div>
+
+                                                    <!--HumerusHead item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="HumerusHead" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Humerus Head</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="HumerusHead" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="HumerusHead"></span>
+                                                    </div>
+
+                                                    <!--Osteophytosis item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="Osteophytosis" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Osteophytosis</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Osteophytosis" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="Osteophytosis"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--PubicSymphysis item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="PubicSymphysis" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Pubic Symphysis</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="PubicSymphysis" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="PubicSymphysis"></span>
+                                                    </div>
+
+                                                    <!--Humerus item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="Humerus" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Humerus</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Humerus" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="Humerus"></span>
+                                                    </div>
+
+                                                    <!--FemurLength item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="FemurLength" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Femur Length</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="FemurLength" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="FemurLength"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--HumerusLength item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="HumerusLength" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Humerus Length</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="HumerusLength" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="HumerusLength"></span>
+                                                    </div>
+
+                                                    <!--TibiaLength item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="TibiaLength" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Tibia Length</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="TibiaLength" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="TibiaLength"></span>
+                                                    </div>
+
+                                                    <!--Robust item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="Robust" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Robust</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Robust" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="Robust"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--SupraorbitalRidges item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="SupraorbitalRidges" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Supraorbital Ridges</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="SupraorbitalRidges" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="SupraorbitalRidges"></span>
+                                                    </div>
+
+                                                    <!--OrbitEdge item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="OrbitEdge" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Orbit Edge</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="OrbitEdge" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="OrbitEdge"></span>
+                                                    </div>
+
+                                                    <!--ParietalBossing item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="ParietalBossing" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Parietal Bossing</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Gender" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="ParietalBossing"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--Gonian item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="Gonian" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Gonian</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="Gonian" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="Gonian"></span>
+                                                    </div>
+
+                                                    <!--NuchalCrest item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="NuchalCrest" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Nuchal Crest</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="NuchalCrest" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="NuchalCrest"></span>
+                                                    </div>
+
+                                                    <!--ZygomaticCrest item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="ZygomaticCrest" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Zygomatic Crest</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="ZygomaticCrest" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="ZygomaticCrest"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--ZygomaticCrest item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="ZygomaticCrest" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Zygomatic rest</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="ZygomaticCrest" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="ZygomaticCrest"></span>
+                                                    </div>
+
+                                                    <!--MaximumCranialLength item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="MaximumCranialLength" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Max Cranial Length</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="MaximumCranialLength" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="MaximumCranialLength"></span>
+                                                    </div>
+
+                                                    <!--MaximumCranialBreadth item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="MaximumCranialBreadth" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Max Cranial Breadth</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="MaximumCranialBreadth" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="MaximumCranialBreadth"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--BasionBregmaHeight item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="BasionBregmaHeight" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Basion Bregma Height</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BasionBregmaHeight" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="BasionBregmaHeight"></span>
+                                                    </div>
+
+                                                    <!--BasionNasion item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="BasionNasion" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Basion Nasion</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BasionNasion" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="BasionNasion"></span>
+                                                    </div>
+
+                                                    <!--BasionProsthionLength item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="BasionProsthionLength" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Basion Prosthion Length</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BasionProsthionLength" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="BasionProsthionLength"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--BizygomaticDiameter item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="BizygomaticDiameter" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Bizygomatic Diameter</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BizygomaticDiameter" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="BizygomaticDiameter"></span>
+                                                    </div>
+
+                                                    <!--NasionProsthion item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="NasionProsthion" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Nasion Prosthion</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="NasionProsthion" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="NasionProsthion"></span>
+                                                    </div>
+
+                                                    <!--MaximumNasalBreadth item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="MaximumNasalBreadth" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Max Nasal Breadth</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="MaximumNasalBreadth" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="MaximumNasalBreadth"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--InterorbitalBreadth item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="InterorbitalBreadth" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Interorbital Breadth</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="InterorbitalBreadth" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="InterorbitalBreadth"></span>
+                                                    </div>
+
+                                                    <!--DescriptionOfTaken item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="DescriptionOfTaken" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Desc Of Taken</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="DescriptionOfTaken" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="DescriptionOfTaken"></span>
+                                                    </div>
+
+                                                    <!--EstimateAge item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="EstimateAge" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Estimate Age</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="EstimateAge" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="EstimateAge"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--EstimateLivingStature item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="EstimateLivingStature" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Estimate Living Stature</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="EstimateLivingStature" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="EstimateLivingStature"></span>
+                                                    </div>
+
+                                                    <!--ToothAttrition item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="ToothAttrition" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Tooth Attrition</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="ToothAttrition" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="ToothAttrition"></span>
+                                                    </div>
+
+                                                    <!--ToothEruption item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="ToothEruption" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Tooth ruption</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="ToothEruption" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="ToothEruption"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row" style="margin-bottom: 10px!important;justify-content:center!important">
+                                                    <!--SoftTissueTaken item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="SoftTissueTaken" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Soft Tissue Taken</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="SoftTissueTaken" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="SoftTissueTaken"></span>
+                                                    </div>
+
+                                                    <!--BoneTaken item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="BoneTaken" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Bone Taken</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="BoneTaken" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="BoneTaken"></span>
+                                                    </div>
+
+                                                    <!--ToothTaken item-->
+                                                    <div class="col-sm-3">
+                                                        <label asp-for="ToothTaken" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">ToothTaken</label>
+                                                        <input class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="ToothTaken" type="text" />
+                                                        <span class="text-danger pl-3" asp-validation-for="ToothTaken"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 

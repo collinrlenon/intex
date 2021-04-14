@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,11 +17,14 @@ namespace Identity.Controllers
             roleManager = roleMgr;
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Index() => View(roleManager.Roles);
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Create() => View();
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Required]string name)
         {
             if (ModelState.IsValid)
@@ -35,6 +39,7 @@ namespace Identity.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(string id)
         {
             IdentityRole role = await roleManager.FindByIdAsync(id);

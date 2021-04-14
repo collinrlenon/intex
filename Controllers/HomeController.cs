@@ -38,7 +38,7 @@ namespace OperationDigger.Controllers
             return View();
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public IActionResult ManageUsers()
         {
             IQueryable<OperationDiggerUser> users = _userManager.Users.ToList().AsQueryable();
@@ -63,6 +63,7 @@ namespace OperationDigger.Controllers
             return RedirectToAction("ManageUsers");
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult ViewUser(string userId)
         {
             return View(_userManager.Users.Where(u => u.Id == userId).FirstOrDefault());
@@ -91,8 +92,8 @@ namespace OperationDigger.Controllers
         // GET method for Burial List view
         public IActionResult BurialList(long? burialId, string gender, string hairColor, int? yearExc, string monthExc, string headDir, string fieldBook, string byuSamp, string skullMag, string sexSkull, string ageSkull, decimal? wtHead, decimal? wtFeet, string burialPres, string burialWrap, string gendMeth, string ageCode, string faceBundle, decimal? burDepth, decimal? stHead, decimal? stFeet, int? Length, string genGe, string searchBox, int pageNum = 1)
         {
-            // Sets the page size to 30
-            int pageSize = 30;
+            // Sets the page size to 47
+            int pageSize = 47;
 
             var BurialListView = new BurialListViewModel
             {

@@ -130,9 +130,9 @@
                                         <label asp-for="HairTaken" class="col-sm-6 col-form-label text-right" style="text-align: left !important;width: 100%!important;padding-left:0px!important;font-weight:normal!important">Hair Taken</label>
                                         <select class="col-sm-6 form-control" style="height: 35px!important; font-size: 14px!important;" asp-for="HairTaken" type="text" required>
                                             <option value="">--</option>
-                                            <option value="Y">Y (Yes)</option>
-                                            <option value="N">N (No)</option>
-                                            <option value="P">P (Pending)</option>
+                                            <option value="true">Y (Yes)</option>
+                                            <option value="false">N (No)</option>
+                                            @*<option value="P">P (Pending)</option>*@
                                         </select>
                                         <span class="text-danger pl-3" asp-validation-for="HairTaken"></span>
                                     </div>
